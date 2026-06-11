@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useState } from "react";
 
 import {
@@ -8,89 +9,108 @@ import {
   CalendarDays,
   Check,
   CircleDollarSign,
-  Clock3,
-  CreditCard,
+  ClipboardCheck,
   FileText,
+  LayoutDashboard,
+  Megaphone,
+  MessageCircle,
   Phone,
-  UserPlus,
   UserRound,
 } from "lucide-react";
+import { AnimatePresence, motion } from "motion/react";
 
 import { LogoIcon } from "../logo";
+import { cn } from "@/lib/utils";
 
-const featureCards = [
+const problemCards = [
   {
-    title: "Capture",
+    title: "Patient Reach",
     description:
-      "Answer every call, text, and message 24/7. No participants lost to hold music or after-hours gaps.",
+      "The right patients are often out there, but traditional recruitment approaches make them difficult to find and engage, leaving sites without a consistent way to generate patient interest.",
     visual: <CaptureVisual />,
   },
   {
-    title: "Convert",
+    title: "Patient Quality",
     description:
-      "Turn referrals into qualified study visits in hours, not weeks, and improve your conversion rate.",
+      "Patient volume alone doesn't guarantee enrollment. Without a clear pre-qualification process, teams spend valuable time filtering patients who may never match study requirements.",
     visual: <ConvertVisual />,
   },
   {
-    title: "Recover",
+    title: "Manual Overload",
     description:
-      "Cut no-shows in half and automatically backfill cancelled slots to keep your schedule full.",
+      "Coordinators handle repetitive calls, follow-ups, reminders, and patient communication manually, increasing workload and making it harder to keep participants engaged throughout the study.",
     visual: <RecoverVisual />,
+  },
+  {
+    title: "Fragmented Systems",
+    description:
+      "Many sites still rely on traditional outreach, spreadsheets, and disconnected tools that make recruitment harder to track, optimize, and scale.",
+    visual: <FragmentedSystemsVisual />,
   },
 ] as const;
 
 const metrics = [
-  { value: "71%", label: "Reduction in no-shows" },
-  { value: "40%", label: "Increase in referral conversion" },
-  { value: "99%", label: "Decrease in hold time" },
-  { value: "60%", label: "Calls resolved end-to-end" },
+  { value: "80%", label: "Trials miss enrollment timelines" },
+  { value: "48%", label: "Sites miss enrollment expectations" },
+  { value: "85%", label: "Patients unaware of trial opportunities" },
+  { value: "$40K+", label: "Sponsor cost per trial delay day" },
 ] as const;
 
 const testimonials = [
   {
-    role: "Practice Manager",
-    name: "Clinical Operations Lead",
+    role: "Therapeutic Innovation & Regulatory Science",
+    name: "Dombernowsky et al.",
     quote:
-      "WeForge helped our team match high inquiry volume with a calmer intake process. Fewer qualified participants fall through the cracks, and our site staff can spend more time with patients who are ready for care.",
+      "Recruitment-related factors are pivotal when assessing trial sites during site selection.",
   },
   {
-    role: "Applied AI Manager",
-    name: "Study Growth Director",
+    role: "Perspectives in Clinical Research",
+    name: "Chaudhari et al.",
     quote:
-      "Working with WeForge feels like adding a clinical recruitment team that understands the workflow. The system keeps refining intake, follow-up, and reporting around the outcomes we actually measure.",
+      "Participant recruitment and retention are two major bottlenecks in conducting clinical trials.",
   },
   {
-    role: "Chief Administrative Officer",
-    name: "Provider Network Partner",
+    role: "Tufts CSDD",
+    name: "Mary Jo Lamberti",
     quote:
-      "Our coordinators feel supported because routine outreach and qualification steps are handled consistently. It gives the team more room to focus on complex patient conversations.",
+      "It takes more patients to be screened in order to get the same number of completed patients.",
   },
 ] as const;
 
-const frontOfficeItems = [
+const SOLUTION_ROTATE_MS = 30_000;
+
+const solutionItems = [
   {
-    title: "Schedule Management",
+    title: "Patient Acquisition",
     description:
-      "Book, reschedule, and backfill cancellations automatically. Your team stays focused on patients, not the schedule.",
-    icon: CalendarDays,
+      "We help you reach and attract potential participants through targeted recruitment channels built around your studies.",
+    icon: Megaphone,
+    image: "/image/acquisition-paths-glass.webp",
+    imageAlt: "Illustration of targeted patient acquisition channels",
   },
   {
-    title: "Referrals",
+    title: "Smart Qualification",
     description:
-      "Every new patient referral gets a follow-up. Clarion reaches out, answers questions, and gets them scheduled.",
-    icon: UserPlus,
+      "We apply study-specific qualification flows before patients reach your team, helping coordinators focus on participants more likely to match study requirements.",
+    icon: ClipboardCheck,
+    image: "/image/recruitment-pages-glass.webp",
+    imageAlt: "Illustration of study-specific qualification flows",
   },
   {
-    title: "Billing and Insurance",
+    title: "Patient Engagement",
     description:
-      "Coverage questions and payments handled through natural conversations. No hold music, no back-and-forth.",
-    icon: CreditCard,
+      "We create structured patient engagement flows that reduce manual coordination and help keep participants informed and engaged throughout the study journey.",
+    icon: MessageCircle,
+    image: "/image/implement.webp",
+    imageAlt: "Illustration of structured patient engagement flows",
   },
   {
-    title: "24/7 Patient Support",
+    title: "Recruitment Operations",
     description:
-      "Refill requests, post-visit check-ins, and after-hours questions. Clarion handles them around the clock.",
-    icon: Clock3,
+      "We centralize patient pipelines and recruitment workflows into one connected system, giving your team the clarity and capacity needed to manage recruitment as you grow.",
+    icon: LayoutDashboard,
+    image: "/image/operate.webp",
+    imageAlt: "Illustration of centralized recruitment operations",
   },
 ] as const;
 
@@ -125,16 +145,21 @@ function ScaleYourPractice() {
   return (
     <>
       <div className="px-6 py-14 text-center md:py-20 border-b border-brand-border">
-        <h2 className="font-clarion-display text-4xl font-light leading-none tracking-normal text-brand-cocoa md:text-5xl">
-          Scale your practice
+        <p className="text-sm font-semibold uppercase tracking-[0.18em] text-brand-orange">
+          The hidden cost of recruitment
+        </p>
+        <h2 className="mx-auto mt-5 max-w-4xl font-clarion-display text-4xl font-light leading-none tracking-normal text-brand-cocoa md:text-5xl">
+          Recruitment shouldn&apos;t be the reason your site falls behind.
         </h2>
         <p className="mx-auto mt-7 max-w-3xl font-clarion-body text-lg leading-8 text-brand-muted md:text-2xl">
-          Simplify everyday tasks so your team can focus on what matters most.
+          Delayed enrollment doesn&apos;t just impact timelines. It increases
+          operational pressure, affects sponsor relationships, and can limit
+          your ability to secure and deliver more studies.
         </p>
       </div>
 
-      <div className="grid lg:grid-cols-3">
-        {featureCards.map((card) => (
+      <div className="grid lg:grid-cols-4">
+        {problemCards.map((card) => (
           <article
             key={card.title}
             className="border-b border-brand-border last:border-b-0 lg:border-b-0 lg:border-r lg:last:border-r-0"
@@ -162,17 +187,26 @@ function ProviderImpact() {
     <>
       <div className="border-b border-brand-border px-6 py-8 text-center md:py-10">
         <h2 className="mx-auto max-w-6xl font-clarion-display text-4xl font-light leading-tight tracking-normal text-brand-cocoa md:text-5xl">
-          Empowering providers to deliver exceptional care
+          Recruitment performance shapes the future of your site.
         </h2>
+        <p className="mx-auto mt-5 max-w-4xl font-clarion-body text-lg leading-8 text-brand-muted md:text-xl">
+          Enrollment success impacts more than study timelines. It influences
+          operational efficiency, sponsor relationships, and your ability to
+          secure and deliver more research opportunities.
+        </p>
       </div>
 
       <div className="grid border-b border-brand-border sm:grid-cols-2 lg:grid-cols-4">
         {metrics.map((metric, index) => (
           <div
             key={metric.label}
-            className={`border-b border-brand-border px-9 py-10 md:px-12 sm:odd:border-r sm:even:border-r-0 lg:border-b-0 ${
-              index === metrics.length - 1 ? "lg:border-r-0!" : "lg:border-r"
-            }`}
+            className={cn(
+              "border-b border-brand-border px-9 py-10 md:px-12 lg:border-b-0",
+              index !== metrics.length - 1 && "lg:border-r",
+              index % 2 === 0 &&
+                index < metrics.length - 1 &&
+                "sm:border-r max-lg:border-r"
+            )}
           >
             <p className="font-clarion-display text-5xl font-light leading-none text-brand-cocoa md:text-6xl">
               {metric.value}
@@ -287,12 +321,13 @@ function TestimonialBand() {
 function FrontOfficeEngine() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [progressKey, setProgressKey] = useState(0);
+  const activeSolution = solutionItems[activeIndex];
 
   useEffect(() => {
     const timer = window.setTimeout(() => {
-      setActiveIndex((current) => (current + 1) % frontOfficeItems.length);
+      setActiveIndex((current) => (current + 1) % solutionItems.length);
       setProgressKey((current) => current + 1);
-    }, 4000);
+    }, SOLUTION_ROTATE_MS);
 
     return () => window.clearTimeout(timer);
   }, [activeIndex, progressKey]);
@@ -306,17 +341,17 @@ function FrontOfficeEngine() {
     <div className="grid min-h-[760px] lg:grid-cols-[1fr_1fr]">
       <div className="flex flex-col border-b border-brand-border px-8 py-14 lg:border-b-0 lg:border-r md:px-12 lg:px-14">
         <div>
-          <h2 className="font-clarion-display text-4xl font-light leading-tight tracking-normal text-brand-cocoa md:whitespace-nowrap md:text-5xl">
-            Your front office revenue engine
+          <h2 className="font-clarion-display text-4xl font-light leading-tight tracking-normal text-brand-cocoa md:text-5xl">
+            Connected recruitment systems for your site
           </h2>
           <p className="mt-4 max-w-2xl font-clarion-body text-lg leading-7 text-brand-muted">
-            Everything your front office handles today, done automatically and
-            at any hour.
+            Four connected capabilities that help you attract, qualify, engage,
+            and manage participants through every stage of the study journey.
           </p>
         </div>
 
         <div className="mt-auto space-y-6 pt-16">
-          {frontOfficeItems.map((item, index) => {
+          {solutionItems.map((item, index) => {
             const Icon = item.icon;
             const isActive = activeIndex === index;
 
@@ -353,7 +388,7 @@ function FrontOfficeEngine() {
                       <span className="mt-3 block h-px max-w-[505px] overflow-hidden bg-brand-border">
                         <span
                           key={progressKey}
-                          className="block h-full origin-left animate-[front-office-progress_4s_linear_forwards] bg-brand-orange"
+                          className="block h-full origin-left animate-[front-office-progress_30s_linear_forwards] bg-brand-orange"
                         />
                       </span>
                     </>
@@ -365,14 +400,27 @@ function FrontOfficeEngine() {
         </div>
       </div>
 
-      <div
-        className="relative min-h-[620px] overflow-hidden bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: "url('/image/wefrge-dashboard-mockup.webp')",
-        }}
-        aria-label="WeForge dashboard mockup"
-        role="img"
-      />
+      <div className="relative min-h-[420px] overflow-hidden bg-brand-peach/25 lg:min-h-[620px]">
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={activeSolution.image}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.35, ease: "easeOut" }}
+            className="absolute inset-0"
+          >
+            <Image
+              src={activeSolution.image}
+              alt={activeSolution.imageAlt}
+              fill
+              className="object-cover object-center"
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              priority={activeIndex === 0}
+            />
+          </motion.div>
+        </AnimatePresence>
+      </div>
     </div>
   );
 }
@@ -383,6 +431,49 @@ function BrandTile({ className = "" }: { className?: string }) {
       className={`flex size-[118px] items-center justify-center rounded-[22px] bg-[linear-gradient(180deg,#fffdf9_0%,#fff3e6_100%)] text-brand-cocoa shadow-[0_0_38px_rgba(255,79,0,0.2),0_18px_45px_rgba(32,21,21,0.08)] ${className}`}
     >
       <LogoIcon className="size-16" />
+    </div>
+  );
+}
+
+function FragmentedSystemsVisual() {
+  return (
+    <div className="relative h-[246px] w-[420px] max-w-none origin-center scale-[0.82] sm:scale-100">
+      <div className="absolute left-2 top-6 w-[118px] rounded-lg bg-white p-3 shadow-[0_12px_24px_rgba(32,21,21,0.08)]">
+        <div className="mb-3 h-2 w-10 rounded-full bg-[#ded9cc]" />
+        <div className="space-y-2">
+          {[72, 88, 64].map((width) => (
+            <div
+              key={width}
+              className="h-1.5 rounded-full bg-[#ddd8cb]"
+              style={{ width: `${width}%` }}
+            />
+          ))}
+        </div>
+      </div>
+      <div className="absolute right-4 top-10 w-[132px] rounded-lg bg-white p-3 shadow-[0_12px_24px_rgba(32,21,21,0.08)]">
+        <div className="grid grid-cols-3 gap-1">
+          {Array.from({ length: 9 }, (_, index) => (
+            <div
+              key={index}
+              className="size-5 rounded-[2px] bg-[#bfe8da]"
+            />
+          ))}
+        </div>
+      </div>
+      <div className="absolute left-[118px] top-[92px] w-[88px] border-t-4 border-dotted border-[#a79f92]" />
+      <div className="absolute right-[118px] top-[118px] w-[72px] border-t-4 border-dotted border-[#a79f92] opacity-60" />
+      <BrandTile className="absolute left-1/2 top-[88px] -translate-x-1/2 size-[92px] rounded-[18px] [&_svg]:size-12" />
+      <div className="absolute bottom-2 left-1/2 flex w-[280px] -translate-x-1/2 items-center justify-between gap-3">
+        <div className="rounded-md border border-brand-border bg-brand-peach/70 px-3 py-2 font-clarion-body text-[10px] font-semibold text-brand-muted">
+          Outreach
+        </div>
+        <div className="rounded-md border border-brand-border bg-brand-peach/70 px-3 py-2 font-clarion-body text-[10px] font-semibold text-brand-muted">
+          Spreadsheet
+        </div>
+        <div className="rounded-md border border-brand-border bg-brand-peach/70 px-3 py-2 font-clarion-body text-[10px] font-semibold text-brand-muted">
+          CRM
+        </div>
+      </div>
     </div>
   );
 }

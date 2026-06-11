@@ -98,11 +98,11 @@ export const Footer = () => {
                 placeholder="Your email"
                 className="bg-transparent px-4 py-2 placeholder:text-brand-cocoa/45 text-brand-cocoa text-sm outline-none"
               />
-              <button className="bg-brand-orange text-brand-ivory absolute inset-y-0 text-center px-4 py-2 rounded-sm right-0">
+              <button className="bg-brand-orange text-brand-ivory absolute inset-y-0 text-center px-4 py-2 rounded-none right-0">
                 <Send className="size-4" />
               </button>
             </div>
-            <p className="text-brand-peach/65 font-inter text-sm max-w-xl">
+            <p className="text-brand-peach/65 font-clarion-body text-sm max-w-xl">
               Stay informed on the latest in clinical recruitment.
             </p>
           </div>

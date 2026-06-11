@@ -1,78 +1,86 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { Container } from "./container";
-import { Heading } from "./heading";
-import { SubHeading } from "./subheading";
+
+import { BlogPlaceholderImage } from "@/components/blog-placeholder-image";
+import { Container } from "@/components/container";
+import { Button } from "@/components/ui/button";
 
 const articles = [
   {
-    category: "Recruitment Ops",
-    title: "How to reduce drop-off before pre-screening starts",
+    category: "Recruitment challenges",
+    title: "Why qualified participants stall before screening",
     description:
-      "A practical look at participant clarity, channel fit, and the first qualification handoff.",
+      "A practical look at the friction points that keep interested patients from becoming ready-to-review candidates.",
   },
   {
-    category: "Study Pages",
-    title: "What clinical study pages need to answer quickly",
+    category: "Study delivery",
+    title: "What clinical sites need before enrollment pressure rises",
     description:
-      "The information participants need before committing time to an eligibility questionnaire.",
+      "How clearer workflows, structured follow-up, and better visibility help teams protect study timelines.",
   },
   {
-    category: "Follow-up",
-    title: "Designing remote screening workflows that feel human",
+    category: "Recruitment strategy",
+    title: "Designing study pages that move patients to action",
     description:
-      "How structured contact options help coordinators move from interest to scheduled review.",
+      "The questions, confidence signals, and next steps that participant-facing pages need to answer fast.",
   },
 ] as const;
 
 export const InsightsPreview = () => {
   return (
-    <section className="bg-brand-peach px-4 py-16 md:py-24 lg:py-32">
-      <Container>
-        <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-brand-orange">
-              Insights
-            </p>
-            <Heading className="mt-4 max-w-3xl">
-              Practical thinking for clinical recruitment teams.
-            </Heading>
-            <SubHeading className="mt-5">
-              Guides and operational notes on participant acquisition,
-              prequalification, and retention workflows.
-            </SubHeading>
+    <section
+      id="blog-preview"
+      className="border-y border-brand-border bg-brand-ivory px-4 my-8 md:my-28"
+    >
+      <Container className="px-0">
+        <div className="overflow-hidden border-x border-brand-border">
+          <div className=" border-b border-brand-border  text-center">
+            <div className="px-6 py-14 md:px-12 md:py-20">
+              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-brand-orange">
+                Blog preview
+              </p>
+              <h2 className="mt-5  font-clarion-display text-4xl font-light leading-tight tracking-normal text-brand-cocoa md:text-5xl">
+                Ideas shaping the future.
+              </h2>
+              <p className="mt-6  font-clarion-body text-lg leading-8 text-brand-muted md:text-xl">
+                Explore insights on recruitment challenges, and strategies
+                helping clinical sites improve study delivery.
+              </p>
+              <Button asChild className="mt-8 bg-brand-cocoa hover:bg-brand-orange">
+                <Link href="/blog">
+                  Read latest
+                  <ArrowRight className="size-4" aria-hidden="true" />
+                </Link>
+              </Button>
+            </div>
           </div>
-          <Link
-            href="/blog"
-            className="inline-flex items-center gap-2 text-sm font-semibold text-brand-cocoa hover:text-brand-orange"
-          >
-            View all insights
-            <ArrowRight className="size-4" />
-          </Link>
-        </div>
 
-        <div className="mt-10 grid grid-cols-1 gap-4 md:grid-cols-3">
-          {articles.map((article) => (
-            <Link
-              key={article.title}
-              href="/blog"
-              className="group rounded-xl border border-brand-border bg-brand-ivory p-6 transition-all hover:-translate-y-1 hover:shadow-[0_18px_42px_rgba(32,21,21,0.10)]"
-            >
-              <p className="text-xs font-bold uppercase tracking-[0.16em] text-brand-orange">
-                {article.category}
-              </p>
-              <h3 className="mt-4 text-xl font-bold leading-tight text-brand-cocoa">
-                {article.title}
-              </h3>
-              <p className="mt-4 text-sm leading-relaxed text-brand-muted">
-                {article.description}
-              </p>
-              <div className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-brand-cocoa group-hover:text-brand-orange">
-                Read preview
-                <ArrowRight className="size-4" />
-              </div>
-            </Link>
-          ))}
+          <div className="grid divide-y divide-brand-border lg:grid-cols-3 lg:divide-x lg:divide-y-0">
+            {articles.map((article, index) => (
+              <Link
+                key={article.title}
+                href="/blog"
+                className="group flex min-h-[315px] flex-col px-6 pb-8 transition-colors hover:bg-brand-peach/45 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange focus-visible:ring-inset md:px-8 md:pb-10"
+              >
+                <div className="-mx-6 mb-8 overflow-hidden md:-mx-8">
+                  <BlogPlaceholderImage variant={index} />
+                </div>
+                <p className="text-xs font-bold uppercase tracking-[0.16em] text-brand-orange">
+                  {article.category}
+                </p>
+                <h3 className="mt-4 max-w-md text-2xl font-medium leading-tight tracking-normal text-brand-cocoa">
+                  {article.title}
+                </h3>
+                <p className="mt-4 max-w-md text-base leading-7 text-brand-muted">
+                  {article.description}
+                </p>
+                <span className="mt-auto inline-flex items-center gap-2 pt-8 text-sm font-semibold text-brand-cocoa transition-colors group-hover:text-brand-orange">
+                  Read preview
+                  <ArrowRight className="size-4" aria-hidden="true" />
+                </span>
+              </Link>
+            ))}
+          </div>
         </div>
       </Container>
     </section>

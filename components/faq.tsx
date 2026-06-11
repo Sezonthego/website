@@ -73,33 +73,6 @@ export const FAQ = () => {
             ))}
           </div>
         </div>
-
-        {/* <div className="relative mt-10 overflow-hidden border border-brand-border bg-brand-peach/60 p-6 md:mt-14 md:p-8">
-          <div
-            aria-hidden="true"
-            className="absolute inset-y-0 right-0 w-1/2 bg-[radial-gradient(ellipse_at_90%_50%,rgba(255,79,0,0.16),transparent_68%)]"
-          />
-          <div className="relative flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
-            <div className="max-w-xl">
-              <h3 className="font-clarion-display text-3xl font-light text-brand-cocoa md:text-4xl">
-                Still have questions?
-              </h3>
-              <p className="mt-3 text-base leading-7 text-brand-muted">
-                Our team is available to answer any question you may have. It
-                only takes a button click to start the conversation.
-              </p>
-            </div>
-            <Button
-              asChild
-              className="w-full shrink-0 bg-brand-cocoa hover:bg-brand-orange md:w-auto"
-            >
-              <Link href="#contact">
-                Let&apos;s chat
-                <ArrowRight className="size-4" />
-              </Link>
-            </Button>
-          </div>
-        </div> */}
       </Container>
     </section>
   );

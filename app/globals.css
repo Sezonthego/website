@@ -2,37 +2,19 @@
 @import "tw-animate-css";
 @custom-variant dark (&:where(.dark, .dark *));
 
-@font-face {
-  font-family: "Moderat Serif Trial";
-  src: url("https://cdn.prod.website-files.com/672129b642cb0117f4c53944/67212dac7895d1da56569225_Moderat-Serif-Trial-Light.otf")
-    format("opentype");
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Clarion Geist";
-  src: url("https://cdn.prod.website-files.com/672129b642cb0117f4c53944/67212dc115a0c098d32efe90_GeistVF.ttf")
-    format("truetype");
-  font-weight: 100 900;
-  font-style: normal;
-  font-display: swap;
-}
-
 :root {
-  --inter: var(--font-inter);
-  --manrope: var(--font-manrope);
-  --font-clarion-serif: "Moderat Serif Trial", Georgia, "Times New Roman", serif;
-  --font-clarion-sans: "Clarion Geist", var(--font-manrope), sans-serif;
-  --radius: 0.625rem;
+  --inter: var(--font-poppins);
+  --manrope: var(--font-poppins);
+  --font-clarion-serif: var(--font-source-serif), Georgia, "Times New Roman", serif;
+  --font-clarion-sans: var(--font-poppins), system-ui, sans-serif;
+  --radius: 0;
   --brand-orange: #ff4f00;
-  --brand-ivory: #fffdf9;
+  --brand-ivory: #fffefa;
   --brand-peach: #fff3e6;
-  --brand-cocoa: #201515;
-  --brand-indigo: #2b2358;
-  --brand-cocoa-muted: rgb(32 21 21 / 72%);
-  --brand-border: rgb(32 21 21 / 12%);
+  --brand-cocoa: #0a0300;
+  --brand-indigo: #0f172a;
+  --brand-cocoa-muted: rgb(10 3 0 / 58%);
+  --brand-border: rgb(10 3 0 / 12%);
   --background: var(--brand-ivory);
   --foreground: var(--brand-cocoa);
   --card: var(--brand-peach);
@@ -49,7 +31,7 @@
   --accent-foreground: var(--brand-cocoa);
   --destructive: #b42318;
   --border: var(--brand-border);
-  --input: rgb(32 21 21 / 16%);
+  --input: rgb(10 3 0 / 16%);
   --ring: var(--brand-orange);
   --chart-1: var(--brand-orange);
   --chart-2: var(--brand-indigo);
@@ -62,18 +44,18 @@
   --sidebar-primary-foreground: var(--brand-ivory);
   --sidebar-accent: var(--brand-peach);
   --sidebar-accent-foreground: var(--brand-cocoa);
-  --sidebar-border: rgb(255 253 249 / 12%);
+  --sidebar-border: rgb(255 254 250 / 12%);
   --sidebar-ring: var(--brand-orange);
 
   --shadow-brand: 0 16px 30px rgb(255 79 0 / 18%),
-    0 6px 14px rgb(32 21 21 / 8%);
+    0 6px 14px rgb(10 3 0 / 8%);
 }
 
 .dark {
   --background: var(--brand-ivory);
   --foreground: var(--brand-cocoa);
-  --inter: var(--font-inter);
-  --manrope: var(--font-manrope);
+  --inter: var(--font-poppins);
+  --manrope: var(--font-poppins);
   --card: var(--brand-peach);
   --card-foreground: var(--brand-cocoa);
   --popover: var(--brand-ivory);
@@ -88,7 +70,7 @@
   --accent-foreground: var(--brand-cocoa);
   --destructive: #b42318;
   --border: var(--brand-border);
-  --input: rgb(32 21 21 / 16%);
+  --input: rgb(10 3 0 / 16%);
   --ring: var(--brand-orange);
   --chart-1: var(--brand-orange);
   --chart-2: var(--brand-indigo);
@@ -101,11 +83,11 @@
   --sidebar-primary-foreground: var(--brand-ivory);
   --sidebar-accent: var(--brand-peach);
   --sidebar-accent-foreground: var(--brand-cocoa);
-  --sidebar-border: rgb(255 253 249 / 12%);
+  --sidebar-border: rgb(255 254 250 / 12%);
   --sidebar-ring: var(--brand-orange);
 
   --shadow-brand: 0 16px 30px rgb(255 79 0 / 18%),
-    0 6px 14px rgb(32 21 21 / 8%);
+    0 6px 14px rgb(10 3 0 / 8%);
 }
 
 @theme inline {
@@ -118,8 +100,8 @@
   --color-brand-border: var(--brand-border);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-inter: var(--font-inter);
-  --font-display: var(--font-manrope);
+  --font-inter: var(--font-poppins);
+  --font-display: var(--font-source-serif);
   --font-clarion-display: var(--font-clarion-serif);
   --font-clarion-body: var(--font-clarion-sans);
   --color-sidebar-ring: var(--sidebar-ring);
@@ -196,6 +178,6 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-clarion-body;
   }
 }

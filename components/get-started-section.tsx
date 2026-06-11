@@ -21,33 +21,26 @@ import { LogoIcon } from "@/components/logo";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
-const checklist = [
-  "Quick setup",
-  "No IT required",
-  "Dedicated team",
-  "Tailored experience",
-] as const;
-
 const steps = [
   {
     number: "01",
-    title: "Integrate your workflows",
+    title: "Discover",
     description:
-      "Connect recruitment pages, screening forms, patient routing, and follow-up rules around your study protocols.",
+      "We understand your studies, recruitment goals, and current processes to create a system that fits your site.",
     visual: <WorkflowVisual />,
   },
   {
     number: "02",
-    title: "Customize your agent",
+    title: "Implement",
     description:
-      "Shape the assistant around your eligibility criteria, tone, knowledge base, and team handoff preferences.",
+      "We build and configure your recruitment pages, qualification flows, patient engagement, and operational systems.",
     visual: <AgentVisual />,
   },
   {
     number: "03",
-    title: "Engage on every channel",
+    title: "Scale",
     description:
-      "Reach qualified participants through web, phone, SMS, and operational follow-up without adding team overhead.",
+      "We continuously support and improve your recruitment system to help your site manage ongoing studies and future growth.",
     visual: <ChannelVisual />,
   },
 ] as const;
@@ -61,26 +54,20 @@ export function GetStartedSection() {
       <Container>
         <div className="overflow-hidden border-x border-brand-border">
           <div className="px-4 py-8 text-center md:px-8 md:py-10">
-            <h2 className="mx-auto max-w-6xl font-clarion-display text-4xl font-light leading-tight tracking-normal text-brand-cocoa md:text-5xl">
-              Get up and running in just days
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-brand-orange">
+              How it works
+            </p>
+            <h2 className="mx-auto mt-5 max-w-6xl font-clarion-display text-4xl font-light leading-tight tracking-normal text-brand-cocoa md:text-5xl">
+              Better recruitment, without disrupting your site.
             </h2>
-
-            <ul className="mx-auto mt-8 flex max-w-4xl flex-wrap items-center justify-center gap-x-8 gap-y-4">
-              {checklist.map((item) => (
-                <li
-                  key={item}
-                  className="inline-flex items-center gap-2 text-sm font-medium text-brand-cocoa md:text-base"
-                >
-                  <span className="flex size-8 items-center justify-center rounded-full bg-brand-peach text-brand-cocoa ring-1 ring-brand-border">
-                    <Check className="size-4" strokeWidth={2} />
-                  </span>
-                  {item}
-                </li>
-              ))}
-            </ul>
+            <p className="mx-auto mt-6 max-w-3xl font-clarion-body text-lg leading-8 text-brand-muted md:text-xl">
+              We handle the setup, implementation, and optimization of your
+              recruitment infrastructure, so your team can stay focused on
+              running studies.
+            </p>
 
             <Button asChild className="mt-8 shadow-brand">
-              <Link href="/#contact">Schedule a demo</Link>
+              <Link href="/contact">Take the first step today</Link>
             </Button>
           </div>
 

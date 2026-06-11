@@ -5,11 +5,11 @@ import { cn } from "@/lib/utils";
 
 const logoTone = {
   dark: {
-    primary: "#111827",
-    secondary: "rgba(32, 21, 21, 0.62)",
+    primary: "#0A0300",
+    secondary: "rgba(10, 3, 0, 0.58)",
   },
   light: {
-    primary: "#FFFDF9",
+    primary: "#FFFEFA",
     secondary: "rgba(255, 243, 230, 0.72)",
   },
 } as const;
@@ -53,7 +53,7 @@ const LogoWordmark = ({ tone }: { tone: "dark" | "light" }) => {
         x="42"
         y="27"
         fill={colors.primary}
-        fontFamily="var(--font-manrope), var(--font-inter), Arial, sans-serif"
+        fontFamily="var(--font-poppins), Arial, sans-serif"
         fontSize="25"
         fontWeight="700"
         letterSpacing="-0.4"
@@ -64,7 +64,7 @@ const LogoWordmark = ({ tone }: { tone: "dark" | "light" }) => {
         x="143"
         y="27"
         fill={colors.secondary}
-        fontFamily="var(--font-manrope), var(--font-inter), Arial, sans-serif"
+        fontFamily="var(--font-poppins), Arial, sans-serif"
         fontSize="12"
         fontStyle="italic"
         fontWeight="500"

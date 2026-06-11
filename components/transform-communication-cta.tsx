@@ -22,11 +22,16 @@ export function TransformCommunicationCta() {
           />
 
           <h2 className="mx-auto max-w-4xl font-clarion-display text-4xl font-light leading-tight text-brand-cocoa md:text-6xl">
-            See how WeForge can transform your patient communication
+            Make recruitment a reason sponsors trust your site.
           </h2>
+          <p className="mx-auto mt-6 max-w-3xl font-clarion-body text-lg leading-8 text-brand-muted md:text-xl">
+            Strengthen your recruitment capabilities with infrastructure designed
+            to help your site meet enrollment expectations, deliver studies, and
+            build stronger sponsor relationships.
+          </p>
 
           <Button asChild className="mt-8 bg-brand-cocoa hover:bg-brand-orange">
-            <Link href="/#contact">Schedule a demo</Link>
+            <Link href="/contact">Book an intro call</Link>
           </Button>
         </div>
       </Container>

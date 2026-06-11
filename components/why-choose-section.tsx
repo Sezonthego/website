@@ -1,8 +1,8 @@
 import {
-  BarChart3,
+  Plug,
+  Settings2,
   ShieldCheck,
-  Sparkles,
-  UserRoundCheck,
+  Lock,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -10,38 +10,26 @@ import { Container } from "@/components/container";
 
 const reasons = [
   {
-    title: "Real-time monitoring",
-    body: "Turn insights into action with live dashboards showing patient needs, interaction quality, and automation performance.",
-    icon: BarChart3,
-    badges: false,
-  },
-  {
-    title: "Seamless escalation",
-    body: "When complex issues arise, your AI agent collects key information and hands off seamlessly to your staff.",
-    icon: UserRoundCheck,
-    badges: false,
-  },
-  {
-    title: "AI you can trust",
-    body: "Your AI is customized to serve patients just like your best staff member, with authentic and empathetic conversations.",
-    icon: Sparkles,
-    badges: false,
-  },
-  {
-    title: "Enterprise-grade security",
-    body: "Protected patient data and complete audit trails ensure every patient interaction is protected and compliant.",
+    title: "GDPR Compliant",
+    body: "Recruitment systems designed with privacy principles in mind, supporting responsible collection, processing, and management of patient information.",
     icon: ShieldCheck,
-    badges: true,
+  },
+  {
+    title: "Client-Controlled Systems",
+    body: "We create recruitment systems around your site while keeping your team in control of the infrastructure, access, and patient data.",
+    icon: Settings2,
+  },
+  {
+    title: "Seamless Integration",
+    body: "Recruitment infrastructure that fits into your existing operations, helping your team work with less disruption.",
+    icon: Plug,
+  },
+  {
+    title: "Secure Infrastructure",
+    body: "Built on trusted technologies with security-focused practices to support reliable handling of sensitive recruitment information.",
+    icon: Lock,
   },
 ] as const;
-
-function TrustBadge({ label }: { label: string }) {
-  return (
-    <span className="flex size-16 items-center justify-center rounded-full border border-brand-cocoa/35 text-center text-[10px] font-semibold leading-tight text-brand-cocoa/60">
-      {label}
-    </span>
-  );
-}
 
 function ReasonCell({ reason }: { reason: (typeof reasons)[number] }) {
   const Icon = reason.icon;
@@ -52,13 +40,6 @@ function ReasonCell({ reason }: { reason: (typeof reasons)[number] }) {
         <span className="flex size-16 shrink-0 items-center justify-center bg-[#f0eee7] text-brand-cocoa">
           <Icon className="size-8 stroke-[1.7]" aria-hidden="true" />
         </span>
-
-        {reason.badges ? (
-          <div className="hidden items-center gap-3 sm:flex">
-            <TrustBadge label="HIPAA" />
-            <TrustBadge label="SOC 2" />
-          </div>
-        ) : null}
       </div>
 
       <div className="mt-8 max-w-xl">
@@ -90,20 +71,21 @@ export function WhyChooseSection() {
 
             <div className="relative flex h-full min-h-[320px] flex-col">
               <div>
-                <h2 className="mx-auto max-w-6xdl font-clarion-display text-4xl font-light leading-tight tracking-normal text-brand-cocoa md:text-5xld">
-                  Why leading practices choose WeForge
+                <h2 className="font-clarion-display text-4xl font-light leading-tight tracking-normal text-brand-cocoa md:text-5xl">
+                  The foundation behind reliable clinical recruitment.
                 </h2>
                 <p className="mt-5 max-w-md text-lg leading-7 text-brand-muted">
-                  Scale your practice with AI that mirrors your best staff,
-                  simplifies complex escalations, and keeps data secure.
+                  WeForge helps sites improve recruitment while maintaining the
+                  security, control, and compliance standards required in
+                  clinical research.
                 </p>
               </div>
 
               <Link
                 href="/contact"
-                className="mt-auto inline-flex w-fit items-center rounded-lg bg-brand-cocoa px-5 py-3 text-base font-semibold text-brand-ivory transition-colors hover:bg-brand-orange focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange focus-visible:ring-offset-4 focus-visible:ring-offset-brand-ivory"
+                className="mt-auto inline-flex w-fit items-center rounded-none bg-brand-cocoa px-5 py-3 text-base font-semibold text-brand-ivory transition-colors hover:bg-brand-orange focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange focus-visible:ring-offset-4 focus-visible:ring-offset-brand-ivory"
               >
-                Speak to our team
+                Talk with our team
               </Link>
             </div>
           </div>

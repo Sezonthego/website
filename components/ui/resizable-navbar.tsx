@@ -68,7 +68,7 @@ export const Navbar = ({ children, className }: NavbarProps) => {
     <NavVisibleContext.Provider value={visible}>
       <motion.header
         animate={{
-          boxShadow: visible ? "0 10px 34px rgba(32, 21, 21, 0.08)" : "none",
+          boxShadow: visible ? "0 10px 34px rgba(10, 3, 0, 0.08)" : "none",
         }}
         transition={{ duration: 0.22, ease: "easeOut" }}
         className={cn(
@@ -96,8 +96,8 @@ export const NavBody = ({ children, className, visible }: NavBodyProps) => {
       animate={{
         y: visible ? 0 : 0,
         backgroundColor: visible
-          ? "rgba(255, 253, 249, 0.98)"
-          : "rgba(255, 253, 249, 0.94)",
+          ? "rgba(255, 254, 250, 0.98)"
+          : "rgba(255, 254, 250, 0.94)",
         backdropFilter: visible ? "blur(14px)" : "blur(8px)",
       }}
       transition={{
@@ -152,8 +152,8 @@ export const MobileNav = ({ children, className, visible }: MobileNavProps) => {
       aria-label="Primary mobile"
       animate={{
         backgroundColor: visible
-          ? "rgba(255, 253, 249, 0.98)"
-          : "rgba(255, 253, 249, 0.94)",
+          ? "rgba(255, 254, 250, 0.98)"
+          : "rgba(255, 254, 250, 0.94)",
         y: visible ? 0 : 0,
       }}
       transition={{
@@ -252,7 +252,7 @@ export const NavbarButton = ({
   | React.ComponentPropsWithoutRef<"button">
 )) => {
   const baseStyles =
-    "relative inline-flex min-h-12 cursor-pointer items-center justify-center gap-2 whitespace-nowrap px-5 py-3 text-center text-sm font-semibold transition duration-200 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange focus-visible:ring-offset-2 focus-visible:ring-offset-brand-ivory";
+    "relative inline-flex min-h-12 cursor-pointer items-center justify-center gap-2 whitespace-nowrap rounded-none px-5 py-3 text-center text-sm font-semibold transition duration-200 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange focus-visible:ring-offset-2 focus-visible:ring-offset-brand-ivory";
 
   const variantStyles = {
     primary:
