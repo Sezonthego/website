@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ArrowRight, MousePointerClick } from "lucide-react";
 
 import { Logo } from "@/components/logo";
+import { SocialBanner } from "@/components/social-banner";
 import {
   MobileNav,
   MobileNavHeader,
@@ -62,7 +63,7 @@ export function SiteNavbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <Navbar>
+    <Navbar banner={<SocialBanner />}>
       <NavBody>
         <Logo className="relative z-20 shrink-0 px-2 py-1" />
         <div className="relative z-20 flex items-center gap-8">

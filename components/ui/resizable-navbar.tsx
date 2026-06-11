@@ -21,6 +21,7 @@ export function useNavVisible() {
 interface NavbarProps {
   children: React.ReactNode;
   className?: string;
+  banner?: React.ReactNode;
 }
 
 interface NavBodyProps {
@@ -56,7 +57,7 @@ interface MobileNavMenuProps {
   onClose: () => void;
 }
 
-export const Navbar = ({ children, className }: NavbarProps) => {
+export const Navbar = ({ children, className, banner }: NavbarProps) => {
   const { scrollY } = useScroll();
   const [visible, setVisible] = useState(false);
 
@@ -72,10 +73,11 @@ export const Navbar = ({ children, className }: NavbarProps) => {
         }}
         transition={{ duration: 0.22, ease: "easeOut" }}
         className={cn(
-          "pointer-events-none fixed inset-x-0 top-0 z-150 border-b border-[#d8d1bf] bg-brand-ivory/95 backdrop-blur-sm",
+          "pointer-events-none fixed inset-x-0 top-0 z-150 flex flex-col border-b border-[#d8d1bf] bg-brand-ivory/95 backdrop-blur-sm",
           className,
         )}
       >
+        {banner}
         {React.Children.map(children, (child) =>
           React.isValidElement(child)
             ? React.cloneElement(
