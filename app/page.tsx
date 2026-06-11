@@ -1,9 +1,8 @@
 import { ContactSection } from "@/components/contact-section";
 import { FAQ } from "@/components/faq";
 import { Features } from "@/components/features";
-import { Footer } from "@/components/footer";
 import { GetStartedSection } from "@/components/get-started-section";
-import { Hero3DStage } from "@/components/hero-3d-stage";
+import { HeroSection } from "@/components/hero-section";
 import { InsightsPreview } from "@/components/insights-preview";
 import { PracticeSection } from "@/components/practice-section";
 import { SystemIntegrations } from "@/components/system-integrations";
@@ -14,7 +13,7 @@ import { WhyChooseSection } from "@/components/why-choose-section";
 export default function Home() {
   return (
     <div className="min-h-screen">
-      <Hero3DStage />
+      <HeroSection />
       <Features />
       <SystemIntegrations />
       <PracticeSection />
@@ -24,7 +23,6 @@ export default function Home() {
       <InsightsPreview />
       <FAQ />
       <ContactSection />
-      <Footer />
     </div>
   );
 }

@@ -1,17 +1,18 @@
 import type { Metadata } from "next";
 import { Poppins, Source_Serif_4 } from "next/font/google";
 import "./globals.css";
-import { ThemeProvider } from "next-themes";
+
 import { Navbar } from "@/components/navbar";
+import { Footer } from "@/components/footer";
 
 const sourceSerif4 = Source_Serif_4({
-  variable: "--font-source-serif",
+  variable: "--font-heading",
   subsets: ["latin"],
   weight: ["300", "400", "600", "700"],
 });
 
 const poppins = Poppins({
-  variable: "--font-poppins",
+  variable: "--font-body",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
 });
@@ -33,15 +34,13 @@ export default function RootLayout({
         className={`${sourceSerif4.variable} ${poppins.variable} antialiased`}
         suppressHydrationWarning
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <Navbar />
-          <main className="bg-background text-foreground">{children}</main>
-        </ThemeProvider>
+<Navbar />
+
+<main className="bg-background text-foreground">
+  {children}
+</main>
+
+<Footer />
       </body>
     </html>
   );

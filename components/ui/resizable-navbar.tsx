@@ -1,7 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { IconMenu2, IconX } from "@tabler/icons-react";
+import { IconBrandLinkedin, IconMenu2, IconX } from "@tabler/icons-react";
 import { ArrowRight, MousePointerClick } from "lucide-react";
 import Link from "next/link";
 import {
@@ -107,8 +107,7 @@ export const NavBody = ({ children, className, visible }: NavBodyProps) => {
         ease: "easeOut",
       }}
       className={cn(
-        "pointer-events-auto relative z-60 mx-auto hidden h-20 w-full max-w-[100rem] flex-row items-center justify-between px-5 lg:flex xl:px-0",
-        className,
+        "pointer-events-auto relative z-60 mx-auto hidden h-16 w-full container flex-row items-center justify-between px-0 lg:flex",        className,
       )}
     >
       {children}
@@ -129,12 +128,12 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
     >
       {items.map((item, idx) => (
         <Link
-          onMouseEnter={() => setHovered(idx)}
-          onClick={onItemClick}
-          className="relative px-3.5 py-2 text-sm font-medium text-brand-cocoa transition-colors hover:text-brand-orange"
-          key={`link-${idx}`}
-          href={item.link}
-        >
+  onMouseEnter={() => setHovered(idx)}
+  onClick={onItemClick}
+  className="relative px-3.5 py-2 text-sm font-normal text-brand-cocoa transition-colors hover:text-brand-orange"
+  key={`link-${idx}`}
+  href={item.link}
+>
           {hovered === idx && (
             <motion.div
               layoutId="navbar-hover"
@@ -254,14 +253,14 @@ export const NavbarButton = ({
   | React.ComponentPropsWithoutRef<"button">
 )) => {
   const baseStyles =
-    "relative inline-flex min-h-12 cursor-pointer items-center justify-center gap-2 whitespace-nowrap rounded-none px-5 py-3 text-center text-sm font-semibold transition duration-200 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange focus-visible:ring-offset-2 focus-visible:ring-offset-brand-ivory";
+  "relative inline-flex min-h-10 cursor-pointer items-center justify-center gap-2 whitespace-nowrap rounded-none px-4 py-3 text-center text-sm font-normal tracking-normal transition duration-200 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange focus-visible:ring-offset-2 focus-visible:ring-offset-brand-ivory";
 
   const variantStyles = {
     primary:
       "border border-brand-border bg-brand-ivory text-brand-cocoa shadow-[0_8px_24px_rgba(32,21,21,0.06)] hover:bg-brand-peach",
     secondary:
       "border border-brand-border bg-transparent text-brand-cocoa shadow-none hover:bg-brand-peach/70",
-    dark: "border border-brand-cocoa bg-brand-cocoa text-brand-ivory shadow-[0_12px_28px_rgba(32,21,21,0.18)] hover:border-brand-orange hover:bg-brand-orange",
+      dark: "border border-brand-orange bg-brand-orange text-brand-ivory shadow-none hover:bg-brand-orange/90",
     gradient:
       "border border-brand-orange bg-brand-orange text-brand-ivory shadow-brand hover:bg-[#e64700]",
   };
@@ -281,7 +280,7 @@ export function NavActions({
   primaryHref = "/contact",
   primaryLabel = "Book an intro call",
   secondaryHref = "/#features",
-  secondaryLabel = "Try it out",
+  secondaryLabel = "View solutions",
 }: {
   primaryHref?: string;
   primaryLabel?: React.ReactNode;
@@ -292,6 +291,14 @@ export function NavActions({
 
   return (
     <div className="relative z-20 flex shrink-0 items-center gap-3">
+      <Link
+        href="https://linkedin.com"
+        target="_blank"
+        className="flex size-10 items-center justify-center text-brand-cocoa transition-colors hover:text-brand-orange"
+      >
+        <IconBrandLinkedin className="size-5" />
+      </Link>
+  
       <NavbarButton href={primaryHref} variant="dark" as={Link}>
         <ArrowRight className="size-4" aria-hidden="true" />
         {primaryLabel}

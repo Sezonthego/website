@@ -1,7 +1,6 @@
 import Link from "next/link";
 
 import { Container } from "@/components/container";
-import { Footer } from "@/components/footer";
 import { Button } from "@/components/ui/button";
 
 export default function NotFound() {
@@ -32,7 +31,6 @@ export default function NotFound() {
           </div>
         </Container>
       </section>
-      <Footer />
     </div>
   );
 }

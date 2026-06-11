@@ -1,19 +1,32 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { Logo } from "../logo";
+
 
 import {
   ArrowLeft,
   ArrowRight,
   ClipboardCheck,
-  LayoutDashboard,
-  Megaphone,
-  MessageCircle,
+  MessagesSquare,
+  UserSearch,
+  Workflow,
 } from "lucide-react";
-import { AnimatePresence, motion } from "motion/react";
+import {
 
-import { LogoIcon } from "../logo";
+  AnimatePresence,
+
+  motion,
+
+  useInView,
+
+  useMotionValue,
+
+  useSpring,
+
+} from "motion/react";
+
 import { cn } from "@/lib/utils";
 
 const problemCards = [
@@ -23,6 +36,8 @@ const problemCards = [
       "The right patients are often out there, but traditional recruitment approaches make them difficult to find and engage, leaving sites without a consistent way to generate patient interest.",
     image: "/assets/patient-reach-blur.svg",
     imageAlt: "Patient reach illustration",
+    width: 500,
+    height: 300,
   },
   {
     title: "Patient Quality",
@@ -30,13 +45,17 @@ const problemCards = [
       "Patient volume alone doesn't guarantee enrollment. Without a clear pre-qualification process, teams spend valuable time filtering patients who may never match study requirements.",
     image: "/assets/patient-quality-blur.svg",
     imageAlt: "Patient quality illustration",
+    width: 450,
+    height: 320,
   },
   {
     title: "Manual Overload",
     description:
-      "Coordinators handle repetitive calls, follow-ups, reminders, and patient communication manually, increasing workload and making it harder to keep participants engaged throughout the study.",
+      "Coordinators handle repetitive calls, follow-ups, and reminders manually, increasing workload and making it harder to keep participants engaged throughout the study.",
     image: "/assets/manual-overload-blur.svg",
     imageAlt: "Manual overload illustration",
+    width: 410,
+    height: 320,
   },
   {
     title: "Fragmented Systems",
@@ -44,15 +63,18 @@ const problemCards = [
       "Many sites still rely on traditional outreach, spreadsheets, and disconnected tools that make recruitment harder to track, optimize, and scale.",
     image: "/assets/fragmented-systems-blur.svg",
     imageAlt: "Fragmented systems illustration",
+    width: 410,
+    height: 320,
   },
 ] as const;
 
 const metrics = [
-  { value: "80%", label: "Trials miss enrollment timelines" },
-  { value: "48%", label: "Sites miss enrollment expectations" },
-  { value: "85%", label: "Patients unaware of trial opportunities" },
-  { value: "$40K+", label: "Sponsor cost per trial delay day" },
+  { value: "80%", label: "Trials miss timelines" },
+  { value: "48%", label: "Sites miss expectations" },
+  { value: "85%", label: "Patients unaware of trials" },
+  { value: "$40K+", label: "Sponsor cost per delay day" },
 ] as const;
+
 
 const testimonials = [
   {
@@ -75,14 +97,16 @@ const testimonials = [
   },
 ] as const;
 
+
 const SOLUTION_ROTATE_MS = 30_000;
+
 
 const solutionItems = [
   {
     title: "Patient Acquisition",
     description:
       "We help you reach and attract potential participants through targeted recruitment channels built around your studies.",
-    icon: Megaphone,
+    icon: UserSearch,
     image: "/image/acquisition-paths-glass.webp",
     imageAlt: "Illustration of targeted patient acquisition channels",
   },
@@ -98,7 +122,7 @@ const solutionItems = [
     title: "Patient Engagement",
     description:
       "We create structured patient engagement flows that reduce manual coordination and help keep participants informed and engaged throughout the study journey.",
-    icon: MessageCircle,
+    icon: MessagesSquare,
     image: "/image/implement.webp",
     imageAlt: "Illustration of structured patient engagement flows",
   },
@@ -106,12 +130,60 @@ const solutionItems = [
     title: "Recruitment Operations",
     description:
       "We centralize patient pipelines and recruitment workflows into one connected system, giving your team the clarity and capacity needed to manage recruitment as you grow.",
-    icon: LayoutDashboard,
+    icon: Workflow,
     image: "/image/operate.webp",
     imageAlt: "Illustration of centralized recruitment operations",
   },
 ] as const;
+function AnimatedMetric({ value }: { value: string }) {
+  const ref = useRef(null);
+  const isInView = useInView(ref, {
+    once: true,
+    margin: "-80px",
+  });
 
+  const target = Number(value.replace(/[^0-9]/g, ""));
+
+  const motionValue = useMotionValue(0);
+
+  const springValue = useSpring(motionValue, {
+    stiffness: 70,
+    damping: 20,
+  });
+
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    if (isInView) {
+      motionValue.set(target);
+    }
+  }, [isInView, motionValue, target]);
+
+  useEffect(() => {
+    const unsubscribe = springValue.on("change", (latest) => {
+      setCurrent(Math.round(latest));
+    });
+
+    return () => unsubscribe();
+  }, [springValue]);
+
+
+  const prefix = value.startsWith("$") ? "$" : "";
+  const suffix =
+    value.includes("K")
+      ? "K+"
+      : value.includes("%")
+        ? "%"
+        : "";
+
+  return (
+    <span ref={ref}>
+      {prefix}
+      {current}
+      {suffix}
+    </span>
+  );
+}
 export const Features = () => {
   return (
     <>
@@ -142,15 +214,11 @@ export const Features = () => {
 function ScaleYourPractice() {
   return (
     <>
-      <div className="px-6 py-14 text-center md:py-20 border-b border-brand-border">
-        <p className="text-sm font-semibold uppercase tracking-[0.18em] text-brand-orange">
-          The hidden cost of recruitment
-        </p>
-        <h2 className="mx-auto mt-5 max-w-4xl font-clarion-display text-4xl font-light leading-none tracking-normal text-brand-cocoa md:text-5xl">
-          Recruitment shouldn&apos;t be the reason your site falls behind.
+      <div className="px-6 py-14 text-center md:py-15 border-b border-brand-border">
+
+        <h2 className="mx-auto mt-5 max-w-4xl font-heading text-[clamp(2rem,4vw,3rem)] font-[300] leading-[1.3] tracking-[-0.02em] text-brand-cocoa">          Recruitment shouldn&apos;t be the reason your site falls behind.
         </h2>
-        <p className="mx-auto mt-7 max-w-3xl font-clarion-body text-lg leading-8 text-brand-muted md:text-2xl">
-          Delayed enrollment doesn&apos;t just impact timelines. It increases
+        <p className="mx-auto mt-6 max-w-[680px] font-body text-base font-light leading-[1.7] text-brand-muted md:text-[17px]">          Delayed enrollment doesn&apos;t just impact timelines. It increases
           operational pressure, affects sponsor relationships, and can limit
           your ability to secure and deliver more studies.
         </p>
@@ -167,22 +235,54 @@ function ScaleYourPractice() {
               index % 2 === 0 && index < problemCards.length - 1 && "sm:border-r"
             )}
           >
-            <div className="flex min-h-[320px] items-center justify-center overflow-hidden border-b border-brand-border bg-brand-ivory px-4 py-8 md:min-h-[364px]">
-              <Image
-                src={card.image}
-                alt={card.imageAlt}
-                width={420}
-                height={300}
-                unoptimized
-                className="h-auto w-full max-w-[520px] object-contain"
-              />
-            </div>
+
+           <div className="relative flex min-h-[320px] items-center justify-center overflow-hidden border-b border-brand-border bg-[#FCF8F3] px-0 py-0 md:min-h-[364px]">
+           <div className="absolute inset-0 overflow-hidden">
+  {Array.from({ length: 18 }).map((_, i) => (
+    <span
+      key={i}
+      className="particle"
+      style={{
+        "--x": `${Math.random() * 100}%`,
+        "--y": `${Math.random() * 100}%`,
+        "--delay": `${Math.random() * -10}s`,
+        "--size": `${Math.random() * 3 + 3}px`,
+      } as React.CSSProperties}
+    />
+  ))}
+</div>
+
+{/* Bottom glow */}
+<div
+  className="
+    absolute
+    bottom-[-350px]
+    left-1/2
+    z-0
+    h-[260px]
+    w-[520px]
+    -translate-x-1/2
+    rounded-full
+    bg-[#FF4F00]/25
+    blur-[100px]
+  "
+/>
+
+{/* SVG image */}
+<Image
+  src={card.image}
+  alt={card.imageAlt}
+  width={card.width}
+  height={card.height}
+  className="relative z-10"
+/>
+
+</div>
             <div className="px-9 py-10 md:px-12">
-              <h3 className="font-clarion-body text-2xl font-medium text-brand-cocoa">
-                {card.title}
+              <h3 className="font-body text-xl font-normal text-brand-cocoa">                {card.title}
               </h3>
-              <p className="mt-3  font-clarion-body text-lg leading-7 text-brand-muted">
-                {card.description}
+
+              <p className="mt-3 max-w-[520px] font-body text-base font-light leading-[1.7] text-brand-muted">                {card.description}
               </p>
             </div>
           </article>
@@ -196,14 +296,9 @@ function ProviderImpact() {
   return (
     <>
       <div className="border-b border-brand-border px-6 py-8 text-center md:py-10">
-        <h2 className="mx-auto max-w-6xl font-clarion-display text-4xl font-light leading-tight tracking-normal text-brand-cocoa md:text-5xl">
-          Recruitment performance shapes the future of your site.
+        <h2 className="mx-auto mt-5 max-w-4xl font-heading text-[clamp(2rem,4vw,3rem)] pb-5 font-[300] leading-[1.3] tracking-[-0.02em] text-brand-cocoa">          Performance shapes your future.
         </h2>
-        <p className="mx-auto mt-5 max-w-4xl font-clarion-body text-lg leading-8 text-brand-muted md:text-xl">
-          Enrollment success impacts more than study timelines. It influences
-          operational efficiency, sponsor relationships, and your ability to
-          secure and deliver more research opportunities.
-        </p>
+
       </div>
 
       <div className="grid border-b border-brand-border sm:grid-cols-2 lg:grid-cols-4">
@@ -214,15 +309,14 @@ function ProviderImpact() {
               "border-b border-brand-border px-9 py-10 md:px-12 lg:border-b-0",
               index !== metrics.length - 1 && "lg:border-r",
               index % 2 === 0 &&
-                index < metrics.length - 1 &&
-                "sm:border-r max-lg:border-r"
+              index < metrics.length - 1 &&
+              "sm:border-r max-lg:border-r"
             )}
           >
-            <p className="font-clarion-display text-5xl font-light leading-none text-brand-cocoa md:text-6xl">
-              {metric.value}
-            </p>
-            <p className="mt-3 font-clarion-body text-lg leading-7 text-brand-muted">
-              {metric.label}
+        <p className="font-heading text-5xl font-[300] leading-none text-brand-cocoa md:text-6xl">
+  <AnimatedMetric value={metric.value} />
+</p>
+            <p className="mt-3 font-body text-base font-light leading-[1.7] text-brand-muted">              {metric.label}
             </p>
           </div>
         ))}
@@ -237,6 +331,16 @@ function TestimonialBand() {
   const [activeIndex, setActiveIndex] = useState(0);
   const active = testimonials[activeIndex];
 
+  useEffect(() => {
+    const timer = window.setInterval(() => {
+      setActiveIndex((current) =>
+        current === testimonials.length - 1 ? 0 : current + 1
+      );
+    }, 5000);
+
+    return () => window.clearInterval(timer);
+  }, []);
+
   const goToPrevious = () => {
     setActiveIndex((current) =>
       current === 0 ? testimonials.length - 1 : current - 1
@@ -250,7 +354,7 @@ function TestimonialBand() {
   };
 
   return (
-    <div className="relative min-h-[430px] overflow-hidden px-8 py-12 md:px-12 md:py-14 lg:min-h-[492px]">
+    <div className="relative min-h-[300px] overflow-hidden px-8 py-10 md:px-12 md:py-12 lg:min-h-[360px]">
       <div
         className="pointer-events-none absolute inset-x-[-8%] bottom-0 h-64 bg-[radial-gradient(72%_95%_at_50%_116%,rgba(255,79,0,0.44)_0%,rgba(255,176,114,0.28)_36%,rgba(255,243,230,0.46)_58%,rgba(255,253,249,0)_82%)]"
         aria-hidden="true"
@@ -260,35 +364,45 @@ function TestimonialBand() {
         aria-hidden="true"
       />
 
-      <div className="relative grid gap-10 lg:grid-cols-[260px_1fr] lg:gap-16">
-        <div>
-          <div className="flex items-center gap-3">
-            <LogoIcon className="size-12 text-brand-cocoa" />
-            <div className="leading-none">
-              <p className="font-clarion-body text-4xl font-bold tracking-normal text-brand-cocoa">
-                weforge
-              </p>
-              <p className="mt-1 font-clarion-body text-xs font-medium italic text-brand-muted">
-                clinical
-              </p>
-            </div>
-          </div>
-          <p className="mt-8 font-clarion-body text-lg leading-7 text-brand-muted">
-            {active.name}
-            <br />
-            {active.role}
-          </p>
-        </div>
+<div className="relative grid min-h-[120px] items-start gap-10 lg:grid-cols-[260px_1fr] lg:gap-16">
 
-        <div>
-          <blockquote className="max-w-5xl font-clarion-body text-xl leading-8 text-brand-cocoa md:text-2xl md:leading-10">
-            &ldquo;{active.quote}&rdquo;
-          </blockquote>
-        </div>
-      </div>
+<div>
+  <p className="translate-y-1.75 font-body text-sm font-light uppercase tracking-[0.12em] text-brand-muted">
+    Industry evidence
+  </p>
+</div>
 
-      <div className="relative mt-18 flex items-center justify-between gap-6 md:mt-24">
-        <div className="flex items-center gap-4 lg:ml-[326px]">
+<AnimatePresence mode="wait">
+  <motion.div
+    key={activeIndex}
+    initial={{ opacity: 0, y: 10 }}
+    animate={{ opacity: 1, y: 0 }}
+    exit={{ opacity: 0, y: -10 }}
+    transition={{
+      duration: 0.7,
+      ease: [0.22, 1, 0.36, 1],
+    }}
+  >
+    <blockquote className="max-w-4xl font-body text-lg font-light leading-[1.7] text-brand-cocoa md:text-[18px]">
+      &ldquo;{active.quote}&rdquo;
+    </blockquote>
+
+    <div className="mt-6">
+      <p className="font-body text-sm font-normal text-brand-cocoa">
+        {active.name}
+      </p>
+
+      <p className="mt-1 font-body text-sm font-light leading-[1.6] text-brand-muted">
+        {active.role}
+      </p>
+    </div>
+  </motion.div>
+</AnimatePresence>
+
+</div>
+
+      <div className="relative mt-6 flex items-center justify-between gap-6 md:mt-8">
+        <div className="flex items-center gap-4 lg:ml-[316px]">
           <button
             type="button"
             aria-label="Previous testimonial"
@@ -349,16 +463,15 @@ function FrontOfficeEngine() {
 
   return (
     <div className="grid min-h-[760px] lg:grid-cols-[1fr_1fr]">
-      <div className="flex flex-col border-b border-brand-border px-8 py-14 lg:border-b-0 lg:border-r md:px-12 lg:px-14">
-        <div>
-          <h2 className="font-clarion-display text-4xl font-light leading-tight tracking-normal text-brand-cocoa md:text-5xl">
-            Connected recruitment systems for your site
-          </h2>
-          <p className="mt-4 max-w-2xl font-clarion-body text-lg leading-7 text-brand-muted">
-            Four connected capabilities that help you attract, qualify, engage,
-            and manage participants through every stage of the study journey.
-          </p>
-        </div>
+<div className="order-2 flex flex-col border-b border-brand-border px-8 py-14 md:px-12 lg:order-2 lg:border-b-0 lg:border-l lg:px-14">      <div>
+  <h2 className="font-heading text-[clamp(2rem,4vw,2.5rem)] font-[300] leading-[1.3] tracking-[-0.02em] text-brand-cocoa">
+  A complete recruitment system built and managed around your site.
+  </h2>
+
+  <p className="mt-6 max-w-[680px] font-body text-base font-light leading-[1.7] text-brand-muted md:text-[17px]">
+  WeForge handles patient acquisition, pre-qualification, engagement, and recruitment workflows, helping your team focus on the right participants while reducing the manual work behind enrollment.
+  </p>
+</div>
 
         <div className="mt-auto space-y-6 pt-16">
           {solutionItems.map((item, index) => {
@@ -367,44 +480,59 @@ function FrontOfficeEngine() {
 
             return (
               <button
-                type="button"
-                key={item.title}
-                onClick={() => setActiveItem(index)}
-                className="group grid w-full grid-cols-[56px_1fr] gap-6 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange"
-                aria-current={isActive ? "true" : undefined}
-              >
+              type="button"
+              key={item.title}
+              onClick={() => setActiveItem(index)}
+              className="group w-full text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange"
+              aria-current={isActive ? "true" : undefined}
+            >
+              {/* ICON + TITLE ROW */}
+              <div className="grid grid-cols-[72px_1fr] items-center gap-6">
                 <span
-                  className={`flex size-14 items-center justify-center ${
-                    isActive ? " text-brand-cocoa" : " text-brand-muted"
-                  }`}
+                  className={`
+                    flex size-16 shrink-0 items-center justify-center
+                    bg-[#F7F3EC]
+                    transition-colors
+                    ${
+                      isActive
+                        ? "text-brand-cocoa"
+                        : "text-brand-muted"
+                    }
+                  `}
                 >
-                  <Icon className="size-6" />
+                  <Icon className="size-5" />
                 </span>
-                <span className="block border-b border-transparent pb-4">
-                  <span
-                    className={`block font-clarion-body text-2xl leading-8 transition-colors ${
+            
+                <h3
+                  className={`
+                    font-body text-[22px] font-normal leading-none transition-colors
+                    ${
                       isActive
                         ? "text-brand-cocoa"
                         : "text-brand-muted group-hover:text-brand-cocoa"
-                    }`}
-                  >
-                    {item.title}
-                  </span>
-                  {isActive ? (
-                    <>
-                      <span className="mt-3 block max-w-xl font-clarion-body text-lg leading-7 text-brand-muted">
-                        {item.description}
-                      </span>
-                      <span className="mt-3 block h-px max-w-[505px] overflow-hidden bg-brand-border">
-                        <span
-                          key={progressKey}
-                          className="block h-full origin-left animate-[front-office-progress_30s_linear_forwards] bg-brand-orange"
-                        />
-                      </span>
-                    </>
-                  ) : null}
-                </span>
-              </button>
+                    }
+                  `}
+                >
+                  {item.title}
+                </h3>
+              </div>
+            
+              {/* DESCRIPTION */}
+              {isActive && (
+                <div className="ml-[96px] mt-3">
+                  <p className="max-w-xl font-body text-base font-light leading-[1.7] text-brand-muted">
+                    {item.description}
+                  </p>
+            
+                  <div className="mt-4 h-px max-w-[505px] overflow-hidden bg-brand-border">
+                    <span
+                      key={progressKey}
+                      className="block h-full origin-left animate-[front-office-progress_30s_linear_forwards] bg-brand-orange"
+                    />
+                  </div>
+                </div>
+              )}
+            </button>
             );
           })}
         </div>

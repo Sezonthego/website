@@ -21,11 +21,11 @@ export function TransformCommunicationCta() {
             className="absolute inset-x-0 bottom-0 -z-10 h-1/2 bg-[radial-gradient(ellipse_at_50%_100%,rgba(255,79,0,0.16)_0%,rgba(255,243,230,0.18)_36%,transparent_72%)]"
           />
 
-          <h2 className="mx-auto max-w-4xl font-clarion-display text-4xl font-light leading-tight text-brand-cocoa md:text-6xl">
-            Make recruitment a reason sponsors trust your site.
+<h2 className="mx-auto max-w-4xl font-heading text-4xl font-semibold leading-[1.15] tracking-[-0.01em] text-brand-cocoa md:text-6xl">
+              Make recruitment a reason sponsors trust your site.
           </h2>
-          <p className="mx-auto mt-6 max-w-3xl font-clarion-body text-lg leading-8 text-brand-muted md:text-xl">
-            Strengthen your recruitment capabilities with infrastructure designed
+          <p className="mx-auto mt-6 max-w-3xl font-body text-lg leading-8 text-brand-muted md:text-xl">
+                        Strengthen your recruitment capabilities with infrastructure designed
             to help your site meet enrollment expectations, deliver studies, and
             build stronger sponsor relationships.
           </p>

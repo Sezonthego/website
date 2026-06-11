@@ -59,7 +59,6 @@ WeForge Clinical is a marketing website for a clinical-recruitment infrastructur
 ├── lib/                    # Utility functions
 │   └── utils.ts               # `cn()` helper (clsx + tailwind-merge)
 ├── providers/              # React context providers
-│   └── ThemeProvider.tsx      # next-themes wrapper
 ├── icons/                  # Custom icon components
 │   └── index.tsx
 ├── public/                 # Static assets

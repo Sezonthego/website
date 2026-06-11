@@ -1,4 +1,4 @@
-"use client";
+
 
 import { Container } from "./container";
 import { Logo } from "./logo";
@@ -11,10 +11,8 @@ import {
   IconBrandInstagram,
   IconBrandLinkedin,
   IconBrandTwitter,
-  IconMoon,
-  IconSun,
 } from "@tabler/icons-react";
-import { useTheme } from "next-themes";
+
 
 export const Footer = () => {
   const navigationItems = [
@@ -30,11 +28,6 @@ export const Footer = () => {
     { title: "Cookie Policy", href: "/cookies" },
   ];
 
-  const { theme, setTheme } = useTheme();
-
-  const handleThemeChange = () => {
-    setTheme(theme === "dark" ? "light" : "dark");
-  };
 
   return (
     <section className="bg-brand-cocoa py-10 md:py-20 lg:pt-32 px-4 overflow-hidden text-brand-ivory">
@@ -102,8 +95,8 @@ export const Footer = () => {
                 <Send className="size-4" />
               </button>
             </div>
-            <p className="text-brand-peach/65 font-clarion-body text-sm max-w-xl">
-              Stay informed on the latest in clinical recruitment.
+            <p className="text-brand-peach/65 font-body text-sm max-w-xl">
+                          Stay informed on the latest in clinical recruitment.
             </p>
           </div>
         </Container>
@@ -120,17 +113,7 @@ export const Footer = () => {
             </div>
 
             <div className="flex items-center gap-4">
-              {theme === "dark" ? (
-                <IconMoon
-                  className="text-brand-peach size-4 cursor-pointer"
-                  onClick={handleThemeChange}
-                />
-              ) : (
-                <IconSun
-                  className="text-brand-peach size-4 cursor-pointer"
-                  onClick={handleThemeChange}
-                />
-              )}
+  
               <IconBrandInstagram className="text-brand-peach hover:text-brand-orange size-4 cursor-pointer" />
               <IconBrandTwitter className="text-brand-peach hover:text-brand-orange size-4 cursor-pointer" />
               <IconBrandLinkedin className="text-brand-peach hover:text-brand-orange size-4 cursor-pointer" />
