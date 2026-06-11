@@ -47,7 +47,7 @@ function HeroTrustStrip() {
 
 export function Hero3DStage() {
   return (
-    <section className="relative overflow-hidden bg-brand-ivory pt-30 font-clarion-body border-b border-[#d8d1bf]">
+    <section className="relative overflow-hidden bg-brand-ivory pt-20 font-clarion-body border-b border-[#d8d1bf]">
       <div className="mx-auto container border-x border-[#d8d1bf]">
         <div className="border-y border-[#d8d1bf] bg-brand-ivory">
           <div className="flex min-h-[420px] items-center justify-center px-6 py-14 text-center sm:px-8 sm:py-16 md:min-h-[480px] md:py-20 lg:min-h-[520px] lg:px-16 xl:px-[4.25rem]">
@@ -73,7 +73,7 @@ export function Hero3DStage() {
                 initial={{ opacity: 0, y: 18 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.58, delay: 0.12, ease: "easeOut" }}
-                className="mx-auto mt-6 max-w-[660px] text-xl font-normal leading-[1.42] text-brand-muted md:text-2xl"
+                className=" mx-auto mt-6  text-xl font-normal leading-[1.42] text-brand-muted md:text-2xl"
               >
                 WeForge helps clinical research sites attract, qualify, and
                 retain patients through connected recruitment systems helping

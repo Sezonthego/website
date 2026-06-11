@@ -174,14 +174,14 @@ function ScaleYourPractice() {
                 width={420}
                 height={300}
                 unoptimized
-                className="h-auto w-full max-w-[420px] object-contain"
+                className="h-auto w-full max-w-[520px] object-contain"
               />
             </div>
             <div className="px-9 py-10 md:px-12">
               <h3 className="font-clarion-body text-2xl font-medium text-brand-cocoa">
                 {card.title}
               </h3>
-              <p className="mt-3 max-w-[520px] font-clarion-body text-lg leading-7 text-brand-muted">
+              <p className="mt-3  font-clarion-body text-lg leading-7 text-brand-muted">
                 {card.description}
               </p>
             </div>
