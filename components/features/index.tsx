@@ -98,7 +98,7 @@ const testimonials = [
 ] as const;
 
 
-const SOLUTION_ROTATE_MS = 30_000;
+const SOLUTION_ROTATE_MS = 10_000;
 
 
 const solutionItems = [
@@ -202,10 +202,9 @@ export const Features = () => {
         </div>
       </section>
 
-      <section className="mt-16 border-y border-[#d8d1bf] bg-brand-ivory px-4 text-brand-cocoa">
-        <div className="container mx-auto border-x border-brand-border bg-brand-ivory">
-          <FrontOfficeEngine />
-        </div>
+      <section className="mt-28 mb-28 border-y border-[#d8d1bf] bg-brand-ivory px-4 text-brand-cocoa">        <div className="container mx-auto border-x border-brand-border bg-brand-ivory">
+        <FrontOfficeEngine />
+      </div>
       </section>
     </>
   );
@@ -236,25 +235,25 @@ function ScaleYourPractice() {
             )}
           >
 
-           <div className="relative flex min-h-[320px] items-center justify-center overflow-hidden border-b border-brand-border bg-[#FCF8F3] px-0 py-0 md:min-h-[364px]">
-           <div className="absolute inset-0 overflow-hidden">
-  {Array.from({ length: 18 }).map((_, i) => (
-    <span
-      key={i}
-      className="particle"
-      style={{
-        "--x": `${Math.random() * 100}%`,
-        "--y": `${Math.random() * 100}%`,
-        "--delay": `${Math.random() * -10}s`,
-        "--size": `${Math.random() * 3 + 3}px`,
-      } as React.CSSProperties}
-    />
-  ))}
-</div>
+            <div className="relative flex min-h-[320px] items-center justify-center overflow-hidden border-b border-brand-border bg-[#FCF8F3] px-0 py-0 md:min-h-[364px]">
+              <div className="absolute inset-0 overflow-hidden">
+                {Array.from({ length: 18 }).map((_, i) => (
+                  <span
+                    key={i}
+                    className="particle"
+                    style={{
+                      "--x": `${Math.random() * 100}%`,
+                      "--y": `${Math.random() * 100}%`,
+                      "--delay": `${Math.random() * -10}s`,
+                      "--size": `${Math.random() * 3 + 3}px`,
+                    } as React.CSSProperties}
+                  />
+                ))}
+              </div>
 
-{/* Bottom glow */}
-<div
-  className="
+              {/* Bottom glow */}
+              <div
+                className="
     absolute
     bottom-[-350px]
     left-1/2
@@ -266,18 +265,18 @@ function ScaleYourPractice() {
     bg-[#FF4F00]/25
     blur-[100px]
   "
-/>
+              />
 
-{/* SVG image */}
-<Image
-  src={card.image}
-  alt={card.imageAlt}
-  width={card.width}
-  height={card.height}
-  className="relative z-10"
-/>
+              {/* SVG image */}
+              <Image
+                src={card.image}
+                alt={card.imageAlt}
+                width={card.width}
+                height={card.height}
+                className="relative z-10"
+              />
 
-</div>
+            </div>
             <div className="px-9 py-10 md:px-12">
               <h3 className="font-body text-xl font-normal text-brand-cocoa">                {card.title}
               </h3>
@@ -313,9 +312,9 @@ function ProviderImpact() {
               "sm:border-r max-lg:border-r"
             )}
           >
-        <p className="font-heading text-5xl font-[300] leading-none text-brand-cocoa md:text-6xl">
-  <AnimatedMetric value={metric.value} />
-</p>
+            <p className="font-heading text-5xl font-[300] leading-none text-brand-cocoa md:text-6xl">
+              <AnimatedMetric value={metric.value} />
+            </p>
             <p className="mt-3 font-body text-base font-light leading-[1.7] text-brand-muted">              {metric.label}
             </p>
           </div>
@@ -364,42 +363,42 @@ function TestimonialBand() {
         aria-hidden="true"
       />
 
-<div className="relative grid min-h-[120px] items-start gap-10 lg:grid-cols-[260px_1fr] lg:gap-16">
+      <div className="relative grid min-h-[120px] items-start gap-10 lg:grid-cols-[260px_1fr] lg:gap-16">
 
-<div>
-  <p className="translate-y-1.75 font-body text-sm font-light uppercase tracking-[0.12em] text-brand-muted">
-    Industry evidence
-  </p>
-</div>
+        <div>
+          <p className="translate-y-1.75 font-body text-sm font-light uppercase tracking-[0.12em] text-brand-muted">
+            Industry evidence
+          </p>
+        </div>
 
-<AnimatePresence mode="wait">
-  <motion.div
-    key={activeIndex}
-    initial={{ opacity: 0, y: 10 }}
-    animate={{ opacity: 1, y: 0 }}
-    exit={{ opacity: 0, y: -10 }}
-    transition={{
-      duration: 0.7,
-      ease: [0.22, 1, 0.36, 1],
-    }}
-  >
-    <blockquote className="max-w-4xl font-body text-lg font-light leading-[1.7] text-brand-cocoa md:text-[18px]">
-      &ldquo;{active.quote}&rdquo;
-    </blockquote>
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={activeIndex}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{
+              duration: 0.7,
+              ease: [0.22, 1, 0.36, 1],
+            }}
+          >
+            <blockquote className="max-w-4xl font-body text-lg font-light leading-[1.7] text-brand-cocoa md:text-[18px]">
+              &ldquo;{active.quote}&rdquo;
+            </blockquote>
 
-    <div className="mt-6">
-      <p className="font-body text-sm font-normal text-brand-cocoa">
-        {active.name}
-      </p>
+            <div className="mt-6">
+              <p className="font-body text-sm font-normal text-brand-cocoa">
+                {active.name}
+              </p>
 
-      <p className="mt-1 font-body text-sm font-light leading-[1.6] text-brand-muted">
-        {active.role}
-      </p>
-    </div>
-  </motion.div>
-</AnimatePresence>
+              <p className="mt-1 font-body text-sm font-light leading-[1.6] text-brand-muted">
+                {active.role}
+              </p>
+            </div>
+          </motion.div>
+        </AnimatePresence>
 
-</div>
+      </div>
 
       <div className="relative mt-6 flex items-center justify-between gap-6 md:mt-8">
         <div className="flex items-center gap-4 lg:ml-[316px]">
@@ -463,76 +462,84 @@ function FrontOfficeEngine() {
 
   return (
     <div className="grid min-h-[760px] lg:grid-cols-[1fr_1fr]">
-<div className="order-2 flex flex-col border-b border-brand-border px-8 py-14 md:px-12 lg:order-2 lg:border-b-0 lg:border-l lg:px-14">      <div>
-  <h2 className="font-heading text-[clamp(2rem,4vw,2.5rem)] font-[300] leading-[1.3] tracking-[-0.02em] text-brand-cocoa">
-  A complete recruitment system built and managed around your site.
-  </h2>
+      <div className="order-2 flex flex-col border-b border-brand-border px-8 py-14 md:px-12 lg:order-2 lg:border-b-0 lg:border-l lg:px-14">      <div>
+        <h2 className="font-heading text-[clamp(2rem,4vw,2.5rem)] font-[300] leading-[1.3] tracking-[-0.02em] text-brand-cocoa">
+          A complete recruitment system built and managed around your site.
+        </h2>
 
-  <p className="mt-6 max-w-[680px] font-body text-base font-light leading-[1.7] text-brand-muted md:text-[17px]">
-  WeForge handles patient acquisition, pre-qualification, engagement, and recruitment workflows, helping your team focus on the right participants while reducing the manual work behind enrollment.
-  </p>
-</div>
+        <p className="mt-6 max-w-[680px] font-body text-base font-light leading-[1.7] text-brand-muted md:text-[17px]">
+          WeForge handles patient acquisition, pre-qualification, engagement, and recruitment workflows, helping your team focus on the right participants while reducing the manual work behind enrollment.
+        </p>
+      </div>
 
-        <div className="mt-auto space-y-6 pt-16">
-          {solutionItems.map((item, index) => {
+      <div className="mt-auto min-h-[430px] space-y-6 pt-16">    
+              {solutionItems.map((item, index) => {
             const Icon = item.icon;
             const isActive = activeIndex === index;
 
             return (
               <button
-              type="button"
-              key={item.title}
-              onClick={() => setActiveItem(index)}
-              className="group w-full text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange"
-              aria-current={isActive ? "true" : undefined}
-            >
-              {/* ICON + TITLE ROW */}
-              <div className="grid grid-cols-[72px_1fr] items-center gap-6">
+                type="button"
+                key={item.title}
+                onClick={() => setActiveItem(index)}
+                className="group w-full text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange"
+                aria-current={isActive ? "true" : undefined}
+              >
+                {/* ICON + TITLE ROW */}
+                <div className="grid grid-cols-[72px_1fr] items-center gap-6">
                 <span
-                  className={`
-                    flex size-16 shrink-0 items-center justify-center
-                    bg-[#F7F3EC]
-                    transition-colors
-                    ${
-                      isActive
-                        ? "text-brand-cocoa"
-                        : "text-brand-muted"
-                    }
-                  `}
-                >
-                  <Icon className="size-5" />
-                </span>
-            
-                <h3
-                  className={`
-                    font-body text-[22px] font-normal leading-none transition-colors
-                    ${
-                      isActive
+  className="
+    flex size-16 shrink-0 items-center justify-center
+    bg-[#FFF0E8]
+    text-brand-orange
+    transition-colors
+  "
+>
+  <Icon className="size-7 stroke-[1.35]" />
+</span>
+
+                  <h3
+                    className={`
+                    font-body text-[21px] font-normal leading-none transition-colors
+                    ${isActive
                         ? "text-brand-cocoa"
                         : "text-brand-muted group-hover:text-brand-cocoa"
-                    }
+                      }
                   `}
-                >
-                  {item.title}
-                </h3>
-              </div>
-            
-              {/* DESCRIPTION */}
-              {isActive && (
-                <div className="ml-[96px] mt-3">
-                  <p className="max-w-xl font-body text-base font-light leading-[1.7] text-brand-muted">
-                    {item.description}
-                  </p>
-            
-                  <div className="mt-4 h-px max-w-[505px] overflow-hidden bg-brand-border">
-                    <span
-                      key={progressKey}
-                      className="block h-full origin-left animate-[front-office-progress_30s_linear_forwards] bg-brand-orange"
-                    />
-                  </div>
+                  >
+                    {item.title}
+                  </h3>
                 </div>
-              )}
-            </button>
+
+                {/* DESCRIPTION */}
+               {/* DESCRIPTION */}
+               <AnimatePresence initial={false} mode="popLayout">
+  {isActive && (
+<motion.div
+  key={`${item.title}-content`}
+      initial={{ opacity: 0, height: 0 }}
+      animate={{ opacity: 1, height: "auto" }}
+      exit={{ opacity: 0, height: 0 }}
+      transition={{
+        duration: 0.38,
+        ease: [0.22, 1, 0.36, 1],
+      }}
+      className="ml-[96px] mt-2 overflow-hidden"
+    >
+      <p className="max-w-xl font-body text-base font-light leading-[1.7] text-brand-muted">
+        {item.description}
+      </p>
+
+      <div className="mt-6 h-px max-w-[505px] overflow-hidden bg-brand-border">
+        <span
+          key={progressKey}
+          className="block h-full origin-left animate-[front-office-progress_8s_linear_forwards] bg-brand-orange"
+        />
+      </div>
+    </motion.div>
+  )}
+</AnimatePresence>
+              </button>
             );
           })}
         </div>

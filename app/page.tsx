@@ -15,7 +15,7 @@ export default function Home() {
     <div className="min-h-screen">
       <HeroSection />
       <Features />
-      <SystemIntegrations />
+      
       <PracticeSection />
       <WhyChooseSection />
       <GetStartedSection />
