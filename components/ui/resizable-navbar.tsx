@@ -290,35 +290,49 @@ export function NavActions({
   const visible = useNavVisible();
 
   return (
-    <div className="relative z-20 flex shrink-0 items-center gap-3">
-      <Link
+<div className="relative z-20 flex shrink-0 items-center">      <Link
         href="https://linkedin.com"
         target="_blank"
-        className="flex size-10 items-center justify-center text-brand-cocoa transition-colors hover:text-brand-orange"
-      >
+        className="mr-3 flex size-10 items-center justify-center text-brand-cocoa transition-colors hover:text-brand-orange"
+              >
         <IconBrandLinkedin className="size-5" />
       </Link>
   
       <NavbarButton href={primaryHref} variant="dark" as={Link}>
-        <ArrowRight className="size-4" aria-hidden="true" />
-        {primaryLabel}
+  <ArrowRight className="size-4" aria-hidden="true" />
+  {primaryLabel}
+</NavbarButton>
+<AnimatePresence initial={false}>
+  {visible && (
+    <motion.div
+      initial={{
+        width: 0,
+        opacity: 0,
+        marginLeft: 0,
+      }}
+      animate={{
+        width: "auto",
+        opacity: 1,
+        marginLeft: 12,
+      }}
+      exit={{
+        width: 0,
+        opacity: 0,
+        marginLeft: 0,
+      }}
+      transition={{
+        duration: 0.3,
+        ease: [0.22, 1, 0.36, 1],
+      }}
+      className="overflow-hidden"
+    >
+      <NavbarButton href={secondaryHref} variant="primary" as={Link}>
+        <MousePointerClick className="size-4" aria-hidden="true" />
+        {secondaryLabel}
       </NavbarButton>
-      <AnimatePresence initial={false}>
-        {visible ? (
-          <motion.div
-            initial={{ width: 0, opacity: 0, x: 10 }}
-            animate={{ width: "auto", opacity: 1, x: 0 }}
-            exit={{ width: 0, opacity: 0, x: 10 }}
-            transition={{ type: "spring", stiffness: 280, damping: 34 }}
-            className="overflow-hidden"
-          >
-            <NavbarButton href={secondaryHref} variant="primary" as={Link}>
-              <MousePointerClick className="size-4" aria-hidden="true" />
-              {secondaryLabel}
-            </NavbarButton>
-          </motion.div>
-        ) : null}
-      </AnimatePresence>
+    </motion.div>
+  )}
+</AnimatePresence>
     </div>
   );
 }
