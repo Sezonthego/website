@@ -1,28 +1,45 @@
-import { ContactSection } from "@/components/contact-section";
-import { FAQ } from "@/components/faq";
-import { Features } from "@/components/features";
-import { GetStartedSection } from "@/components/get-started-section";
-import { HeroSection } from "@/components/hero-section";
-import { InsightsPreview } from "@/components/insights-preview";
-import { PracticeSection } from "@/components/practice-section";
-import { SystemIntegrations } from "@/components/system-integrations";
-import { TransformCommunicationCta } from "@/components/transform-communication-cta";
-import { WhyChooseSection } from "@/components/why-choose-section";
+import { ContactSection } from "@/components/sections/contact-section";
+import { FAQ } from "@/components/sections/faq-section";
+
+import { HeroSection } from "@/components/sections/hero-section";
+
+import { RecruitmentChallengesSection } from "@/components/sections/recruitment-challenges-section";
+import { ImpactSection } from "@/components/sections/impact-section";
+import { SolutionSection } from "@/components/sections/solution-section";
+
+import { PracticeSection } from "@/components/sections/therapeutic-areas-section";
+import { TransformCommunicationCta } from "@/components/sections/final-cta-section";
+import { GetStartedSection } from "@/components/sections/how-it-works-section";
+import { InsightsPreview } from "@/components/sections/insights-preview-section";
+import { WhyChooseSection } from "@/components/sections/why-choose-us-section";
 
 
 export default function Home() {
   return (
     <div className="min-h-screen">
+
       <HeroSection />
-      <Features />
-      
+
+      <RecruitmentChallengesSection />
+
+      <ImpactSection />
+
+      <SolutionSection />
+
       <PracticeSection />
+
       <WhyChooseSection />
+
       <GetStartedSection />
-      <TransformCommunicationCta />
+
       <InsightsPreview />
-      <FAQ />
-      <ContactSection />
+
+      <TransformCommunicationCta />
+
+      {/* <FAQ /> */}
+
+      {/* <ContactSection /> */}
+
     </div>
   );
 }

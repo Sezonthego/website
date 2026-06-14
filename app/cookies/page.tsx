@@ -3,9 +3,9 @@ import type { Metadata } from "next";
 import { LegalPage } from "@/components/legal-page";
 
 export const metadata: Metadata = {
-  title: "Cookie Policy | WeForge Clinical",
+  title: "Cookie Policy - Weforge",
   description:
-    "Read how WeForge Clinical uses cookies and similar technologies on its public website.",
+    "Read how Weforge Clinical uses cookies and similar technologies on its public website.",
 };
 
 const cookieSections = [
@@ -13,7 +13,7 @@ const cookieSections = [
     title: "What cookies are",
     body: [
       "Cookies are small text files stored by your browser. Similar technologies, such as local storage or pixels, can also help websites remember settings or understand basic usage.",
-      "This policy explains how the WeForge Clinical public website may use those technologies. Customer platforms, study workflows, and participant data handling may be governed by separate agreements and notices.",
+      "This policy explains how the Weforge Clinical public website may use those technologies. Customer platforms, study workflows, and participant data handling may be governed by separate agreements and notices.",
     ],
   },
   {
@@ -60,11 +60,11 @@ const cookieSections = [
 export default function CookiesPage() {
   return (
     <LegalPage
-      description="This cookie policy explains how WeForge Clinical uses cookies and similar technologies on this website and related public pages."
+      description="This cookie policy explains how Weforge Clinical uses cookies and similar technologies on this website and related public pages."
       eyebrow="Cookies"
       sections={cookieSections}
-      title="Cookie policy"
-      updated="June 5, 2026"
+      title="Cookie Policy"
+      updated="June 14, 2026"
     />
   );
 }

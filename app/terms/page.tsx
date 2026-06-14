@@ -3,16 +3,16 @@ import type { Metadata } from "next";
 import { LegalPage } from "@/components/legal-page";
 
 export const metadata: Metadata = {
-  title: "Terms of Use | WeForge Clinical",
+  title: "Terms and Conditions - Weforge",
   description:
-    "Review the terms that govern use of the WeForge Clinical website and related public materials.",
+    "Review the terms that govern use of the Weforge website and related public materials.",
 };
 
 const termsSections = [
   {
     title: "Use of this website",
     body: [
-      "These terms govern your access to and use of the WeForge Clinical website. By using the website, you agree to use it lawfully and in accordance with these terms.",
+      "These terms govern your access to and use of the Weforge Clinical website. By using the website, you agree to use it lawfully and in accordance with these terms.",
       "If you are using the website on behalf of an organization, you represent that you have authority to do so.",
     ],
   },
@@ -26,7 +26,7 @@ const termsSections = [
   {
     title: "No medical advice",
     body: [
-      "WeForge Clinical does not provide medical advice through this website. Website content should not be used to diagnose, treat, prevent, or manage any medical condition.",
+      "Weforge Clinical does not provide medical advice through this website. Website content should not be used to diagnose, treat, prevent, or manage any medical condition.",
       "Clinical decisions should be made by qualified professionals under the applicable study protocol, clinical standards, and regulatory requirements.",
     ],
   },
@@ -34,13 +34,13 @@ const termsSections = [
     title: "Acceptable use",
     body: [
       "You agree not to interfere with website operations, attempt unauthorized access, submit malicious code, misuse contact forms, or use the website in a way that violates applicable law.",
-      "We may restrict access if we believe website use creates risk for WeForge Clinical, our users, or our partners.",
+      "We may restrict access if we believe website use creates risk for Weforge Clinical, our users, or our partners.",
     ],
   },
   {
     title: "Intellectual property",
     body: [
-      "The website, branding, text, graphics, interface elements, and related materials are owned by WeForge Clinical or its licensors and are protected by applicable intellectual property laws.",
+      "The website, branding, text, graphics, interface elements, and related materials are owned by Weforge Clinical or its licensors and are protected by applicable intellectual property laws.",
       "You may not copy, modify, distribute, or create derivative works from website materials without written permission, except where permitted by law.",
     ],
   },
@@ -55,7 +55,7 @@ const termsSections = [
     title: "Disclaimers and limitations",
     body: [
       "The website is provided on an as-is and as-available basis. We do not guarantee that the website will always be uninterrupted, error-free, or available.",
-      "To the fullest extent permitted by law, WeForge Clinical will not be liable for indirect, incidental, special, consequential, or punitive damages arising from website use.",
+      "To the fullest extent permitted by law, Weforge Clinical will not be liable for indirect, incidental, special, consequential, or punitive damages arising from website use.",
     ],
   },
   {
@@ -70,11 +70,11 @@ const termsSections = [
 export default function TermsPage() {
   return (
     <LegalPage
-      description="These terms explain the rules for using the WeForge Clinical website and public materials."
+      description="These terms explain the rules for using the Weforge Clinical website and public materials."
       eyebrow="Terms"
       sections={termsSections}
-      title="Terms of use"
-      updated="June 4, 2026"
+      title="Terms & Conditions"
+      updated="June 14, 2026"
     />
   );
 }

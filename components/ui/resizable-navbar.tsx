@@ -2,7 +2,7 @@
 
 import { cn } from "@/lib/utils";
 import { IconBrandLinkedin, IconMenu2, IconX } from "@tabler/icons-react";
-import { ArrowRight, MousePointerClick } from "lucide-react";
+import { ArrowRight, MousePointerClick, Phone, Mail } from "lucide-react";
 import Link from "next/link";
 import {
   AnimatePresence,
@@ -73,7 +73,7 @@ export const Navbar = ({ children, className, banner }: NavbarProps) => {
         }}
         transition={{ duration: 0.22, ease: "easeOut" }}
         className={cn(
-          "pointer-events-none fixed inset-x-0 top-0 z-150 flex flex-col border-b border-[#d8d1bf] bg-brand-ivory/95 backdrop-blur-sm",
+          "pointer-events-none fixed inset-x-0 top-0 z-150 flex flex-col border-b border-brand-border bg-brand-ivory/95 backdrop-blur-sm",
           className,
         )}
       >
@@ -81,9 +81,9 @@ export const Navbar = ({ children, className, banner }: NavbarProps) => {
         {React.Children.map(children, (child) =>
           React.isValidElement(child)
             ? React.cloneElement(
-                child as React.ReactElement<{ visible?: boolean }>,
-                { visible },
-              )
+              child as React.ReactElement<{ visible?: boolean }>,
+              { visible },
+            )
             : child,
         )}
       </motion.header>
@@ -107,7 +107,8 @@ export const NavBody = ({ children, className, visible }: NavBodyProps) => {
         ease: "easeOut",
       }}
       className={cn(
-        "pointer-events-auto relative z-60 mx-auto hidden h-16 w-full container flex-row items-center justify-between px-0 lg:flex",        className,
+        "pointer-events-auto relative z-60 mx-auto hidden h-16 w-full max-w-[1320px] flex-row items-center justify-between px-0 lg:flex",
+        className,
       )}
     >
       {children}
@@ -128,12 +129,12 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
     >
       {items.map((item, idx) => (
         <Link
-  onMouseEnter={() => setHovered(idx)}
-  onClick={onItemClick}
-  className="relative px-3.5 py-2 text-sm font-normal text-brand-cocoa transition-colors hover:text-brand-orange"
-  key={`link-${idx}`}
-  href={item.link}
->
+          onMouseEnter={() => setHovered(idx)}
+          onClick={onItemClick}
+          className="relative px-3.5 py-2 text-sm font-normal text-brand-cocoa transition-colors hover:text-brand-orange"
+          key={`link-${idx}`}
+          href={item.link}
+        >
           {hovered === idx && (
             <motion.div
               layoutId="navbar-hover"
@@ -162,8 +163,11 @@ export const MobileNav = ({ children, className, visible }: MobileNavProps) => {
         ease: "easeOut",
       }}
       className={cn(
-        "pointer-events-auto relative z-160 mx-auto flex h-20 w-full max-w-[100rem] flex-col items-center justify-between px-6 lg:hidden",
+
+        "pointer-events-auto relative z-160 mx-auto flex h-17 w-full max-w-[1320px] flex-col items-center justify-between px-5 md:px-8 lg:hidden",
+
         className,
+
       )}
     >
       {children}
@@ -200,7 +204,7 @@ export const MobileNavMenu = ({
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -8 }}
           className={cn(
-            "absolute inset-x-0 top-20 z-170 flex w-full flex-col items-start justify-start gap-4 border border-brand-border bg-brand-ivory px-6 py-6 shadow-[0_16px_40px_rgba(32,21,21,0.08)]",
+            "absolute inset-x-0 top-16 z-170 flex w-full flex-col items-start justify-start gap-4 border border-brand-border bg-brand-ivory px-6 py-6 shadow-[0_16px_40px_rgba(32,21,21,0.08)]",
             className,
           )}
         >
@@ -222,14 +226,14 @@ export const MobileNavToggle = ({
     <button
       type="button"
       onClick={onClick}
-      className="inline-flex size-12 items-center justify-center bg-transparent text-brand-cocoa transition-colors hover:text-brand-orange"
+      className="inline-flex size-7 items-center justify-center bg-transparent text-brand-cocoa transition-colors hover:text-brand-orange"
       aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
       aria-expanded={isOpen}
     >
       {isOpen ? (
-        <IconX className="size-8 stroke-[1.75]" />
+        <IconX className="size-6 stroke-[1.75]" />
       ) : (
-        <IconMenu2 className="size-8 stroke-[1.75]" />
+        <IconMenu2 className="size-6 stroke-[1.75]" />
       )}
     </button>
   );
@@ -249,18 +253,18 @@ export const NavbarButton = ({
   className?: string;
   variant?: "primary" | "secondary" | "dark" | "gradient";
 } & (
-  | React.ComponentPropsWithoutRef<"a">
-  | React.ComponentPropsWithoutRef<"button">
-)) => {
+    | React.ComponentPropsWithoutRef<"a">
+    | React.ComponentPropsWithoutRef<"button">
+  )) => {
   const baseStyles =
-  "relative inline-flex min-h-10 cursor-pointer items-center justify-center gap-2 whitespace-nowrap rounded-none px-4 py-3 text-center text-sm font-normal tracking-normal transition duration-200 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange focus-visible:ring-offset-2 focus-visible:ring-offset-brand-ivory";
+    "inline-flex min-h-12 items-center gap-2 whitespace-nowrap uppercase rounded-none bg-brand-orange px-5 py-3 text-[13px] font-medium text-brand-ivory shadow-[0_14px_30px_rgba(255,79,0,0.20)] transition-colors hover:bg-brand-orange/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange focus-visible:ring-offset-2 focus-visible:ring-offset-brand-ivory sm:px-4";
 
   const variantStyles = {
     primary:
       "border border-brand-border bg-brand-ivory text-brand-cocoa shadow-[0_8px_24px_rgba(32,21,21,0.06)] hover:bg-brand-peach",
     secondary:
       "border border-brand-border bg-transparent text-brand-cocoa shadow-none hover:bg-brand-peach/70",
-      dark: "border border-brand-orange bg-brand-orange text-brand-ivory shadow-none hover:bg-brand-orange/90",
+    dark: "border border-brand-orange bg-brand-orange text-brand-ivory shadow-none hover:bg-brand-orange/90",
     gradient:
       "border border-brand-orange bg-brand-orange text-brand-ivory shadow-brand hover:bg-[#e64700]",
   };
@@ -278,7 +282,7 @@ export const NavbarButton = ({
 
 export function NavActions({
   primaryHref = "/contact",
-  primaryLabel = "Book an intro call",
+  primaryLabel = "ASK A QUESTION",
   secondaryHref = "/#features",
   secondaryLabel = "View solutions",
 }: {
@@ -290,49 +294,178 @@ export function NavActions({
   const visible = useNavVisible();
 
   return (
-<div className="relative z-20 flex shrink-0 items-center">      <Link
-        href="https://linkedin.com"
-        target="_blank"
-        className="mr-3 flex size-10 items-center justify-center text-brand-cocoa transition-colors hover:text-brand-orange"
-              >
-        <IconBrandLinkedin className="size-5" />
-      </Link>
-  
-      <NavbarButton href={primaryHref} variant="dark" as={Link}>
-  <ArrowRight className="size-4" aria-hidden="true" />
-  {primaryLabel}
-</NavbarButton>
-<AnimatePresence initial={false}>
-  {visible && (
-    <motion.div
-      initial={{
-        width: 0,
-        opacity: 0,
-        marginLeft: 0,
-      }}
-      animate={{
-        width: "auto",
-        opacity: 1,
-        marginLeft: 12,
-      }}
-      exit={{
-        width: 0,
-        opacity: 0,
-        marginLeft: 0,
-      }}
-      transition={{
-        duration: 0.3,
-        ease: [0.22, 1, 0.36, 1],
-      }}
-      className="overflow-hidden"
+    <div className="relative z-20 flex shrink-0 items-center">     <Link
+      href="https://www.linkedin.com/company/weforgeclinical/"
+      target="_blank"
+      className="
+    group
+    mr-7
+    flex h-10 items-center
+    text-brand-cocoa
+    transition-all
+    duration-500
+    ease-out
+    hover:text-brand-orange
+  "
     >
-      <NavbarButton href={secondaryHref} variant="primary" as={Link}>
-        <MousePointerClick className="size-4" aria-hidden="true" />
-        {secondaryLabel}
+      <IconBrandLinkedin
+        stroke={1.6}
+        className="
+      size-[20px]
+      shrink-0
+      transition-transform
+      duration-500
+      ease-out
+      group-hover:-translate-x-0.5
+    "
+      />
+
+      <span
+        className="
+      ml-0
+      max-w-0
+      overflow-hidden
+      whitespace-nowrap
+      text-[13px]
+      font-normal
+      opacity-0
+      transition-all
+      duration-500
+      ease-out
+      group-hover:ml-2
+      group-hover:max-w-[160px]
+      group-hover:opacity-100
+    "
+      >
+        Meet us on LinkedIn
+      </span>
+    </Link>
+      <Link
+        href="tel:+48792586357"
+        className="
+    group
+    mr-7
+    flex h-10 items-center
+    text-brand-cocoa
+    transition-all
+    duration-500
+    ease-out
+    hover:text-brand-orange
+  "
+      >
+        <Phone
+          strokeWidth={1.5}
+          className="
+    size-[19px]
+    shrink-0
+    transition-transform
+    duration-500
+    ease-out
+    group-hover:-translate-x-0.5
+  "
+        />
+
+        <span
+          className="
+      ml-0
+      max-w-0
+      overflow-hidden
+      whitespace-nowrap
+      text-[13px]
+      font-normal
+      opacity-0
+      transition-all
+      duration-500
+      ease-out
+      group-hover:ml-2
+      group-hover:max-w-[120px]
+      group-hover:opacity-100
+    "
+        >
+          Call a specialist
+        </span>
+      </Link>
+      <Link
+        href="mailto:hello@weforgeclinical.com"
+        className="
+    group
+    mr-7
+    flex h-10 items-center
+    text-brand-cocoa
+    transition-all
+    duration-500
+    ease-out
+    hover:text-brand-orange
+  "
+      >
+        <Mail
+          strokeWidth={1.5}
+          className="
+      size-[19px]
+      shrink-0
+      transition-transform
+      duration-500
+      ease-out
+      group-hover:-translate-x-0.5
+    "
+        />
+
+        <span
+          className="
+      ml-0
+      max-w-0
+      overflow-hidden
+      whitespace-nowrap
+      text-[13px]
+      font-normal
+      opacity-0
+      transition-all
+      duration-500
+      ease-out
+      group-hover:ml-2
+      group-hover:max-w-[150px]
+      group-hover:opacity-100
+    "
+        >
+          Write us an email
+        </span>
+      </Link>
+      <NavbarButton href={primaryHref} variant="dark" as={Link}>
+
+        <ArrowRight className="size-4" aria-hidden="true" />
+        {primaryLabel}
       </NavbarButton>
-    </motion.div>
-  )}
-</AnimatePresence>
+      <AnimatePresence initial={false}>
+        {visible && (
+          <motion.div
+            initial={{
+              width: 0,
+              opacity: 0,
+              marginLeft: 0,
+            }}
+            animate={{
+              width: "auto",
+              opacity: 1,
+              marginLeft: 12,
+            }}
+            exit={{
+              width: 0,
+              opacity: 0,
+              marginLeft: 0,
+            }}
+            transition={{
+              duration: 0.3,
+              ease: [0.22, 1, 0.36, 1],
+            }}
+            className="overflow-hidden"
+          >
+            <NavbarButton href={secondaryHref} variant="primary" as={Link}>
+              <MousePointerClick className="size-4" aria-hidden="true" />
+              {secondaryLabel}
+            </NavbarButton>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

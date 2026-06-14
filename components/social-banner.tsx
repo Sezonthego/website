@@ -30,7 +30,7 @@ export function SocialBanner() {
       aria-label="Social media"
     >
       <div className="mx-auto flex h-10 max-w-[100rem] items-center justify-between gap-4 px-5 sm:justify-center sm:gap-6 xl:px-0">
-        <p className="font-clarion-body text-xs font-medium tracking-wide text-brand-peach/80 sm:text-sm">
+        <p className="font-body text-xs font-medium tracking-wide text-brand-peach/80 sm:text-sm">
           Follow WeForge
         </p>
         <div className="flex items-center gap-4">

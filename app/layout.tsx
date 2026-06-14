@@ -1,26 +1,28 @@
 import type { Metadata } from "next";
-import { Poppins, Source_Serif_4 } from "next/font/google";
 import "./globals.css";
+import { Geist, Source_Serif_4 } from "next/font/google";
 
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 
-const sourceSerif4 = Source_Serif_4({
-  variable: "--font-heading",
+
+const geist = Geist({
+  variable: "--font-geist",
   subsets: ["latin"],
-  weight: ["300", "400", "600", "700"],
+  weight: ["300", "400", "500", "600", "700"],
 });
 
-const poppins = Poppins({
-  variable: "--font-body",
+
+const sourceSerif = Source_Serif_4({
+  variable: "--font-source-serif",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["300", "400", "500", "600"],
 });
 
 export const metadata: Metadata = {
-  title: "WeForge - Faster Patient Recruitment. Less Friction.",
+  title: "Weforge - Recruit Patients Faster. Retain Them Longer.",
   description:
-    "WeForge helps clinical research sites streamline recruitment, pre-screening, and operational workflows through intelligent infrastructure built for scalability, speed, and compliance.",
+    "WWe help research teams recruit faster, meet enrollment targets, and strengthen sponsor relationships through connected recruitment systems.",
 };
 
 export default function RootLayout({
@@ -30,10 +32,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${sourceSerif4.variable} ${poppins.variable} antialiased`}
-        suppressHydrationWarning
-      >
+<body suppressHydrationWarning className={`${geist.variable} ${sourceSerif.variable}`}>
 <Navbar />
 
 <main className="bg-background text-foreground">

@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { ArrowRight, MousePointerClick } from "lucide-react";
+import { ArrowRight, MousePointerClick, Phone, Mail } from "lucide-react";
+import { IconBrandLinkedin } from "@tabler/icons-react";
 
 import { Logo } from "@/components/logo";
 import {
@@ -22,38 +23,37 @@ import { motion } from "motion/react";
 const navItems = [
   { name: "Home", link: "/" },
   { name: "Solutions", link: "/#features" },
-  { name: "Methodology", link: "/#methodology" },
+  { name: "Articles", link: "/blog" },
   { name: "Contact", link: "/contact" },
 ];
 
 function MobileNavActions({ onClose }: { onClose: () => void }) {
-  const visible = useNavVisible();
-
   return (
     <div className="flex w-full flex-col gap-3">
-      <NavbarButton href="/contact" variant="dark" as={Link} onClick={onClose}>
-        <ArrowRight className="size-4" aria-hidden="true" />
-        Book an intro call
-      </NavbarButton>
-      <motion.div
-        initial={false}
-        animate={{
-          height: visible ? "auto" : 0,
-          opacity: visible ? 1 : 0,
-        }}
-        className="overflow-hidden"
+
+      <NavbarButton
+        href="/contact"
+        variant="dark"
+        as={Link}
+        className="w-full"
+        onClick={onClose}
       >
-        <NavbarButton
-          href="/#features"
-          variant="primary"
-          as={Link}
-          className="w-full"
-          onClick={onClose}
-        >
-          <MousePointerClick className="size-4" aria-hidden="true" />
-          Try it out
-        </NavbarButton>
-      </motion.div>
+        <ArrowRight className="size-4" aria-hidden="true" />
+        Ask a question
+      </NavbarButton>
+
+
+      <NavbarButton
+        href="/#features"
+        variant="primary"
+        as={Link}
+        className="w-full"
+        onClick={onClose}
+      >
+        <MousePointerClick className="size-4" aria-hidden="true" />
+        View solutions
+      </NavbarButton>
+
     </div>
   );
 }
@@ -73,11 +73,83 @@ export function SiteNavbar() {
 
       <MobileNav>
         <MobileNavHeader>
+
           <Logo className="shrink-0" />
-          <MobileNavToggle
-            isOpen={isMobileMenuOpen}
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          />
+
+          <div className="flex items-center gap-5">
+
+            <Link
+
+              href="https://www.linkedin.com/company/weforgeclinical/"
+
+              target="_blank"
+
+              aria-label="Weforge LinkedIn"
+
+              className="text-brand-cocoa"
+
+            >
+
+              <IconBrandLinkedin
+
+                stroke={1.6}
+
+                className="size-[18px]"
+
+              />
+
+            </Link>
+
+            <Link
+
+              href="tel:+48792586357"
+
+              aria-label="Call Weforge"
+
+              className="text-brand-cocoa"
+
+            >
+
+              <Phone
+
+                strokeWidth={1.5}
+
+                className="size-[17px]"
+
+              />
+
+            </Link>
+
+            <Link
+
+              href="mailto:hello@weforgeclinical.com"
+
+              aria-label="Email Weforge"
+
+              className="text-brand-cocoa"
+
+            >
+
+              <Mail
+
+                strokeWidth={1.5}
+
+                className="size-[17px]"
+
+              />
+
+            </Link>
+
+            <MobileNavToggle
+
+              isOpen={isMobileMenuOpen}
+
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+
+            />
+
+          </div>
+
         </MobileNavHeader>
 
         <MobileNavMenu

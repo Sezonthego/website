@@ -1,0 +1,18 @@
+<svg width="602" height="382" viewBox="0 0 602 382" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="602" height="382" fill="#0A0300"/>
+<line x1="42" y1="217.75" x2="286" y2="217.75" stroke="white" stroke-width="0.5"/>
+<path d="M317 217.85V341.5" stroke="white" stroke-width="0.3"/>
+<line x1="42" y1="228.8" x2="286" y2="228.8" stroke="white" stroke-width="0.4"/>
+<line x1="42" y1="195.75" x2="286" y2="195.75" stroke="white" stroke-width="0.5"/>
+<line x1="57" y1="206.8" x2="246" y2="206.8" stroke="white" stroke-width="0.4"/>
+<line x1="42" y1="173.75" x2="286" y2="173.75" stroke="white" stroke-width="0.5"/>
+<line x1="57" y1="184.8" x2="246" y2="184.8" stroke="white" stroke-width="0.4"/>
+<line x1="42" y1="151.75" x2="286" y2="151.75" stroke="white" stroke-width="0.5"/>
+<path d="M317 151.5V38.5" stroke="white" stroke-width="0.3"/>
+<line x1="42" y1="162.8" x2="231" y2="162.8" stroke="white" stroke-width="0.4"/>
+<rect x="246.15" y="130.15" width="30.7" height="120.7" stroke="white" stroke-width="0.3"/>
+<rect x="286.25" y="130.25" width="30.5" height="120.5" stroke="white" stroke-width="0.5"/>
+<circle cx="438" cy="191" r="120.75" stroke="white" stroke-width="0.5"/>
+<circle cx="405" cy="191" r="54.85" stroke="white" stroke-width="0.3"/>
+<circle cx="436.5" cy="190.5" r="86.25" stroke="white" stroke-width="0.5"/>
+</svg>

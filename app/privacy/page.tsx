@@ -3,9 +3,9 @@ import type { Metadata } from "next";
 import { LegalPage } from "@/components/legal-page";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | WeForge Clinical",
+  title: "Privacy Policy - Weforge",
   description:
-    "Read how WeForge Clinical handles website inquiries, service communications, and information related to clinical research operations.",
+    "Read how we handle website inquiries, service communications, and information related to clinical research operations.",
 };
 
 const privacySections = [
@@ -20,7 +20,7 @@ const privacySections = [
     title: "How we use information",
     body: [
       "We use information to respond to inquiries, provide requested materials, coordinate service conversations, operate and improve our website, and protect our systems.",
-      "We may also use business contact information for appropriate follow-up about WeForge Clinical services, unless you ask us not to.",
+      "We may also use business contact information for appropriate follow-up about Weforge Clinical services, unless you ask us not to.",
     ],
   },
   {
@@ -56,11 +56,11 @@ const privacySections = [
 export default function PrivacyPage() {
   return (
     <LegalPage
-      description="This privacy policy explains how WeForge Clinical handles information collected through this website and related business communications."
-      eyebrow="Privacy"
+      description="This privacy policy explains how Weforge Clinical handles information collected through this website and related business communications."
+      eyebrow="DATA TRANSPARENCY"
       sections={privacySections}
-      title="Privacy policy"
-      updated="June 4, 2026"
+      title="Privacy Policy"
+      updated="June 14, 2026"
     />
   );
 }

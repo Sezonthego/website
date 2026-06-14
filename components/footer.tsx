@@ -1,25 +1,24 @@
-
-
-import { Container } from "./container";
-import { Logo } from "./logo";
-import { SubHeading } from "./subheading";
-import { Button } from "./ui/button";
-import { Send } from "lucide-react";
-import { cn } from "@/lib/utils";
+import Image from "next/image";
 import Link from "next/link";
+import { Send, Phone, Mail } from "lucide-react";
+import { MessagesSquare } from "lucide-react";
 import {
   IconBrandInstagram,
   IconBrandLinkedin,
-  IconBrandTwitter,
+  IconBrandX,
 } from "@tabler/icons-react";
 
+import { Container } from "@/components/container";
+import { SubHeading } from "@/components/subheading";
+import { BorderPlus } from "@/components/border-plus";
+import { cn } from "@/lib/utils";
 
 export const Footer = () => {
   const navigationItems = [
     { title: "Home", href: "/" },
     { title: "Solutions", href: "/#features" },
-    { title: "Insights", href: "/blog" },
-    { title: "Partnership", href: "/#contact" },
+    { title: "Articles", href: "/blog" },
+    { title: "Contact", href: "/contact" },
   ];
 
   const policyItems = [
@@ -28,112 +27,422 @@ export const Footer = () => {
     { title: "Cookie Policy", href: "/cookies" },
   ];
 
-
   return (
-    <section className="bg-brand-cocoa py-10 md:py-20 lg:pt-32 px-4 overflow-hidden text-brand-ivory">
-      <footer className="border-t border-brand-ivory/10 pt-10 md:pt-20 lg:pt-32 lg:pb-10 relative perspective-distant">
-        <Container className="grid grid-cols-1 md:grid-cols-5 gap-10 px-4 relative z-20">
-          <div className="md:col-span-2 flex flex-col gap-4 items-start">
-            <div className="flex gap-1 items-center">
-              <Logo tone="light" />
-            </div>
-            <SubHeading className="text-brand-peach/70">
-              Patient recruitment infrastructure for clinical research sites.
-            </SubHeading>
-            <Button asChild className="">
-              <Link href="/#contact">Book an intro call</Link>
-            </Button>
-          </div>
+    <section
 
-          <div className="col-span-1 flex flex-col gap-4">
-            <div className="text-base font-medium text-brand-peach">
-              Navigation
-            </div>
-            <ul className="flex flex-col gap-2 list-none">
-              {navigationItems.map((item) => (
-                <li key={item.title}>
-                  <Link
-                    href={item.href}
-                    className="text-sm text-brand-peach/70 hover:text-brand-orange transition-all duration-200"
-                  >
-                    {item.title}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+      className="
 
-          <div className="col-span-1 flex flex-col gap-4">
-            <div className="text-base font-medium text-brand-peach">
-              Policies
-            </div>
-            <ul className="flex flex-col gap-2 list-none">
-              {policyItems.map((item) => (
-                <li key={item.title}>
-                  <Link
-                    href={item.href}
-                    className="text-sm text-brand-peach/70 hover:text-brand-orange transition-all duration-200"
-                  >
-                    {item.title}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+  bg-brand-cocoa
 
-          <div className="col-span-1 flex flex-col gap-4">
-            <div className="text-base font-medium text-brand-peach">
-              Newsletter
-            </div>
-            <div className="border p-px border-brand-ivory/15 bg-brand-peach rounded-md relative items-center justify-between flex shrink-0">
-              <input
-                type="email"
-                placeholder="Your email"
-                className="bg-transparent px-4 py-2 placeholder:text-brand-cocoa/45 text-brand-cocoa text-sm outline-none"
+  px-4
+
+  py-15
+
+  text-brand-ivory
+
+  md:px-8
+
+"
+
+    >
+
+      <div
+
+        className="
+
+    relative
+
+    mx-auto
+
+    max-w-[1320px]
+
+    border-x
+
+    border-[rgba(255,253,249,0.08)]
+
+    bg-brand-cocoa
+
+  "
+
+      >
+
+        <footer
+
+          className="
+
+  relative
+
+  overflow-hidden
+
+  pt-10
+
+  pb-14
+
+  md:py-16
+
+  perspective-[900px]
+
+"
+
+        >
+          <div
+            className="
+    relative
+    z-20
+    grid
+    grid-cols-1
+    gap-10
+    px-8
+    md:px-12
+    lg:px-14
+    md:grid-cols-[1.8fr_0.7fr_0.7fr_1.7fr]
+    md:gap-x-20
+  "
+          >
+            <div className="flex flex-col items-start gap-9">
+              <Image
+                src="/brand-logo/weforge-white-2.svg"
+                alt="Weforge"
+                width={150}
+                height={40}
+                className="h-auto w-[200px]"
               />
-              <button className="bg-brand-orange text-brand-ivory absolute inset-y-0 text-center px-4 py-2 rounded-none right-0">
-                <Send className="size-4" />
-              </button>
+              <SubHeading
+
+                className="
+
+  max-w-[350px]
+
+  text-[16px]
+
+  md:text-[14px]
+
+  leading-[1.7]
+
+  font-light
+
+  text-brand-peach/70
+
+"
+
+              >
+
+                Building the recruitment infrastructure clinical sites need to recruit, manage, and deliver studies more effectively.
+
+              </SubHeading>
+
+              <Link
+
+                href="/contact"
+
+                className="
+
+    mt-4
+
+    mb-6
+
+    md:mb-0
+
+    inline-flex
+
+    min-h-12
+
+    items-center
+
+    gap-4
+
+    rounded-none
+
+    bg-brand-orange
+    px-5
+    py-3
+    text-[13px]
+    font-medium
+    uppercase
+    text-brand-ivory
+    shadow-[0_14px_30px_rgba(255,79,0,0.20)]
+    transition-colors
+    hover:bg-brand-orange/90
+  "
+              >
+                <MessagesSquare
+                  className="size-4 stroke-[1.7]"
+                  aria-hidden="true"
+                />
+
+                Talk with our team
+              </Link>
             </div>
-            <p className="text-brand-peach/65 font-body text-sm max-w-xl">
-                          Stay informed on the latest in clinical recruitment.
+
+            <div className="flex flex-col gap-4">
+              <div className="text-base font-medium text-brand-peach">
+                Resources
+              </div>
+
+              <ul className="flex list-none flex-col gap-2">
+                {navigationItems.map((item) => (
+                  <li key={item.title}>
+                    <Link
+                      href={item.href}
+                      className="text-sm text-brand-peach/70 transition-all duration-200 hover:text-brand-orange"
+                    >
+                      {item.title}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="col-span-1 flex flex-col gap-4">
+              <div className="text-base font-medium text-brand-peach">
+                Compliance
+              </div>
+
+              <ul className="flex list-none flex-col gap-2">
+                {policyItems.map((item) => (
+                  <li key={item.title}>
+                    <Link
+                      href={item.href}
+                      className="text-sm text-brand-peach/70 transition-all duration-200 hover:text-brand-orange"
+                    >
+                      {item.title}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="flex flex-col gap-4">
+              <div>
+                <div className="text-base font-medium text-brand-peach">
+                  Clinical insights
+                </div>
+
+                <p className="mt-3 text-sm leading-[1.7] text-brand-peach/65">
+                  Stay informed on the latest in clinical recruitment.
+                </p>
+              </div>
+
+              <div className="relative flex h-12 overflow-hidden bg-brand-ivory">
+                <input
+                  type="email"
+                  placeholder="Write your email"
+                  className="
+        w-full
+        bg-transparent
+        px-4
+        pr-14
+        text-sm
+        text-brand-cocoa
+        placeholder:text-brand-cocoa/45
+        outline-none
+      "
+                />
+
+                <button
+                  type="button"
+                  className="
+        absolute
+        inset-y-0
+        right-0
+        flex
+        w-12
+        items-center
+        justify-center
+        bg-brand-orange
+        text-brand-ivory
+        transition-colors
+        hover:bg-brand-orange/90
+      "
+                  aria-label="Subscribe"
+                >
+                  <Send className="size-4" />
+                </button>
+              </div>
+
+              <p className="text-xs leading-[1.6] text-brand-peach/45">
+                By subscribing, you agree to our{" "}
+                <Link
+                  href="/privacy"
+                  className="
+        underline
+        underline-offset-4
+        transition-colors
+        hover:text-brand-orange
+      "
+                >
+                  Privacy Policy
+                </Link>.
+              </p>
+              <div className="mt-5 flex items-center gap-5">
+
+                {/* Contact */}
+                <div className="flex items-center gap-5">
+                  <Link href="tel:+48792586357" aria-label="Call Weforge">
+                    <Phone
+                      strokeWidth={1.6}
+                      className="
+
+        size-4.5
+      
+        md:size-4
+      
+        cursor-pointer
+      
+        text-brand-peach
+      
+        transition-colors
+      
+        hover:text-brand-orange
+      
+      "
+                    />
+                  </Link>
+
+                  <Link
+                    href="mailto:hello@weforgeclinical.com"
+                    aria-label="Email Weforge"
+                  >
+                    <Mail
+                      strokeWidth={1.6}
+                      className="
+
+        size-5
+      
+        md:size-4
+      
+        cursor-pointer
+      
+        text-brand-peach
+      
+        transition-colors
+      
+        hover:text-brand-orange
+      
+      "
+                    />
+                  </Link>
+                </div>
+
+
+                {/* Separator */}
+                <span className="h-4 w-px bg-brand-peach/20" />
+
+
+                {/* Social */}
+                <div className="flex items-center gap-5">
+
+                  <IconBrandInstagram
+                    className="
+
+size-5.5
+
+md:size-4
+
+cursor-pointer
+
+text-brand-peach
+
+transition-colors
+
+hover:text-brand-orange
+
+"
+                  />
+
+                  <IconBrandX
+                    stroke={1.6}
+                    className="
+
+      size-5
+    
+      md:size-4
+    
+      cursor-pointer
+    
+      text-brand-peach
+    
+      transition-colors
+    
+      hover:text-brand-orange
+    
+    "
+                  />
+
+                  <Link
+                    href="https://www.linkedin.com/company/weforgeclinical/"
+                    target="_blank"
+                    aria-label="Weforge LinkedIn"
+                  >
+                    <IconBrandLinkedin
+                      className="
+
+size-5
+
+md:size-4
+
+cursor-pointer
+
+text-brand-peach
+
+transition-colors
+
+hover:text-brand-orange
+
+"
+                    />
+                  </Link>
+
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="relative z-20 mt-[82px] mb-8 h-px w-full bg-brand-ivory/10" />
+          <div
+  className="
+    relative
+    z-20
+    flex
+    flex-col
+    items-start
+    gap-4
+    px-8
+    md:px-12
+    lg:px-14
+    sm:flex-row
+    sm:justify-between
+  "
+>
+            <p className="text-sm text-brand-peach/60">
+              &copy; {new Date().getFullYear()} Weforge. All rights reserved.
             </p>
-          </div>
-        </Container>
 
-        <Container className="flex flex-col items-start gap-4 sm:flex-row sm:justify-between mt-10 relative z-20 px-4">
-          <p className="text-sm text-brand-peach/60">
-            &copy; {new Date().getFullYear()} WeForge. All rights reserved.
-          </p>
+            <div className="flex items-center gap-5 text-sm text-brand-peach/60">
+              <Link href="/privacy" className="hover:text-brand-orange">
+                Privacy Policy
+              </Link>
 
-          <div className="flex flex-col items-start sm:items-end gap-4 *:text-sm *:text-brand-peach/60">
-            <div className="flex items-center gap-4">
-              <Link href="/privacy">Privacy Policy</Link>
-              <Link href="/terms">Terms of Service</Link>
+              <Link href="/terms" className="hover:text-brand-orange">
+                Terms & Conditions
+              </Link>
             </div>
 
-            <div className="flex items-center gap-4">
-  
-              <IconBrandInstagram className="text-brand-peach hover:text-brand-orange size-4 cursor-pointer" />
-              <IconBrandTwitter className="text-brand-peach hover:text-brand-orange size-4 cursor-pointer" />
-              <IconBrandLinkedin className="text-brand-peach hover:text-brand-orange size-4 cursor-pointer" />
             </div>
-          </div>
-        </Container>
 
-        <div
-          className={cn(
-            "absolute inset-0",
-            "flex items-center justify-center gap-10",
-            "bg-size-[40px_40px]",
-            "bg-[linear-gradient(to_right,rgba(255,253,249,0.08)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,243,230,0.08)_1px,transparent_1px)]",
-            "mask-radial-from-50%"
-          )}
-          style={{
-            transform: "rotateX(60deg)",
-          }}
-        />
-      </footer>
+          <div
+            className={cn(
+              "absolute inset-0",
+              "flex items-center justify-center gap-10",
+              "bg-size-[40px_40px]",
+              "bg-[linear-gradient(to_right,rgba(255,253,249,0.08)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,243,230,0.08)_1px,transparent_1px)]",
+              "mask-radial-from-50%"
+            )}
+            style={{
+              transform: "rotateX(60deg)",
+            }}
+          />
+        </footer>
+      </div>
     </section>
   );
 };

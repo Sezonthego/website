@@ -46,14 +46,14 @@ export async function POST(request: Request) {
     );
   }
 
-  const toEmail = process.env.CONTACT_TO_EMAIL ?? "contact@weforgeclinical.com";
+  const toEmail = process.env.CONTACT_TO_EMAIL ?? "contact@weforgeclinical.pl";
   const resendKey = process.env.RESEND_API_KEY;
   const fromEmail =
     process.env.RESEND_FROM_EMAIL ?? "WeForge Website <onboarding@resend.dev>";
   const webhookUrl = process.env.CONTACT_WEBHOOK_URL;
 
   const roleLabel = roleLabels[role] ?? role;
-  const subject = `WeForge lead: ${name} (${roleLabel})`;
+  const subject = `Weforge lead: ${name} (${roleLabel})`;
   const text = [
     `Name: ${name}`,
     `Email: ${email}`,

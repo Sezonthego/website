@@ -2,8 +2,8 @@
 @import "tw-animate-css";
 
 :root {
-  --font-heading: var(--font-source-serif), Georgia, "Times New Roman", serif;
-  --font-body: var(--font-poppins), system-ui, sans-serif;
+  --font-body: var(--font-geist);
+  --font-heading: var(--font-geist);
   --radius: 0;
   --brand-orange: #ff4f00;
   --brand-ivory: #fffefa;
@@ -11,7 +11,7 @@
   --brand-cocoa: #0a0300;
   --brand-indigo: #0f172a;
   --brand-cocoa-muted: rgb(10 3 0 / 58%);
-  --brand-border: rgb(10 3 0 / 12%);
+  --brand-border: rgb(15 23 42 / 10%);
   --background: var(--brand-ivory);
   --foreground: var(--brand-cocoa);
   --card: var(--brand-peach);
@@ -50,17 +50,20 @@
 
 
 @theme inline {
-  --color-brand-orange: var(--brand-orange);
-  --color-brand-ivory: var(--brand-ivory);
-  --color-brand-peach: var(--brand-peach);
-  --color-brand-cocoa: var(--brand-cocoa);
-  --color-brand-indigo: var(--brand-indigo);
-  --color-brand-muted: var(--brand-cocoa-muted);
-  --color-brand-border: var(--brand-border);
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-heading: var(--font-heading);
-  --font-body: var(--font-body);
+    --color-brand-orange: var(--brand-orange);
+    --color-brand-ivory: var(--brand-ivory);
+    --color-brand-peach: var(--brand-peach);
+    --color-brand-cocoa: var(--brand-cocoa);
+    --color-brand-indigo: var(--brand-indigo);
+    --color-brand-muted: var(--brand-cocoa-muted);
+    --color-brand-border: var(--brand-border);
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --font-heading: var(--font-heading);
+
+    --font-body: var(--font-body);
+  
+    --font-serif: var(--font-source-serif);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -139,6 +142,29 @@
   }
 }
 
+@keyframes float-particle {
+  0% {
+    transform: translateY(0) translateX(0);
+    opacity: 0.2;
+  }
+
+  50% {
+    transform: translateY(-18px) translateX(-12px);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-35px) translateX(-25px);
+    opacity: 0;
+  }
+}
+
+.animate-float-particle {
+  animation-name: float-particle;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
 @keyframes practice-scroll-right {
   from {
     transform: translateX(-50%);
@@ -149,11 +175,11 @@
 }
 
 .animate-practice-scroll-left {
-  animation: practice-scroll-left 35s linear infinite;
+  animation: practice-scroll-left 45s linear infinite;
 }
 
 .animate-practice-scroll-right {
-  animation: practice-scroll-right 35s linear infinite;
+  animation: practice-scroll-right 45s linear infinite;
 }
 
 .particle {
@@ -181,7 +207,19 @@
   animation-delay: var(--delay);
 }
 
+@keyframes source-scroll {
+  from {
+    transform: translateY(0);
+  }
 
+  to {
+    transform: translateY(-50%);
+  }
+}
+
+.animate-source-scroll {
+  animation: source-scroll 12s linear infinite;
+}
 @keyframes particle-float {
   0% {
     transform:
