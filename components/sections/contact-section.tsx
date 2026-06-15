@@ -18,6 +18,7 @@ type FormState = {
   email: string;
   role: string;
   message: string;
+  website: string;
 };
 
 const initialForm: FormState = {
@@ -25,6 +26,7 @@ const initialForm: FormState = {
   email: "",
   role: "site",
   message: "",
+  website: "",
 };
 
 export const ContactSection = () => {
@@ -66,18 +68,18 @@ export const ContactSection = () => {
   return (
 
     <div
-  
-      id="contact"
-  
-      className="grid lg:grid-cols-[0.9fr_1.1fr]"
-  
-    >
-         <div className="border-b border-brand-border px-6 py-14 md:px-12 lg:border-b-0 lg:border-r">
-      
-            <div className="relative max-w-xl">
-            <h2
 
-className="
+      id="contact"
+
+      className="grid lg:grid-cols-[0.9fr_1.1fr]"
+
+    >
+      <div className="border-b border-brand-border px-6 py-14 md:px-12 lg:border-b-0 lg:border-r">
+
+        <div className="relative max-w-xl">
+          <h2
+
+            className="
 
   font-heading
 
@@ -93,55 +95,55 @@ className="
 
 "
 
->
+          >
 
 
 
-</h2>
-    
+          </h2>
 
-<ul className=" divide-y divide-brand-border border-b border-brand-border">
-                <ContactDetail
-                  icon={<Mail className="size-5" />}
-                  label="Email"
-                  value="contact@weforgeclinical.pl"
-                  href="mailto:contact@weforgeclinical.pl"
-                />
-                <ContactDetail
-                  icon={<Phone className="size-5" />}
-                  label="Phone"
-                  value="+48 792 586 357"
-                  href="tel:+48792586357"
-                />
-                <ContactDetail
-                  icon={<MapPin className="size-5" />}
-                  label="Location"
-                  value="Warsaw, Poland"
-                />
-              </ul>
-            </div>
-          </div>
 
-          <div className="px-6 py-14 md:px-12">
-            
-     
-              <div className="relative">
-                {status === "success" ? (
-                  <div className="flex min-h-[460px] flex-col items-center justify-center py-8 text-center">
-                    <div className="flex size-14 items-center justify-center rounded-full bg-brand-orange text-brand-ivory">
-                      <CheckCircle2 className="size-7" strokeWidth={1.8} />
-                    </div>
-                    <h3 className="mt-6 font-heading text-3xl font-light text-brand-cocoa md:text-4xl">
-                      Thank you for reaching out.
-                    </h3>
-                    <p className="mt-4 max-w-md text-brand-muted">
-                      Our team has received your message and will get back to
-                      you as soon as possible.
-                    </p>
-                    <button
-  type="button"
-  onClick={() => setStatus("idle")}
-  className="
+          <ul className=" divide-y divide-brand-border border-b border-brand-border">
+            <ContactDetail
+              icon={<Mail className="size-5" />}
+              label="Email"
+              value="contact@weforgeclinical.pl"
+              href="mailto:contact@weforgeclinical.pl"
+            />
+            <ContactDetail
+              icon={<Phone className="size-5" />}
+              label="Phone"
+              value="+48 792 586 357"
+              href="tel:+48792586357"
+            />
+            <ContactDetail
+              icon={<MapPin className="size-5" />}
+              label="Location"
+              value="Warsaw, Poland"
+            />
+          </ul>
+        </div>
+      </div>
+
+      <div className="px-6 py-14 md:px-12">
+
+
+        <div className="relative">
+          {status === "success" ? (
+            <div className="flex min-h-[460px] flex-col items-center justify-center py-8 text-center">
+              <div className="flex size-14 items-center justify-center rounded-full bg-brand-orange text-brand-ivory">
+                <CheckCircle2 className="size-7" strokeWidth={1.8} />
+              </div>
+              <h3 className="mt-6 font-heading text-3xl font-light text-brand-cocoa md:text-4xl">
+                Thank you for reaching out.
+              </h3>
+              <p className="mt-4 max-w-md text-brand-muted">
+                Our team has received your message and will get back to
+                you as soon as possible.
+              </p>
+              <button
+                type="button"
+                onClick={() => setStatus("idle")}
+                className="
     mt-8
     inline-flex
     h-12
@@ -157,47 +159,62 @@ className="
     transition-colors
     hover:bg-brand-orange
   "
->
-  Send another message
-</button>
-                  </div>
-                ) : (
-                  <form onSubmit={handleSubmit} className="grid gap-5">
-               
+              >
+                Send another message
+              </button>
+            </div>
+          ) : (
+            <form onSubmit={handleSubmit} className="grid gap-5">
 
-                    <Field label="Name" required>
-                      <input
-                        type="text"
-                        name="name"
-                        required
-                        value={form.name}
-                        onChange={(e) =>
-                          setForm((f) => ({ ...f, name: e.target.value }))
-                        }
-                        className={inputClass}
-                        placeholder="Your name"
-                      />
-                    </Field>
+              {/* Bot protection honeypot */}
+              <input
+                type="text"
+                name="website"
+                value={form.website}
+                onChange={(e) =>
+                  setForm((f) => ({
+                    ...f,
+                    website: e.target.value,
+                  }))
+                }
+                tabIndex={-1}
+                autoComplete="off"
+                className="hidden"
+              />
 
-                    <Field label="Email" required>
-                      <input
-                        type="email"
-                        name="email"
-                        required
-                        value={form.email}
-                        onChange={(e) =>
-                          setForm((f) => ({ ...f, email: e.target.value }))
-                        }
-                        className={inputClass}
-                        placeholder="you@company.com"
-                      />
-                    </Field>
-                    <Field label="Which best describes you?">
-  <div className="relative">
-    <button
-      type="button"
-      onClick={() => setRoleOpen((open) => !open)}
-      className="
+                <Field label="Name" required>
+                  <input
+                    type="text"
+                    name="name"
+                    required
+                    value={form.name}
+                    onChange={(e) =>
+                      setForm((f) => ({ ...f, name: e.target.value }))
+                    }
+                    className={inputClass}
+                    placeholder="Your name"
+                  />
+                </Field>
+
+                <Field label="Email" required>
+                  <input
+                    type="email"
+                    name="email"
+                    required
+                    value={form.email}
+                    onChange={(e) =>
+                      setForm((f) => ({ ...f, email: e.target.value }))
+                    }
+                    className={inputClass}
+                    placeholder="you@company.com"
+                  />
+                </Field>
+                <Field label="Which best describes you?">
+                  <div className="relative">
+                    <button
+                      type="button"
+                      onClick={() => setRoleOpen((open) => !open)}
+                      className="
         flex
         w-full
         items-center
@@ -211,40 +228,40 @@ className="
         text-sm
         text-brand-cocoa
       "
-    >
-      {
-        roleOptions.find(
-          (option) => option.value === form.role
-        )?.label
-      }
+                    >
+                      {
+                        roleOptions.find(
+                          (option) => option.value === form.role
+                        )?.label
+                      }
 
-      <span className="text-brand-orange">
-        ↓
-      </span>
-    </button>
-    <AnimatePresence>
-  {roleOpen && (
-    <motion.div
-      initial={{
-        opacity: 0,
-        y: -8,
-        scale: 0.98,
-      }}
-      animate={{
-        opacity: 1,
-        y: 0,
-        scale: 1,
-      }}
-      exit={{
-        opacity: 0,
-        y: -8,
-        scale: 0.98,
-      }}
-      transition={{
-        duration: 0.25,
-        ease: [0.22, 1, 0.36, 1],
-      }}
-      className="
+                      <span className="text-brand-orange">
+                        ↓
+                      </span>
+                    </button>
+                    <AnimatePresence>
+                      {roleOpen && (
+                        <motion.div
+                          initial={{
+                            opacity: 0,
+                            y: -8,
+                            scale: 0.98,
+                          }}
+                          animate={{
+                            opacity: 1,
+                            y: 0,
+                            scale: 1,
+                          }}
+                          exit={{
+                            opacity: 0,
+                            y: -8,
+                            scale: 0.98,
+                          }}
+                          transition={{
+                            duration: 0.25,
+                            ease: [0.22, 1, 0.36, 1],
+                          }}
+                          className="
         absolute
         z-50
         mt-2
@@ -254,19 +271,19 @@ className="
         border-brand-border
         bg-brand-ivory
       "
-    >
-        {roleOptions.map((option) => (
-          <button
-            key={option.value}
-            type="button"
-            onClick={() => {
-              setForm((f) => ({
-                ...f,
-                role: option.value,
-              }));
-              setRoleOpen(false);
-            }}
-            className="
+                        >
+                          {roleOptions.map((option) => (
+                            <button
+                              key={option.value}
+                              type="button"
+                              onClick={() => {
+                                setForm((f) => ({
+                                  ...f,
+                                  role: option.value,
+                                }));
+                                setRoleOpen(false);
+                              }}
+                              className="
               block
               w-full
               px-4
@@ -277,74 +294,50 @@ className="
               hover:bg-[#FFF0E8]
               hover:text-brand-orange
             "
-          >
-            {option.label}
-          </button>
-        ))}
-     </motion.div>
-  )}
-</AnimatePresence>
-  </div>
-</Field>
+                            >
+                              {option.label}
+                            </button>
+                          ))}
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                </Field>
 
-                    <Field label="Message" required>
+                <Field label="Message" required>
 
-<textarea
+                  <textarea
 
-  name="message"
+                    name="message"
 
-  required
+                    required
 
-  rows={4}
+                    rows={4}
 
-  value={form.message}
-                        onChange={(e) =>
-                          setForm((f) => ({ ...f, message: e.target.value }))
-                        }
-                        className={cn(inputClass, "min-h-[132px] resize-y")}
-                        placeholder="Tell us about your recruitment goals..."
-                      />
-                    </Field>
+                    value={form.message}
+                    onChange={(e) =>
+                      setForm((f) => ({ ...f, message: e.target.value }))
+                    }
+                    className={cn(inputClass, "min-h-[132px] resize-y")}
+                    placeholder="Tell us about your recruitment goals..."
+                  />
+                </Field>
 
-                    {status === "error" && errorMessage && (
-                      <p className="text-sm text-destructive" role="alert">
-                        {errorMessage}
-                      </p>
-                    )}
+                {status === "error" && errorMessage && (
+                  <p className="text-sm text-destructive" role="alert">
+                    {errorMessage}
+                  </p>
+                )}
 
-<p className="text-xs leading-5 text-brand-muted">
+                <p className="text-xs leading-5 text-brand-muted">
 
-By submitting you agree with our{" "}
+                  By submitting you agree with our{" "}
 
-<Link
+                  <Link
 
-  href="/privacy"
+                    href="/privacy"
 
-  className="
-
-    underline
-
-    underline-offset-4
-
-    transition-colors
-
-    hover:text-brand-orange
-
-  "
-
->
-
-  Privacy Policy
-
-</Link>{" "}
-
-and{" "}
-
-<Link
-
-  href="/terms"
-
-  className="
+                    className="
 
     underline
 
@@ -356,22 +349,46 @@ and{" "}
 
   "
 
->
+                  >
 
-  Terms &amp; Conditions
+                    Privacy Policy
 
-</Link>
+                  </Link>{" "}
 
-.
+                  and{" "}
 
-</p>
-<button
+                  <Link
 
-  type="submit"
+                    href="/terms"
 
-  disabled={status === "submitting"}
+                    className="
 
-  className="
+    underline
+
+    underline-offset-4
+
+    transition-colors
+
+    hover:text-brand-orange
+
+  "
+
+                  >
+
+                    Terms &amp; Conditions
+
+                  </Link>
+
+                  .
+
+                </p>
+                <button
+
+                  type="submit"
+
+                  disabled={status === "submitting"}
+
+                  className="
 
     inline-flex
 
@@ -405,20 +422,20 @@ and{" "}
 
   "
 
->
+                >
 
-  {status === "submitting" ? "Sending..." : "Send message"}
+                  {status === "submitting" ? "Sending..." : "Send message"}
 
-  <ArrowRight className="size-4" />
+                  <ArrowRight className="size-4" />
 
-</button>
-                  </form>
-                )}
-              </div>
-            </div>
-          </div>
-   
-  
+                </button>
+            </form>
+          )}
+        </div>
+      </div>
+    </div>
+
+
   );
 };
 
@@ -438,7 +455,7 @@ function ContactDetail({
 }) {
   const content = (
     <>
-    <span className="flex size-10 shrink-0 items-center justify-center bg-[#FFF0E8] text-brand-orange">
+      <span className="flex size-10 shrink-0 items-center justify-center bg-[#FFF0E8] text-brand-orange">
         {icon}
       </span>
       <span>
@@ -447,9 +464,9 @@ function ContactDetail({
         </span>
         <span className="mt-1 block font-normal text-brand-cocoa">
 
-{value}
+          {value}
 
-</span>
+        </span>
       </span>
     </>
   );
@@ -481,7 +498,7 @@ function Field({
 }) {
   return (
     <label className="flex flex-col gap-2">
-     <span className="text-[16px] font-normal text-brand-cocoa">
+      <span className="text-[16px] font-normal text-brand-cocoa">
         {label}
         {required && <span className="text-brand-orange"> *</span>}
       </span>

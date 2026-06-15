@@ -53,7 +53,7 @@ export function GetStartedSection() {
   return (
     <section
 
-      id="get-started"
+      id="how-it-works"
 
       className="my-28 border-y border-brand-border bg-brand-ivory px-4 text-brand-cocoa md:px-8"
 
@@ -83,8 +83,10 @@ export function GetStartedSection() {
               We build and optimize your recruitment infrastructure while your team stays focused on delivering clinical studies.
             </p>
             <Link
-              href="/contact"
-              className="
+  href="https://cal.com/YOUR-CAL-LINK"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="
     mt-14 inline-flex min-h-12 items-center
     rounded-none
     bg-brand-orange
@@ -102,9 +104,9 @@ export function GetStartedSection() {
     focus-visible:ring-offset-2
     focus-visible:ring-offset-brand-ivory
   "
-            >
-              Discuss your needs
-            </Link>
+>
+  Discuss your needs
+</Link>
           </div>
 
           <div className="grid grid-cols-1 border-t border-brand-border lg:grid-cols-3">

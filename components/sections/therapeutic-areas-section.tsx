@@ -78,7 +78,7 @@ function PracticeAreaItem({
 
 export function PracticeSection() {
   return (
-    <section className="mt-28 mb-28 border-y border-brand-border bg-brand-ivory px-4 text-brand-cocoa md:px-8">
+    <section id="therapeutic-areas" className="mt-28 mb-28 border-y border-brand-border bg-brand-ivory px-4 text-brand-cocoa md:px-8">
       <div className="relative mx-auto max-w-[1320px] border-x border-brand-border bg-brand-ivory">
 
         <BorderPlus className="-left-[11px] -top-[11px]" />

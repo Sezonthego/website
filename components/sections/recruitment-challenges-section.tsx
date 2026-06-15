@@ -143,7 +143,7 @@ export function RecruitmentChallengesSection() {
   
       <section
   
-        id="recruitment-challenges"
+        id="challenges"
   
         className="mt-8 border-t border-brand-border bg-brand-ivory px-4 text-brand-cocoa md:mt-28 md:px-8"
   

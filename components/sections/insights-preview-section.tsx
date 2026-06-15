@@ -32,7 +32,7 @@ export const InsightsPreview = () => {
   return (
     <section
 
-      id="blog-preview"
+      id="insights-preview"
 
       className="my-28 border-y border-brand-border bg-brand-ivory px-4 text-brand-cocoa md:px-8"
 

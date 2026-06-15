@@ -182,7 +182,7 @@ useEffect(() => {
 }, []);
 
   return (
-    <section className="my-28 border-y border-brand-border bg-brand-ivory px-4 text-brand-cocoa md:px-8">
+    <section id="why-us" className="my-28 border-y border-brand-border bg-brand-ivory px-4 text-brand-cocoa md:px-8">
       <div className="relative mx-auto max-w-[1320px] border-x border-brand-border bg-brand-ivory">
 
 
@@ -239,12 +239,11 @@ useEffect(() => {
                 </p>
               </div>
               <Link
-
-                href="/contact"
-
-                className="
-
-  group mt-14 md:mt-auto inline-flex min-h-12 w-fit items-center gap-2
+  href="https://cal.com/YOUR-CAL-LINK"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="
+    group mt-14 md:mt-auto inline-flex min-h-12 w-fit items-center gap-2
     rounded-none
     bg-brand-orange
     px-5 py-3
@@ -261,19 +260,19 @@ useEffect(() => {
     focus-visible:ring-offset-2
     focus-visible:ring-offset-brand-ivory
   "
-              >
-                Talk with our team
+>
+  Talk with our team
 
-                <ArrowRight
-                  className="
+  <ArrowRight
+    className="
       size-4
       stroke-[1.8]
       transition-transform
       duration-300
       group-hover:translate-x-1
     "
-                />
-              </Link>
+  />
+</Link>
             </div>
           </div>
 

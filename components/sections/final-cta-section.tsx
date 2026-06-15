@@ -26,7 +26,7 @@ export function TransformCommunicationCta() {
     );
   }, []);
   return (
-    <section className="mt-28 mb-28 border-y border-brand-border bg-brand-ivory px-4 text-brand-cocoa md:px-8">
+    <section id="final-cta" className="mt-28 mb-28 border-y border-brand-border bg-brand-ivory px-4 text-brand-cocoa md:px-8">
       <div className="relative mx-auto max-w-[1320px] border-x border-brand-border bg-brand-cocoa">
 
 
@@ -139,8 +139,10 @@ export function TransformCommunicationCta() {
 
 
           <Link
-            href="/contact"
-            className="
+  href="https://cal.com/YOUR-CAL-LINK"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="
     mt-14
     inline-flex
     min-h-12
@@ -164,14 +166,14 @@ export function TransformCommunicationCta() {
     focus-visible:ring-offset-brand-ivory
     sm:px-6
   "
-          >
-            <Calendar
-              className="size-4 stroke-[1.7]"
-              aria-hidden="true"
-            />
+>
+  <Calendar
+    className="size-4 stroke-[1.7]"
+    aria-hidden="true"
+  />
 
-            Book an intro call
-          </Link>
+  Book an intro call
+</Link>
 
         </div>
       </div>

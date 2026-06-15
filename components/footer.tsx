@@ -132,27 +132,18 @@ export const Footer = () => {
               </SubHeading>
 
               <Link
-
-                href="/contact"
-
-                className="
-
+  href="https://cal.com/YOUR-CAL-LINK"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="
     mt-4
-
     mb-6
-
     md:mb-0
-
     inline-flex
-
     min-h-12
-
     items-center
-
     gap-4
-
     rounded-none
-
     bg-brand-orange
     px-5
     py-3
@@ -164,14 +155,14 @@ export const Footer = () => {
     transition-colors
     hover:bg-brand-orange/90
   "
-              >
-                <MessagesSquare
-                  className="size-4 stroke-[1.7]"
-                  aria-hidden="true"
-                />
+>
+  <MessagesSquare
+    className="size-4 stroke-[1.7]"
+    aria-hidden="true"
+  />
 
-                Talk with our team
-              </Link>
+  Talk with our team
+</Link>
             </div>
 
             <div className="flex flex-col gap-4">
@@ -214,7 +205,7 @@ export const Footer = () => {
 
             <div className="flex flex-col gap-4">
               <div>
-                <div className="text-base font-medium text-brand-peach">
+                <div id="newsletter" className="text-base font-medium text-brand-peach">
                   Clinical insights
                 </div>
 

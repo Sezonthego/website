@@ -432,7 +432,7 @@ export function ImpactSection() {
 
     return (
   
-      <section className="border-y border-brand-border bg-brand-ivory px-4 text-brand-cocoa md:px-8">
+      <section id="impact" className="border-y border-brand-border bg-brand-ivory px-4 text-brand-cocoa md:px-8">
   
         <div className="relative mx-auto max-w-[1320px] border-x border-brand-border bg-brand-ivory">
   

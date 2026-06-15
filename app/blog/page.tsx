@@ -178,7 +178,7 @@ className="
           <div className="border-t border-brand-border p-8 md:p-10">
 
             <Link
-              href="/contact"
+              href="#newsletter"
               className="
                 inline-flex
                 h-12

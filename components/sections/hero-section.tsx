@@ -121,7 +121,7 @@ function HeroTrustStrip() {
 export function HeroSection() {
   return (
     <section
-    id="hero"
+      id="hero"
       className="
     relative
     bg-brand-ivory
@@ -209,12 +209,14 @@ xl:px-[4.25rem]
                 className="mt-8 flex justify-center"
               >
                 <Link
-                  href="/contact"
-                  className="inline-flex min-h-14 items-center gap-3 uppercase rounded-none bg-brand-orange px-5 py-3 text-[13px] font-medium text-brand-ivory shadow-[0_14px_30px_rgba(255,79,0,0.20)] transition-colors hover:bg-brand-orange/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange focus-visible:ring-offset-2 focus-visible:ring-offset-brand-ivory sm:px-6"
-                >
-                  <Calendar className="size-4 stroke-[1.8]" />
-                  Book an intro call
-                </Link>
+  href="https://cal.com/YOUR-CAL-LINK"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="inline-flex min-h-14 items-center gap-3 uppercase rounded-none bg-brand-orange px-5 py-3 text-[13px] font-medium text-brand-ivory shadow-[0_14px_30px_rgba(255,79,0,0.20)] transition-colors hover:bg-brand-orange/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange focus-visible:ring-offset-2 focus-visible:ring-offset-brand-ivory sm:px-6"
+>
+  <Calendar className="size-4 stroke-[1.8]" />
+  Book an intro call
+</Link>
               </motion.div>
             </div>
           </div>

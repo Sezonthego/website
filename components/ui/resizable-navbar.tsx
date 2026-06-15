@@ -283,7 +283,7 @@ export const NavbarButton = ({
 export function NavActions({
   primaryHref = "/contact",
   primaryLabel = "ASK A QUESTION",
-  secondaryHref = "/#features",
+  secondaryHref = "/#solution",
   secondaryLabel = "View solutions",
 }: {
   primaryHref?: string;

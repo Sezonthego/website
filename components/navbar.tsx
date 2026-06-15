@@ -22,7 +22,7 @@ import { motion } from "motion/react";
 
 const navItems = [
   { name: "Home", link: "/" },
-  { name: "Solutions", link: "/#features" },
+  { name: "Statistics", link: "/#impact" },
   { name: "Articles", link: "/blog" },
   { name: "Contact", link: "/contact" },
 ];
@@ -44,7 +44,7 @@ function MobileNavActions({ onClose }: { onClose: () => void }) {
 
 
       <NavbarButton
-        href="/#features"
+        href="/#solution"
         variant="primary"
         as={Link}
         className="w-full"
@@ -58,11 +58,13 @@ function MobileNavActions({ onClose }: { onClose: () => void }) {
   );
 }
 
-export function SiteNavbar() {
+export function SiteNavbar({ banner }: { banner?: React.ReactNode }) {
+
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <Navbar>
+
+    <Navbar banner={banner}>
       <NavBody>
         <Logo className="relative z-20 shrink-0 px-2 py-1" />
         <div className="relative z-20 flex items-center gap-8">

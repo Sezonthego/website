@@ -4,6 +4,7 @@ import { Geist, Source_Serif_4 } from "next/font/google";
 
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
+import { AnnouncementBanner } from "@/components/sections/announcement-banner";
 
 
 const geist = Geist({
@@ -33,7 +34,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
 <body suppressHydrationWarning className={`${geist.variable} ${sourceSerif.variable}`}>
-<Navbar />
+<Navbar/>
 
 <main className="bg-background text-foreground">
   {children}
