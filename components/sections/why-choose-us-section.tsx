@@ -65,21 +65,32 @@ function ReasonCell({
   `}
     >
 
-      {/* Orange glow on hover */}
-      <div
-        className="
-          pointer-events-none
-          absolute
-          -right-20 -top-20
-          h-[180px] w-[180px]
-          rounded-full
-          bg-brand-orange/0
-          blur-[70px]
-          transition-colors
-          duration-500
-          group-hover:bg-brand-orange/20
-        "
-      />
+  {/* Orange glow on hover */}
+<div
+  className="
+    pointer-events-none
+    absolute
+
+    -right-40
+    -top-40
+
+    h-[320px]
+    w-[320px]
+
+    rounded-full
+
+    bg-brand-orange/30
+
+    opacity-0
+
+    blur-[120px]
+
+    transition-opacity
+    duration-500
+
+    group-hover:opacity-100
+  "
+/>
 
       <div className="relative flex items-start justify-between gap-6">
 

@@ -104,7 +104,6 @@ function HeroTrustStrip() {
 
                 className="brightness-0 opacity-40"
 
-
               />
             </div>
           ))}

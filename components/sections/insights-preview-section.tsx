@@ -9,15 +9,14 @@ import Image from "next/image";
 const articles = [
   {
     id: "strategy",
-    image: "/article/art1.svg",
+    
   },
   {
     id: "enrollment",
-    image: "/article/art2.svg",
+   
   },
   {
     id: "infrastructure",
-    image: "/article/img1.svg",
   },
 ] as const;
 
@@ -117,27 +116,8 @@ export const InsightsPreview = () => {
              href={`/${locale}/blog`}
                 className="group flex min-h-[315px] flex-col px-6 pb-8 transition-colors hover:bg-[#FFFAF6] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange focus-visible:ring-inset md:px-8 md:pb-10"
               >
-                <div className="-mx-6 mb-8 overflow-hidden md:-mx-8">
-                  <div className="-mx-6 mb-8 flex aspect-video items-center justify-center overflow-hidden bg-brand-cocoa md:-mx-8">
-
-                  <Image
-  src={article.image}
-  alt={t(`articles.${article.id}.title`)}
-  width={800}
-  height={450}
-  className="
-    h-full
-    w-full
-    object-contain
-    transition-transform
-    duration-500
-    group-hover:scale-105
-  "
-/>
-
-                  </div>
-                </div>
-                <p className="font-body text-xs font-medium uppercase tracking-[0.14em] text-brand-orange">
+      
+                <p className="font-body text-xs font-medium uppercase tracking-[0.14em] pt-12 text-brand-orange">
                 {t(`articles.${article.id}.category`)}
                 </p>
                 <h3 className="mt-4 max-w-md font-body text-[23px] font-[500] leading-[1.4] tracking-[-0.03em] text-brand-cocoa">
