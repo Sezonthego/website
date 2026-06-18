@@ -4,6 +4,7 @@ import { Calendar } from "lucide-react";
 import Image from "next/image";
 import { BorderPlus } from "@/components/border-plus";
 
+
 const trustItems = [
   {
     name: "Supabase",
