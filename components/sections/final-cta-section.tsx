@@ -2,8 +2,11 @@
 import Link from "next/link";
 import { Calendar } from "lucide-react";
 import { useEffect, useState } from "react";
+import { useTranslations, useLocale } from "next-intl";
 
 export function TransformCommunicationCta() {
+  const t = useTranslations("FinalCTA");
+  const locale = useLocale();
   const [particles, setParticles] = useState<
     {
       x: number;
@@ -98,11 +101,22 @@ export function TransformCommunicationCta() {
           />
 
 
-          <h2 className="mx-auto max-w-2xl font-heading text-[clamp(2.5rem,5vw,3.2rem)] font-[600] leading-[1.2] tracking-[-0.04em] text-brand-ivory">
-            Make recruitment a reason sponsors{" "}
-            <span className="text-brand-orange">
-              trust your site.
-            </span>
+<h2
+  className={`
+    mx-auto
+    ${locale === "pl" ? "max-w-3xl" : "max-w-2xl"}
+    font-heading
+    text-[clamp(2.5rem,5vw,3.2rem)]
+    font-[600]
+    leading-[1.2]
+    tracking-[-0.04em]
+    text-brand-ivory
+  `}
+>
+          {t("headline")}{" "}
+<span className="text-brand-orange">
+  {t("headlineHighlight")}
+</span>
           </h2>
 
           <p
@@ -125,7 +139,7 @@ export function TransformCommunicationCta() {
 
   text-brand-ivory/70
 
-  md:max-w-[620px]
+  md:max-w-[650px]
 
   md:text-[16px]
 
@@ -133,8 +147,7 @@ export function TransformCommunicationCta() {
 
           >
 
-            Strengthen your recruitment capabilities with infrastructure designed to improve enrollment performance and support reliable study delivery.
-
+{t("description")}
           </p>
 
 
@@ -172,11 +185,12 @@ export function TransformCommunicationCta() {
     aria-hidden="true"
   />
 
-  Book an intro call
+{t("cta")}
 </Link>
 
         </div>
       </div>
     </section>
   );
+  
 }

@@ -1,0 +1,412 @@
+{
+  "Navigation": {
+    "home": "Strona główna",
+    "solutions": "Rozwiązania",
+    "insights": "Materiały",
+    "contact": "Kontakt"
+  },
+  "Navbar": {
+    "home": "Strona główna",
+    "statistics": "Statystyki",
+    "articles": "Artykuły",
+    "contact": "Kontakt",
+    "primaryCta": "ZADAJ PYTANIE",
+    "secondaryCta": "Zobacz rozwiązania",
+    "linkedin": "Poznaj nas na LinkedIn",
+    "phone": "Zadzwoń do specjalisty",
+    "email": "Napisz do nas",
+    "openMenu": "Otwórz menu",
+    "closeMenu": "Zamknij menu"
+  },
+  "Hero": {
+    "trust": "Wspierane przez wiodące technologie branżowe",
+    "eyebrow": "Infrastruktura rekrutacji pacjentów",
+    "headline": "Rekrutuj szybciej. Utrzymuj dłużej.",
+    "subheadline": "Pomagamy zespołom badawczym szybciej rekrutować pacjentów, osiągać cele rekrutacyjne i wzmacniać relacje ze sponsorami dzięki połączonym systemom rekrutacji.",
+    "cta": "Umów rozmowę"
+  },
+  "Challenges": {
+    "headline": "Rekrutacja nie powinna być powodem, przez który Twoja placówka",
+    "headlineHighlight": "zostaje w tyle.",
+    "description": "Problemy z rekrutacją oznaczają więcej niż opóźnienia. Zwiększają obciążenie operacyjne, osłabiają zaufanie sponsorów i ograniczają zdolność placówki do regularnej realizacji badań.",
+    "cards": {
+      "patientReach": {
+        "title": "Dotarcie do pacjentów",
+        "description": "Odpowiedni pacjenci istnieją, ale tradycyjne metody rekrutacji utrudniają ich regularne pozyskiwanie i angażowanie."
+      },
+      "patientQuality": {
+        "title": "Jakość pacjentów",
+        "description": "Samo zainteresowanie pacjenta nie oznacza kwalifikacji. Bez wstępnej selekcji zespoły tracą czas na osoby, które mogą nie spełniać kryteriów."
+      },
+      "manualOverload": {
+        "title": "Ręczna koordynacja",
+        "description": "Ręczna koordynacja zwiększa obciążenie zespołu i utrudnia utrzymanie zaangażowania pacjentów podczas badania."
+      },
+      "fragmentedSystems": {
+        "title": "Rozproszone systemy",
+        "description": "Niepołączone narzędzia utrudniają śledzenie, zarządzanie i skalowanie rekrutacji w wielu badaniach."
+      }
+    }
+  },
+  "Impact": {
+    "headline": "Wyniki rekrutacji kształtują",
+    "headlineHighlight": "przyszłość Twojej placówki.",
+    "description": "Skuteczność rekrutacji wpływa na zaufanie sponsorów, możliwości udziału w nowych badaniach oraz zdolność do regularnej realizacji projektów badawczych.",
+    "sourcedFrom": "ŹRÓDŁA",
+    "metrics": {
+      "timeline": "Badań nie osiąga terminów rekrutacji",
+      "expectations": "Placówek nie spełnia oczekiwań",
+      "awareness": "Pacjentów nie wie o możliwości udziału w badaniach klinicznych",
+      "cost": "Koszt dla sponsora za każdy dzień opóźnienia badania"
+    },
+    "testimonials": {
+      "dombernowsky": {
+        "role": "Therapeutic Innovation & Regulatory Science",
+        "name": "Dombernowsky i współautorzy",
+        "quote": "Czynniki związane z rekrutacją mają kluczowe znaczenie podczas oceny ośrodków badawczych w procesie wyboru placówek."
+      },
+      "chaudhari": {
+        "role": "Perspectives in Clinical Research",
+        "name": "Chaudhari i współautorzy",
+        "quote": "Rekrutacja i utrzymanie uczestników należą do głównych wyzwań podczas prowadzenia badań klinicznych."
+      },
+      "lamberti": {
+        "role": "Tufts CSDD",
+        "name": "Mary Jo Lamberti",
+        "quote": "Potrzeba przebadać większą liczbę pacjentów, aby uzyskać tę samą liczbę pacjentów kończących badanie."
+      }
+    }
+  },
+  "Solution": {
+    "headline": "Kompletna",
+    "headlineHighlight": "infrastruktura rekrutacji",
+    "headlineEnd": "zbudowana i zarządzana wokół Twojej placówki.",
+    "description": "Weforge obsługuje pozyskiwanie pacjentów, wstępną kwalifikację, komunikację oraz procesy rekrutacyjne, pomagając zespołowi skupić się na odpowiednich uczestnikach i ograniczyć ręczną pracę.",
+    "items": {
+      "patientAcquisition": {
+        "title": "Pozyskiwanie pacjentów",
+        "description": "Pomagamy docierać do potencjalnych uczestników poprzez ukierunkowane kanały rekrutacji dopasowane do prowadzonych badań."
+      },
+      "smartQualification": {
+        "title": "Inteligentna kwalifikacja",
+        "description": "Tworzymy procesy wstępnej kwalifikacji dopasowane do badań, aby zespoły mogły skupić się na pacjentach najlepiej odpowiadających wymaganiom."
+      },
+      "patientEngagement": {
+        "title": "Zaangażowanie pacjentów",
+        "description": "Budujemy uporządkowane procesy komunikacji, które ograniczają ręczną koordynację i pomagają utrzymać zaangażowanie uczestników."
+      },
+      "recruitmentOperations": {
+        "title": "Operacje rekrutacyjne",
+        "description": "Łączymy ścieżki pacjentów i procesy rekrutacji w jeden system, zapewniając zespołowi większą kontrolę i możliwość skalowania."
+      }
+    }
+  },
+  "SolutionVisuals": {
+    "operations": {
+      "study": "Badanie: Atopowe zapalenie skóry",
+      "active": "Aktywna rekrutacja",
+      "progress": "Postęp rekrutacji",
+      "patients": {
+        "prescreened": "Po wstępnej ocenie",
+        "qualified": "Zakwalifikowani",
+        "scheduled": "Umówieni"
+      },
+      "metrics": {
+        "enrolled": "Włączeni",
+        "weeklyProgress": "Postęp tygodniowy"
+      }
+    },
+    "acquisition": {
+      "eyebrow": "Kanały pozyskiwania",
+      "title": "Zasięg rekrutacji",
+      "description": "Zwiększanie zasięgu i identyfikacja potencjalnych uczestników badania.",
+      "addStudy": "Dodaj badanie",
+      "metrics": {
+        "search": "Ruch z wyszukiwania",
+        "engagement": "Zaangażowanie",
+        "visits": "Odwiedziny strony",
+        "fit": "Potencjalnie pasujący"
+      }
+    },
+    "engagement": {
+      "patient": "Pacjent",
+      "enrolled": "Włączony",
+      "steps": {
+        "welcome": "Wiadomość powitalna wysłana",
+        "reminder": "Przypomnienie zaplanowane",
+        "visit": "Wizyta potwierdzona"
+      },
+      "statusTitle": "Status zaangażowania",
+      "completed": "Zakończone",
+      "status": {
+        "sms": "SMS wysłany",
+        "email": "Email wysłany",
+        "visit": "Wizyta potwierdzona"
+      }
+    },
+    "qualification": {
+      "studyPage": "Strona badania",
+      "study": "Cukrzyca typu 2",
+      "button": "Sprawdź kwalifikację",
+      "flowTitle": "Proces kwalifikacji",
+      "patient": "Pacjent",
+      "steps": {
+        "criteria": "Sprawdzanie kryteriów",
+        "responses": "Analiza odpowiedzi",
+        "matching": "Dopasowanie do badania"
+      },
+      "results": {
+        "patient01": {
+          "name": "Pacjent 01",
+          "status": "Kwalifikuje się"
+        },
+        "patient02": {
+          "name": "Pacjent 02",
+          "status": "Do sprawdzenia"
+        }
+      }
+    }
+  },
+  "TherapeuticAreas": {
+    "headline": "Stworzone, aby dopasować się do Twoich",
+    "headlineHighlight": "badań.",
+    "description": "Weforge wspiera procesy rekrutacji w różnych obszarach terapeutycznych i typach badań, pomagając ośrodkom tworzyć uporządkowane systemy dopasowane do ich pracy.",
+    "cta": "Omów swoje potrzeby",
+
+    "items": {
+      "oncology": "Onkologia",
+      "hematology": "Hematologia",
+      "cardiology": "Kardiologia",
+      "cardiovascular": "Układ sercowo-naczyniowy",
+      "neurology": "Neurologia",
+      "psychiatry": "Psychiatria",
+      "cns": "Centralny układ nerwowy",
+      "endocrinology": "Endokrynologia",
+      "metabolism": "Metabolizm",
+      "gastroenterology": "Gastroenterologia",
+      "hepatology": "Hepatologia",
+      "nephrology": "Nefrologia",
+      "urology": "Urologia",
+      "pulmonology": "Pulmonologia",
+      "infectious": "Choroby zakaźne",
+      "immunology": "Immunologia",
+      "rheumatology": "Reumatologia",
+      "dermatology": "Dermatologia",
+      "ophthalmology": "Okulistyka",
+      "otolaryngology": "Laryngologia",
+      "rare": "Choroby rzadkie",
+      "diabetology": "Diabetologia",
+      "obesity": "Otyłość"
+    }
+  },
+  "WhyChoose": {
+  "headline": "Fundament",
+  "headlineHighlight": "niezawodnej rekrutacji.",
+  "description": "Dbamy o standardy bezpieczeństwa, kontroli i zgodności wymagane w badaniach klinicznych.",
+  "cta": "Porozmawiaj z naszym zespołem",
+
+  "reasons": {
+    "gdpr": {
+      "title": "Zgodność z GDPR",
+      "body": "Projektowane z myślą o prywatności oraz odpowiedzialnym zbieraniu, przetwarzaniu i zarządzaniu danymi pacjentów."
+    },
+    "control": {
+      "title": "Systemy pod kontrolą klienta",
+      "body": "Połączone systemy stworzone tak, aby Twój zespół zachował kontrolę nad infrastrukturą, dostępem i informacjami pacjentów."
+    },
+    "integration": {
+      "title": "Płynna integracja",
+      "body": "Infrastruktura rekrutacyjna dopasowana do obecnych procesów, pomagająca zespołowi pracować bez zakłóceń."
+    },
+    "security": {
+      "title": "Bezpieczna infrastruktura",
+      "body": "Budowana na sprawdzonych technologiach i praktykach bezpieczeństwa wspierających obsługę wrażliwych informacji."
+    }
+  }
+},
+"HowItWorks": {
+  "eyebrow": "PODEJŚCIE WEFORGE",
+  "headline": "Lepsza rekrutacja bez",
+  "headlineHighlight": "zakłócania pracy placówki.",
+  "description": "Budujemy i optymalizujemy infrastrukturę rekrutacji, podczas gdy Twój zespół skupia się na prowadzeniu badań klinicznych.",
+  "cta": "Umów rozmowę",
+
+  "steps": {
+    "discover": {
+      "title": "Analiza",
+      "description": "Poznajemy Twoje badania, cele rekrutacyjne i obecne procesy, aby stworzyć system dopasowany do placówki."
+    },
+    "implement": {
+      "title": "Wdrożenie",
+      "description": "Tworzymy strony rekrutacyjne, procesy kwalifikacji, komunikację z pacjentami oraz system operacyjny."
+    },
+    "scale": {
+      "title": "Skalowanie",
+      "description": "Stale rozwijamy system rekrutacji, pomagając zarządzać obecnymi i przyszłymi badaniami."
+    }
+  },
+
+  "visuals": {
+    "workflow": {
+      "studies": "Badania",
+      "goals": "Cele",
+      "processes": "Procesy",
+      "siteReview": "Analiza placówki",
+      "phase": "Etap analizy"
+    },
+    "agent": {
+      "page": "Strona rekrutacji",
+      "qualification": "Proces kwalifikacji",
+      "engagement": "Zaangażowanie pacjenta"
+    },
+    "scale": {
+      "patients": "Pozyskani pacjenci",
+      "growth": "Wzrost"
+    }
+  }
+},
+"InsightsPreview": {
+  "headline": "Pomysły kształtujące",
+  "headlineHighlight": "przyszłość.",
+  "description": "Poznaj materiały dotyczące rekrutacji, zaangażowania pacjentów oraz systemów operacyjnych pomagających placówkom skuteczniej prowadzić badania.",
+  "cta": "Czytaj najnowsze",
+  "articleCta": "Zobacz artykuł",
+
+  "articles": {
+    "strategy": {
+      "category": "Strategia rekrutacji",
+      "title": "Rekrutacja kliniczna to nie tylko problem świadomości.",
+      "description": "Badania kliniczne znacząco rozwinęły się w ostatniej dekadzie, a projekty badawcze stają się coraz bardziej..."
+    },
+    "enrollment": {
+      "category": "Rekrutacja pacjentów",
+      "title": "Dlaczego rekrutacja zawodzi po zainteresowaniu pacjenta?",
+      "description": "Zainteresowanie pacjenta jest ważnym etapem procesu rekrutacji do badania klinicznego. Oznacza..."
+    },
+    "infrastructure": {
+      "category": "Infrastruktura cyfrowa",
+      "title": "Dlaczego więcej technologii nie zawsze zmniejsza złożoność?",
+      "description": "Nowe technologie zwykle wdraża się z prostym celem: aby ułatwić pracę. Jednak..."
+    }
+  }
+},
+"FinalCTA": {
+  "headline": "Spraw, aby rekrutacja była powodem, dla którego sponsorzy",
+  "headlineHighlight": "ufają Twojej placówce.",
+  "description": "Wzmocnij możliwości rekrutacyjne swojej placówki dzięki infrastrukturze zaprojektowanej, aby poprawiać wyniki rekrutacji i wspierać skuteczną realizację badań.",
+  "cta": "Umów rozmowę"
+},
+"Footer": {
+  "description": "Budujemy infrastrukturę rekrutacyjną, której ośrodki kliniczne potrzebują, aby skuteczniej rekrutować, zarządzać i realizować badania.",
+  "cta": "Porozmawiaj z naszym zespołem",
+
+  "resources": "Materiały",
+  "compliance": "Zgodność",
+
+  "navigation": {
+    "home": "Strona główna",
+    "solutions": "Rozwiązania",
+    "articles": "Artykuły",
+    "contact": "Kontakt"
+  },
+
+  "policies": {
+    "privacy": "Polityka prywatności",
+    "terms": "Regulamin",
+    "cookies": "Polityka cookies"
+  },
+
+  "newsletter": {
+    "title": "Wiedza kliniczna",
+    "description": "Bądź na bieżąco z tematami dotyczącymi rekrutacji klinicznej.",
+    "placeholder": "Wpisz swój email",
+    "subscribe": "Subskrybuj",
+    "consent": "Subskrybując, akceptujesz naszą"
+  },
+
+  "rights": "Wszelkie prawa zastrzeżone."
+},
+"Contact": {
+  "headline": "Jesteśmy",
+  "headlineHighlight": "jedno kliknięcie",
+  "headlineEnd": "od rozmowy.",
+  "description": "Porozmawiajmy o Twoich wyzwaniach rekrutacyjnych, celach operacyjnych i o tym, jak Weforge może wesprzeć procesy badań klinicznych."
+},
+"ContactForm": {
+  "email": "Email",
+  "phone": "Telefon",
+  "location": "Lokalizacja",
+
+  "name": "Imię",
+  "namePlaceholder": "Twoje imię",
+
+  "emailPlaceholder": "ty@firma.com",
+
+  "roleQuestion": "Co najlepiej Cię opisuje?",
+
+  "roles": {
+    "site": "Ośrodek badań klinicznych",
+    "cro": "CRO",
+    "sponsor": "Sponsor",
+    "other": "Inne"
+  },
+
+  "message": "Wiadomość",
+  "messagePlaceholder": "Opowiedz nam o swoich celach rekrutacyjnych...",
+
+  "consentStart": "Wysyłając formularz akceptujesz naszą",
+  "and": "oraz",
+  "privacy": "Politykę Prywatności",
+
+"terms": "Regulamin",
+
+  "send": "Wyślij wiadomość",
+  "sending": "Wysyłanie..."
+},
+"Blog": {
+
+  "eyebrow": "Materiały",
+
+  "headline": "Pomysły kształtujące przyszłość",
+
+  "headlineHighlight": "badań klinicznych.",
+
+  "description": "Poznaj materiały dotyczące wyzwań rekrutacyjnych, zaangażowania pacjentów oraz infrastruktury pomagającej ośrodkom klinicznym skuteczniej realizować badania.",
+
+  "categories": {
+
+    "recruitment": {
+
+      "title": "Rekrutacja pacjentów",
+
+      "description": "Strategie i wiedza dotyczące poprawy dotarcia do pacjentów, kwalifikacji, rekrutacji oraz systemów stojących za skutecznym pozyskiwaniem uczestników."
+
+    },
+
+    "operations": {
+
+      "title": "Operacje kliniczne",
+
+      "description": "Analiza procesów, przepływów pracy oraz wyzwań operacyjnych wpływających na sposób prowadzenia badań przez ośrodki."
+
+    },
+
+    "infrastructure": {
+
+      "title": "Infrastruktura cyfrowa",
+
+      "description": "Jak technologia, automatyzacja i połączone systemy mogą wspierać bardziej efektywne i skalowalne operacje badań klinicznych."
+
+    }
+
+  },
+
+  "cta": "Otrzymuj aktualizacje"
+
+},
+"NotFound": {
+  "headline": "Nie znaleziono strony.",
+  "description": "Strona, której szukasz, mogła zostać przeniesiona lub już nie istnieje.",
+  "button": "Wróć na stronę główną"
+}
+}

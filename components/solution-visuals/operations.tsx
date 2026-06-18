@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
+import { useTranslations } from "next-intl";
 import {
   Activity,
   CheckCircle2,
@@ -12,24 +13,25 @@ import {
 
 const patients = [
   {
-    name: "Pre-screened",
+    key: "prescreened",
     value: "126",
     icon: Users,
   },
   {
-    name: "Qualified",
+    key: "qualified",
     value: "48",
     icon: CheckCircle2,
   },
   {
-    name: "Scheduled",
+    key: "scheduled",
     value: "32",
     icon: Clock,
   },
 ];
 
-
 export function RecruitmentOperationsVisual() {
+  const t = useTranslations("SolutionVisuals.operations");
+
   return (
     <div className="relative flex h-full w-full items-center justify-center overflow-hidden">
 
@@ -70,11 +72,11 @@ export function RecruitmentOperationsVisual() {
 
             <div>
               <p className="font-body text-sm font-medium text-brand-cocoa">
-                Study: Atopic Dermatitis 
+              {t("study")}
               </p>
 
               <p className="mt-1 font-body text-xs text-brand-muted">
-                Active recruitment
+              {t("active")}
               </p>
             </div>
 
@@ -92,7 +94,7 @@ export function RecruitmentOperationsVisual() {
 
           <div className="mb-3 flex justify-between">
             <span className="text-xs text-brand-muted">
-              Enrollment Progress
+            {t("progress")}
             </span>
 
             <span className="text-xs text-brand-orange">
@@ -138,7 +140,7 @@ export function RecruitmentOperationsVisual() {
 
             return (
               <motion.div
-                key={patient.name}
+              key={patient.key}
                 animate={{
                   opacity: [0.5, 1, 1, 0.5],
                   x: [-8, 0, 0, -8],
@@ -169,7 +171,7 @@ export function RecruitmentOperationsVisual() {
     text-xs
     text-brand-cocoa
   ">
-    {patient.name}
+    {t(`patients.${patient.key}`)}
   </p>
 
   <p className="
@@ -196,14 +198,14 @@ export function RecruitmentOperationsVisual() {
 
 {/* OPERATION METRICS */}
 {[
-  {
-    label: "Enrolled",
-    value: "48",
-    position: "left-12 top-36",
-  },
+ {
+  label: "enrolled",
+  value: "48",
+  position: "left-12 top-36",
+},
   {
 
-    label: "Weekly progress",
+    label: "weeklyProgress",
   
     value: "graph",
   
@@ -213,7 +215,7 @@ export function RecruitmentOperationsVisual() {
 ].map((metric, index) => (
 
 <motion.div
-  key={metric.label}
+  key={t(`metrics.${metric.label}`)}
 
   className={`
     absolute
@@ -240,7 +242,7 @@ export function RecruitmentOperationsVisual() {
 >
 
 <p className="text-xs text-brand-muted">
-  {metric.label}
+  {t(`metrics.${metric.label}`)}
 </p>
 
 {metric.value === "graph" ? (

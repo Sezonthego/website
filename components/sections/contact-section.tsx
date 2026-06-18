@@ -5,18 +5,19 @@ import { ArrowRight, CheckCircle2, Mail, MapPin, Phone } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { AnimatePresence, motion } from "motion/react";
+import { useTranslations } from "next-intl";
 
 const roleOptions = [
-  { value: "site", label: "Site" },
-  { value: "cro", label: "CRO" },
-  { value: "sponsor", label: "Sponsor" },
-  { value: "other", label: "Other" },
+  "site",
+  "cro",
+  "sponsor",
+  "other",
 ] as const;
 
 type FormState = {
   name: string;
   email: string;
-  role: string;
+  role: (typeof roleOptions)[number];
   message: string;
   website: string;
 };
@@ -30,6 +31,7 @@ const initialForm: FormState = {
 };
 
 export const ContactSection = () => {
+  const t = useTranslations("ContactForm");
   const [roleOpen, setRoleOpen] = useState(false);
   const [form, setForm] = useState<FormState>(initialForm);
   const [status, setStatus] = useState<
@@ -105,19 +107,19 @@ export const ContactSection = () => {
           <ul className=" divide-y divide-brand-border border-b border-brand-border">
             <ContactDetail
               icon={<Mail className="size-5" />}
-              label="Email"
+              label={t("email")}
               value="contact@weforgeclinical.pl"
               href="mailto:contact@weforgeclinical.pl"
             />
             <ContactDetail
               icon={<Phone className="size-5" />}
-              label="Phone"
+              label={t("phone")}
               value="+48 792 586 357"
               href="tel:+48792586357"
             />
             <ContactDetail
               icon={<MapPin className="size-5" />}
-              label="Location"
+              label={t("location")}
               value="Warsaw, Poland"
             />
           </ul>
@@ -182,39 +184,39 @@ export const ContactSection = () => {
                 className="hidden"
               />
 
-                <Field label="Name" required>
-                  <input
-                    type="text"
-                    name="name"
-                    required
-                    value={form.name}
-                    onChange={(e) =>
-                      setForm((f) => ({ ...f, name: e.target.value }))
-                    }
-                    className={inputClass}
-                    placeholder="Your name"
-                  />
-                </Field>
+              <Field label={t("name")} required>
+                <input
+                  type="text"
+                  name="name"
+                  required
+                  value={form.name}
+                  onChange={(e) =>
+                    setForm((f) => ({ ...f, name: e.target.value }))
+                  }
+                  className={inputClass}
+                  placeholder={t("namePlaceholder")}
+                />
+              </Field>
 
-                <Field label="Email" required>
-                  <input
-                    type="email"
-                    name="email"
-                    required
-                    value={form.email}
-                    onChange={(e) =>
-                      setForm((f) => ({ ...f, email: e.target.value }))
-                    }
-                    className={inputClass}
-                    placeholder="you@company.com"
-                  />
-                </Field>
-                <Field label="Which best describes you?">
-                  <div className="relative">
-                    <button
-                      type="button"
-                      onClick={() => setRoleOpen((open) => !open)}
-                      className="
+              <Field label="Email" required>
+                <input
+                  type="email"
+                  name="email"
+                  required
+                  value={form.email}
+                  onChange={(e) =>
+                    setForm((f) => ({ ...f, email: e.target.value }))
+                  }
+                  className={inputClass}
+                  placeholder={t("emailPlaceholder")}
+                />
+              </Field>
+              <Field label={t("roleQuestion")}>
+                <div className="relative">
+                  <button
+                    type="button"
+                    onClick={() => setRoleOpen((open) => !open)}
+                    className="
         flex
         w-full
         items-center
@@ -228,40 +230,38 @@ export const ContactSection = () => {
         text-sm
         text-brand-cocoa
       "
-                    >
-                      {
-                        roleOptions.find(
-                          (option) => option.value === form.role
-                        )?.label
-                      }
+                  >
+                    {
+                      t(`roles.${form.role}`)
+                    }
 
-                      <span className="text-brand-orange">
-                        ↓
-                      </span>
-                    </button>
-                    <AnimatePresence>
-                      {roleOpen && (
-                        <motion.div
-                          initial={{
-                            opacity: 0,
-                            y: -8,
-                            scale: 0.98,
-                          }}
-                          animate={{
-                            opacity: 1,
-                            y: 0,
-                            scale: 1,
-                          }}
-                          exit={{
-                            opacity: 0,
-                            y: -8,
-                            scale: 0.98,
-                          }}
-                          transition={{
-                            duration: 0.25,
-                            ease: [0.22, 1, 0.36, 1],
-                          }}
-                          className="
+                    <span className="text-brand-orange">
+                      ↓
+                    </span>
+                  </button>
+                  <AnimatePresence>
+                    {roleOpen && (
+                      <motion.div
+                        initial={{
+                          opacity: 0,
+                          y: -8,
+                          scale: 0.98,
+                        }}
+                        animate={{
+                          opacity: 1,
+                          y: 0,
+                          scale: 1,
+                        }}
+                        exit={{
+                          opacity: 0,
+                          y: -8,
+                          scale: 0.98,
+                        }}
+                        transition={{
+                          duration: 0.25,
+                          ease: [0.22, 1, 0.36, 1],
+                        }}
+                        className="
         absolute
         z-50
         mt-2
@@ -271,124 +271,104 @@ export const ContactSection = () => {
         border-brand-border
         bg-brand-ivory
       "
-                        >
-                          {roleOptions.map((option) => (
-                            <button
-                              key={option.value}
-                              type="button"
-                              onClick={() => {
-                                setForm((f) => ({
-                                  ...f,
-                                  role: option.value,
-                                }));
-                                setRoleOpen(false);
-                              }}
-                              className="
-              block
-              w-full
-              px-4
-              py-3
-              text-left
-              text-sm
-              transition-colors
-              hover:bg-[#FFF0E8]
-              hover:text-brand-orange
-            "
-                            >
-                              {option.label}
-                            </button>
-                          ))}
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
-                  </div>
-                </Field>
+                      >
+                        {roleOptions.map((option) => (
+                          <button
+                            key={option}
+                            type="button"
+                            onClick={() => {
+                              setForm((f) => ({
+                                ...f,
+                                role: option,
+                              }));
+                              setRoleOpen(false);
+                            }}
+                            className="
+      block
+      w-full
+      px-4
+      py-3
+      text-left
+      text-sm
+      transition-colors
+      hover:bg-[#FFF0E8]
+      hover:text-brand-orange
+    "
+                          >
+                            {t(`roles.${option}`)}
+                          </button>
+                        ))}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              </Field>
 
-                <Field label="Message" required>
+              <Field label={t("message")} required>
 
-                  <textarea
+                <textarea
 
-                    name="message"
+                  name="message"
 
-                    required
+                  required
 
-                    rows={4}
+                  rows={4}
 
-                    value={form.message}
-                    onChange={(e) =>
-                      setForm((f) => ({ ...f, message: e.target.value }))
-                    }
-                    className={cn(inputClass, "min-h-[132px] resize-y")}
-                    placeholder="Tell us about your recruitment goals..."
-                  />
-                </Field>
+                  value={form.message}
+                  onChange={(e) =>
+                    setForm((f) => ({ ...f, message: e.target.value }))
+                  }
+                  className={cn(inputClass, "min-h-[132px] resize-y")}
+                  placeholder={t("messagePlaceholder")}
+                />
+              </Field>
 
-                {status === "error" && errorMessage && (
-                  <p className="text-sm text-destructive" role="alert">
-                    {errorMessage}
-                  </p>
-                )}
-
-                <p className="text-xs leading-5 text-brand-muted">
-
-                  By submitting you agree with our{" "}
-
-                  <Link
-
-                    href="/privacy"
-
-                    className="
-
-    underline
-
-    underline-offset-4
-
-    transition-colors
-
-    hover:text-brand-orange
-
-  "
-
-                  >
-
-                    Privacy Policy
-
-                  </Link>{" "}
-
-                  and{" "}
-
-                  <Link
-
-                    href="/terms"
-
-                    className="
-
-    underline
-
-    underline-offset-4
-
-    transition-colors
-
-    hover:text-brand-orange
-
-  "
-
-                  >
-
-                    Terms &amp; Conditions
-
-                  </Link>
-
-                  .
-
+              {status === "error" && errorMessage && (
+                <p className="text-sm text-destructive" role="alert">
+                  {errorMessage}
                 </p>
-                <button
+              )}
 
-                  type="submit"
+              <p className="text-xs leading-5 text-brand-muted">
 
-                  disabled={status === "submitting"}
+                {t("consentStart")}{" "}
 
+                <Link
+                  href="/privacy"
                   className="
+    underline
+    underline-offset-4
+    transition-colors
+    hover:text-brand-orange
+  "
+                >
+                  {t("privacy")}
+                </Link>{" "}
+
+                {t("and")}{" "}
+
+                <Link
+                  href="/terms"
+                  className="
+    underline
+    underline-offset-4
+    transition-colors
+    hover:text-brand-orange
+  "
+                >
+                  {t("terms")}
+                </Link>
+
+                .
+
+              </p>
+              <button
+
+                type="submit"
+
+                disabled={status === "submitting"}
+
+                className="
 
     inline-flex
 
@@ -422,13 +402,13 @@ export const ContactSection = () => {
 
   "
 
-                >
+              >
 
-                  {status === "submitting" ? "Sending..." : "Send message"}
+                {status === "submitting" ? t("sending") : t("send")}
 
-                  <ArrowRight className="size-4" />
+                <ArrowRight className="size-4" />
 
-                </button>
+              </button>
             </form>
           )}
         </div>

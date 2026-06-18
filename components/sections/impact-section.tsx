@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { useTranslations, useLocale } from "next-intl";
 
 import {
   ArrowLeft,
@@ -20,32 +21,21 @@ import { cn } from "@/lib/utils";
 
 
 const metrics = [
-  { value: "80%", label: "Trials miss enrollment timelines" },
-  { value: "48%", label: "Sites miss the expectations" },
-  { value: "85%", label: "Patients unaware of clinical trials" },
-  { value: "$40K+", label: "Sponsor cost per delay trial day" },
+  { value: "80%", key: "timeline" },
+  { value: "48%", key: "expectations" },
+  { value: "85%", key: "awareness" },
+  { value: "$40K+", key: "cost" },
 ] as const;
 
 
 const testimonials = [
-  {
-    role: "Therapeutic Innovation & Regulatory Science",
-    name: "Dombernowsky et al.",
-    quote:
-      "Recruitment-related factors are pivotal when assessing trial sites during site selection.",
-  },
-  {
-    role: "Perspectives in Clinical Research",
-    name: "Chaudhari et al.",
-    quote:
-      "Participant recruitment and retention are two major bottlenecks in conducting clinical trials.",
-  },
-  {
-    role: "Tufts CSDD",
-    name: "Mary Jo Lamberti",
-    quote:
-      "It takes more patients to be screened in order to get the same number of completed patients.",
-  },
+
+  { key: "dombernowsky" },
+
+  { key: "chaudhari" },
+
+  { key: "lamberti" },
+
 ] as const;
 
 
@@ -115,18 +105,31 @@ function AnimatedMetric({ value }: { value: string }) {
 
 
 function ProviderImpact() {
+  const t = useTranslations("Impact");
+  const locale = useLocale();
   return (
     <>
       <div className="border-b border-brand-border px-6 py-14 text-center md:py-15">
 
-        <h2 className="mx-auto mt-5 max-w-5xl font-heading text-[clamp(2.5rem,5vw,3.2rem)] font-[600] leading-[1.2] tracking-[-0.04em] text-brand-cocoa">
-          Performance shapes your{" "}
-          <span className="text-brand-orange"> site's future.</span>
+      <h2
+  className={`
+    mx-auto
+    mt-5
+    ${locale === "pl" ? "max-w-4xl" : "max-w-4xl"}
+    font-heading
+    text-[clamp(2.5rem,5vw,3.2rem)]
+    font-[600]
+    leading-[1.2]
+    tracking-[-0.04em]
+    text-brand-cocoa
+  `}
+>
+        {t("headline")}{" "}
+        <span className="text-brand-orange">{t("headlineHighlight")}</span>
         </h2>
 
         <p className="mx-auto mt-6 max-w-[600px] font-body text-base font-light leading-[1.7] text-brand-muted md:text-[16px]">
-          Enrollment performance influences sponsor trust, study opportunities,
-          and your ability to deliver research consistently.
+        {t("description")}
         </p>
 
       </div>
@@ -137,7 +140,7 @@ function ProviderImpact() {
         {metrics.map((metric, index) => (
 
           <div
-            key={metric.label}
+          key={metric.key}
             className={cn(
               "border-b border-brand-border px-5 py-8 md:px-12 lg:pl-12 lg:pr-5 lg:border-b-0",
 
@@ -154,7 +157,7 @@ function ProviderImpact() {
             </p>
 
             <p className="mt-3 font-body text-base font-light leading-[1.7] text-brand-muted lg:max-w-[260px]">
-              {metric.label}
+            {t(`metrics.${metric.key}`)}
             </p>
 
           </div>
@@ -172,6 +175,8 @@ function ProviderImpact() {
 
 
 function TestimonialBand() {
+  const t = useTranslations("Impact");
+
   const [activeIndex, setActiveIndex] = useState(0);
 
   const active = testimonials[activeIndex];
@@ -322,7 +327,7 @@ function TestimonialBand() {
     
           <div>
           <p className="font-body text-sm pt-1.5 font-medium uppercase tracking-[0.12em] text-brand-muted/80">
-            SOURCED FROM
+          {t("sourcedFrom")}
       </p>
     
       <div className="relative mt-8 h-[90px] overflow-hidden">
@@ -369,16 +374,16 @@ function TestimonialBand() {
                 }}
               >
                 <blockquote className="max-w-4xl font-body text-lg font-normal leading-[1.7] text-brand-cocoa md:text-[18px]">
-                  &ldquo;{active.quote}&rdquo;
+                &ldquo;{t(`testimonials.${active.key}.quote`)}&rdquo;
                 </blockquote>
     
                 <div className="mt-6">
                   <p className="font-body text-sm font-normal text-brand-cocoa">
-                    {active.name}
+                  {t(`testimonials.${active.key}.name`)}
                   </p>
     
                   <p className="mt-1 font-body text-sm font-light leading-[1.6] text-brand-muted">
-                    {active.role}
+                  {t(`testimonials.${active.key}.role`)}
                   </p>
                 </div>
               </motion.div>
@@ -410,7 +415,7 @@ function TestimonialBand() {
               {testimonials.map((testimonial, index) => (
                 <button
                   type="button"
-                  key={testimonial.name}
+                  key={testimonial.key}
                   aria-label={`Show testimonial ${index + 1}`}
                   aria-current={activeIndex === index ? "true" : undefined}
                   onClick={() => setActiveIndex(index)}

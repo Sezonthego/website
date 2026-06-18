@@ -1,13 +1,13 @@
-import Image from "next/image";
+"use client";
 
+import Image from "next/image";
+import { useTranslations, useLocale } from "next-intl";
 import { BorderPlus } from "@/components/border-plus";
 import { cn } from "@/lib/utils";
 
 const problemCards = [
   {
-    title: "Patient Reach",
-    description:
-      "The right patients are out there, but traditional recruitment makes it difficult to consistently reach and engage them.",
+      key: "patientReach",
     image: "/assets/patient-reach-blur-2.svg",
     imageAlt: "Patient reach illustration",
     width: 380,
@@ -15,9 +15,7 @@ const problemCards = [
     imageSize: "max-w-[280px]",
   },
   {
-    title: "Patient Quality",
-    description:
-      "Patient interest doesn’t guarantee enrollment. Without qualification, teams spend time on patients who may not fit.",
+    key: "patientQuality",
     image: "/assets/patient-quality-blur-2.svg",
     imageAlt: "Patient quality illustration",
     width: 450,
@@ -25,9 +23,7 @@ const problemCards = [
     imageSize: "max-w-[270px]",
   },
   {
-    title: "Manual Overload",
-    description:
-      "Manual coordination increases workload and makes it harder to keep patients engaged throughout the study.",
+    key: "manualOverload",
     image: "/assets/manual-overload-blur-2.svg",
     imageAlt: "Manual overload illustration",
     width: 410,
@@ -35,9 +31,7 @@ const problemCards = [
     imageSize: "max-w-[250px]",
   },
   {
-    title: "Fragmented Systems",
-    description:
-      "Disconnected tools make recruitment harder to track, manage, and scale across studies.",
+    key: "fragmentedSystems",
     image: "/assets/fragmented-systems-blur-2.svg",
     imageAlt: "Fragmented systems illustration",
     width: 410,
@@ -48,19 +42,33 @@ const problemCards = [
 
 
 function ScaleYourPractice() {
+  const t = useTranslations("Challenges");
+  const locale = useLocale();
+  console.log(t("headline"));
   return (
     <>
       <div className="border-b border-brand-border px-6 py-14 text-center md:py-15">
 
-        <h2 className="mx-auto mt-5 max-w-3xl font-heading text-[clamp(2.5rem,5vw,3.2rem)] font-[600] leading-[1.2] tracking-[-0.04em] text-brand-cocoa">
-          Recruitment shouldn&apos;t be the reason your site{" "}
-          <span className="text-brand-orange">falls behind.</span>
+      <h2
+  className={`
+    mx-auto
+    mt-5
+    ${locale === "pl" ? "max-w-5xl" : "max-w-3xl"}
+    font-heading
+    text-[clamp(2.5rem,5vw,3.2rem)]
+    font-[600]
+    leading-[1.2]
+    tracking-[-0.04em]
+    text-brand-cocoa
+  `}
+>
+        {t("headline")}{" "}
+
+<span className="text-brand-orange">{t("headlineHighlight")}</span>
         </h2>
 
         <p className="mx-auto mt-6 max-w-[680px] font-body text-base font-light leading-[1.7] text-brand-muted md:text-[16px]">
-          Enrollment challenges create more than delays. They increase operational
-          pressure, weaken sponsor confidence, and limit your site&apos;s ability to
-          deliver studies consistently.
+        {t("description")}
         </p>
 
       </div>
@@ -70,7 +78,7 @@ function ScaleYourPractice() {
 
         {problemCards.map((card, index) => (
           <article
-            key={card.title}
+            key={t(`cards.${card.key}.title`)}
             className={cn(
               "border-brand-border",
 
@@ -119,11 +127,11 @@ function ScaleYourPractice() {
             <div className="px-7 py-8 pb-14">
 
               <h3 className="font-base text-[20px] font-[500] leading-[1.15] tracking-[-0.03em] text-brand-cocoa">
-                {card.title}
+              {t(`cards.${card.key}.title`)}
               </h3>
 
               <p className="mt-3 max-w-[520px] font-body text-[15px] font-light leading-[1.7] text-brand-muted">
-                {card.description}
+              {t(`cards.${card.key}.description`)}
               </p>
 
             </div>

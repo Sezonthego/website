@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
+import { useTranslations } from "next-intl";
 import {
     CheckCircle2,
     ClipboardCheck,
@@ -9,22 +10,21 @@ import {
     MousePointerClick,
   } from "lucide-react";
 
-const patients = [
-  {
-    name: "Patient 01",
-    status: "Eligible",
-    icon: CheckCircle2,
-  },
-  {
-    name: "Patient 02",
-    status: "Review",
-    icon: AlertCircle,
-  },
-];
+  const patients = [
+    {
+      key: "patient01",
+      icon: CheckCircle2,
+    },
+    {
+      key: "patient02",
+      icon: AlertCircle,
+    },
+  ];
 
-export function SmartQualificationVisual() {
-    
-  return (
+  export function SmartQualificationVisual() {
+    const t = useTranslations("SolutionVisuals.qualification");
+      
+    return (
     <div className="relative flex h-full w-full items-center justify-center overflow-hidden">
 
 {/* STUDY / QUALIFICATION CARD */}
@@ -53,11 +53,11 @@ export function SmartQualificationVisual() {
     }}
   >
     <p className="text-xs font-medium uppercase tracking-[0.14em] text-brand-orange">
-      Study page
+    {t("studyPage")}
     </p>
 
     <h3 className="mt-2 font-heading text-3xl font-[500] tracking-[-0.04em] text-brand-cocoa">
-  Type 2 diabetes
+    {t("study")}
 </h3>
 
     <div className="mt-6 space-y-3">
@@ -93,7 +93,7 @@ export function SmartQualificationVisual() {
     ease: "easeInOut",
   }}
 >
-  Check eligibility
+{t("button")}
 </motion.div>
 
 
@@ -174,15 +174,15 @@ export function SmartQualificationVisual() {
     }}
   >
     <p className="text-xs font-medium uppercase tracking-[0.14em] text-brand-orange">
-      Qualification flow
+    {t("flowTitle")}
     </p>
 
     <div className="mt-6 space-y-4">
 
-{[
-  "Checking criteria",
-  "Reviewing responses",
-  "Matching study fit",
+    {[
+  "criteria",
+  "responses",
+  "matching",
 ].map((step, index) => (
 
   <motion.p
@@ -200,7 +200,7 @@ export function SmartQualificationVisual() {
       ease: "easeInOut",
     }}
   >
-    ✓ {step}
+    ✓ {t(`steps.${step}`)}
   </motion.p>
 
 ))}
@@ -240,7 +240,7 @@ export function SmartQualificationVisual() {
       <User className="size-4 text-brand-orange" />
 
       <span className="text-xs text-brand-cocoa">
-        Patient
+      {t("patient")}
       </span>
 
     </motion.div>
@@ -257,7 +257,7 @@ export function SmartQualificationVisual() {
 
           return (
             <motion.div
-              key={patient.name}
+            key={patient.key}
               initial={{
                 opacity: 0,
               
@@ -316,8 +316,7 @@ className="
 "
 
 >
-
-{patient.name}
+{t(`results.${patient.key}.name`)}
 
 </p>
 
@@ -329,7 +328,7 @@ className="
     text-brand-muted
   "
 >
-  {patient.status}
+{t(`results.${patient.key}.status`)}
 </p>
                 </div>
               </div>

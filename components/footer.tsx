@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useTranslations, useLocale } from "next-intl";
 import { Send, Phone, Mail } from "lucide-react";
 import { MessagesSquare } from "lucide-react";
 import {
@@ -14,17 +17,23 @@ import { BorderPlus } from "@/components/border-plus";
 import { cn } from "@/lib/utils";
 
 export const Footer = () => {
+  const t = useTranslations("Footer");
+  const locale = useLocale();
   const navigationItems = [
-    { title: "Home", href: "/" },
-    { title: "Solutions", href: "/#features" },
-    { title: "Articles", href: "/blog" },
-    { title: "Contact", href: "/contact" },
+    { title: t("navigation.home"), href: `/${locale}` },
+    { title: t("navigation.solutions"), href: `/${locale}#features` },
+    { title: t("navigation.articles"), href: `/${locale}/blog` },
+    { title: t("navigation.contact"), href: `/${locale}/contact` },
   ];
 
   const policyItems = [
-    { title: "Privacy Policy", href: "/privacy" },
-    { title: "Terms & Conditions", href: "/terms" },
-    { title: "Cookie Policy", href: "/cookies" },
+
+    { title: t("policies.privacy"), href: `/${locale}/privacy` },
+  
+    { title: t("policies.terms"), href: `/${locale}/terms` },
+  
+    { title: t("policies.cookies"), href: `/${locale}/cookies` },
+  
   ];
 
   return (
@@ -127,7 +136,7 @@ export const Footer = () => {
 
               >
 
-                Building the recruitment infrastructure clinical sites need to recruit, manage, and deliver studies more effectively.
+{t("description")}
 
               </SubHeading>
 
@@ -161,13 +170,13 @@ export const Footer = () => {
     aria-hidden="true"
   />
 
-  Talk with our team
+{t("cta")}
 </Link>
             </div>
 
             <div className="flex flex-col gap-4">
               <div className="text-base font-medium text-brand-peach">
-                Resources
+              {t("resources")}
               </div>
 
               <ul className="flex list-none flex-col gap-2">
@@ -186,7 +195,7 @@ export const Footer = () => {
 
             <div className="col-span-1 flex flex-col gap-4">
               <div className="text-base font-medium text-brand-peach">
-                Compliance
+              {t("compliance")}
               </div>
 
               <ul className="flex list-none flex-col gap-2">
@@ -206,18 +215,18 @@ export const Footer = () => {
             <div className="flex flex-col gap-4">
               <div>
                 <div id="newsletter" className="text-base font-medium text-brand-peach">
-                  Clinical insights
+                {t("newsletter.title")}
                 </div>
 
                 <p className="mt-3 text-sm leading-[1.7] text-brand-peach/65">
-                  Stay informed on the latest in clinical recruitment.
+                {t("newsletter.description")}
                 </p>
               </div>
 
               <div className="relative flex h-12 overflow-hidden bg-brand-ivory">
                 <input
                   type="email"
-                  placeholder="Write your email"
+                  placeholder={t("newsletter.placeholder")}
                   className="
         w-full
         bg-transparent
@@ -245,26 +254,26 @@ export const Footer = () => {
         transition-colors
         hover:bg-brand-orange/90
       "
-                  aria-label="Subscribe"
+      aria-label={t("newsletter.subscribe")}
                 >
                   <Send className="size-4" />
                 </button>
               </div>
 
               <p className="text-xs leading-[1.6] text-brand-peach/45">
-                By subscribing, you agree to our{" "}
-                <Link
-                  href="/privacy"
-                  className="
-        underline
-        underline-offset-4
-        transition-colors
-        hover:text-brand-orange
-      "
-                >
-                  Privacy Policy
-                </Link>.
-              </p>
+  {t("newsletter.consent")}{" "}
+  <Link
+  href={`/${locale}/privacy`}
+  className="
+    underline
+    underline-offset-4
+    transition-colors
+    hover:text-brand-orange
+  "
+>
+    {t("policies.privacy")}
+  </Link>.
+</p>
               <div className="mt-5 flex items-center gap-5">
 
                 {/* Contact */}
@@ -404,19 +413,22 @@ hover:text-brand-orange
     sm:justify-between
   "
 >
-            <p className="text-sm text-brand-peach/60">
-              &copy; {new Date().getFullYear()} Weforge. All rights reserved.
-            </p>
+<p className="text-sm text-brand-peach/60">
+  &copy; {new Date().getFullYear()} Weforge. {t("rights")}
+</p>
 
-            <div className="flex items-center gap-5 text-sm text-brand-peach/60">
-              <Link href="/privacy" className="hover:text-brand-orange">
-                Privacy Policy
-              </Link>
+<div className="flex items-center gap-5 text-sm text-brand-peach/60">
+<Link
+  href={`/${locale}/privacy`}
+  className="hover:text-brand-orange"
+>
+  {t("policies.privacy")}
+</Link>
 
-              <Link href="/terms" className="hover:text-brand-orange">
-                Terms & Conditions
-              </Link>
-            </div>
+  <Link href={`/${locale}/terms`} className="hover:text-brand-orange">
+    {t("policies.terms")}
+  </Link>
+</div>
 
             </div>
 

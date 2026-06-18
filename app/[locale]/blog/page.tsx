@@ -1,33 +1,20 @@
+"use client";
+
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 
 import { BorderPlus } from "@/components/border-plus";
 import { ArrowRight } from "lucide-react";
 
-export const metadata = {
-  title: "Weforge - Clinical Recruitment Insights",
-  description:
-    "Explore insights on patient recruitment, clinical operations, and digital infrastructure helping clinical sites deliver studies more effectively.",
-};
-
 const categories = [
-  {
-    title: "Patient Recruitment",
-    description:
-      "Strategies and insights on improving patient reach, qualification, enrollment, and the systems behind successful recruitment.",
-  },
-  {
-    title: "Clinical Operations",
-    description:
-      "Exploring the workflows, processes, and operational challenges that shape how research sites deliver studies.",
-  },
-  {
-    title: "Digital Infrastructure",
-    description:
-      "How technology, automation, and connected systems can support more efficient and scalable clinical research operations.",
-  },
-];
+  "recruitment",
+  "operations",
+  "infrastructure",
+] as const;
 
 export default function BlogPage() {
+  const t = useTranslations("Blog");
+
   return (
     <div className="min-h-screen bg-brand-ivory text-brand-cocoa">
 
@@ -38,7 +25,7 @@ export default function BlogPage() {
           <BorderPlus className="-left-[11px] -top-[11px]" />
           <BorderPlus className="-right-[11px] -top-[11px]" />
 
-          <div className="px-6 py-20 md:px-12 md:py-28">
+          <div className="px-6 pt-32 pb-20 md:px-12 md:pt-40 md:pb-28">
 
             <p
               className="
@@ -50,7 +37,7 @@ export default function BlogPage() {
                 text-brand-orange
               "
             >
-              Insights
+              {t("eyebrow")}
             </p>
 
             <h1
@@ -65,9 +52,9 @@ export default function BlogPage() {
                 text-brand-cocoa
               "
             >
-              Ideas shaping the future of{" "}
+              {t("headline")}{" "}
               <span className="text-brand-orange">
-                clinical research.
+                {t("headlineHighlight")}
               </span>
             </h1>
 
@@ -82,9 +69,7 @@ export default function BlogPage() {
                 text-brand-muted
               "
             >
-              Explore insights on recruitment challenges, patient engagement,
-              and the infrastructure helping clinical sites deliver studies
-              more effectively.
+              {t("description")}
             </p>
 
           </div>
@@ -113,10 +98,9 @@ export default function BlogPage() {
 
           <div className="grid md:grid-cols-3">
 
-          {categories.map((category, index) => (
+            {categories.map((category, index) => (
               <div
-                key={category.title}
-
+                key={category}
                 className={`
                   min-h-[240px]
                   border-brand-border
@@ -141,32 +125,21 @@ export default function BlogPage() {
                     text-brand-cocoa
                   "
                 >
-                  {category.title}
+                  {t(`categories.${category}.title`)}
                 </p>
 
                 <p
-
-className="
-
-  mt-4
-
-  font-body
-
-  text-[15px]
-
-  font-light
-
-  leading-[1.7]
-
-  text-brand-muted
-
-"
-
->
-
-{category.description}
-
-</p>
+                  className="
+                    mt-4
+                    font-body
+                    text-[15px]
+                    font-light
+                    leading-[1.7]
+                    text-brand-muted
+                  "
+                >
+                  {t(`categories.${category}.description`)}
+                </p>
 
               </div>
             ))}
@@ -199,7 +172,7 @@ className="
               "
             >
 
-              Get notified
+              {t("cta")}
 
               <ArrowRight className="size-4" />
 

@@ -3,6 +3,7 @@
 import { cn } from "@/lib/utils";
 import { IconBrandLinkedin, IconMenu2, IconX } from "@tabler/icons-react";
 import { ArrowRight, MousePointerClick, Phone, Mail } from "lucide-react";
+import { LanguageSwitcher } from "@/components/language-switcher";
 import Link from "next/link";
 import {
   AnimatePresence,
@@ -222,6 +223,7 @@ export const MobileNavToggle = ({
   isOpen: boolean;
   onClick: () => void;
 }) => {
+
   return (
     <button
       type="button"
@@ -285,16 +287,23 @@ export function NavActions({
   primaryLabel = "ASK A QUESTION",
   secondaryHref = "/#solution",
   secondaryLabel = "View solutions",
+  linkedinLabel = "Meet us on LinkedIn",
+  phoneLabel = "Call a specialist",
+  emailLabel = "Write us an email",
 }: {
   primaryHref?: string;
   primaryLabel?: React.ReactNode;
   secondaryHref?: string;
   secondaryLabel?: React.ReactNode;
+  linkedinLabel?: string;
+  phoneLabel?: string;
+  emailLabel?: string;
 }) {
   const visible = useNavVisible();
 
   return (
-    <div className="relative z-20 flex shrink-0 items-center">     <Link
+    <div className="relative z-20 flex shrink-0 items-center">
+        <Link
       href="https://www.linkedin.com/company/weforgeclinical/"
       target="_blank"
       className="
@@ -337,7 +346,7 @@ export function NavActions({
       group-hover:opacity-100
     "
       >
-        Meet us on LinkedIn
+        {linkedinLabel}
       </span>
     </Link>
       <Link
@@ -382,7 +391,7 @@ export function NavActions({
       group-hover:opacity-100
     "
         >
-          Call a specialist
+          {phoneLabel}
         </span>
       </Link>
       <Link
@@ -427,9 +436,12 @@ export function NavActions({
       group-hover:opacity-100
     "
         >
-          Write us an email
+          {emailLabel}
         </span>
       </Link>
+      <div className="mr-7">
+  <LanguageSwitcher />
+</div> 
       <NavbarButton href={primaryHref} variant="dark" as={Link}>
 
         <ArrowRight className="size-4" aria-hidden="true" />

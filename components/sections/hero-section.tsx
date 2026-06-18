@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useTranslations, useLocale } from "next-intl";
 import { Calendar } from "lucide-react";
 import { motion } from "motion/react";
 import Image from "next/image";
@@ -66,12 +67,14 @@ const trustItems = [
 ] as const;
 
 function HeroTrustStrip() {
+  const t = useTranslations("Hero");
+  const locale = useLocale();
   const marqueeItems = [...trustItems, ...trustItems];
 
   return (
     <div className="  bg-brand-ivory px-6 py-8 sm:px-10 lg:px-12">
       <p className="text-center text-base uppercase font-normal text-[11px] pb-1 tracking-[0.10em] text-brand-muted">
-        Powered by industry-leading technologies
+      {t("trust")}
       </p>
       <div className="relative mt-7 overflow-hidden">
         <div
@@ -119,6 +122,8 @@ function HeroTrustStrip() {
 }
 
 export function HeroSection() {
+  const t = useTranslations("Hero");
+
   return (
     <section
       id="hero"
@@ -180,27 +185,27 @@ lg:px-16
 xl:px-[4.25rem]
 
 ">
-            <div className="mx-auto max-w-[860px]">
+            <div className="mx-auto max-w-[1000px]">
               <motion.p
                 initial={{ opacity: 0, y: 18 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.58, ease: "easeOut" }}
                 className="text-center text-base uppercase font-normal text-[12px] tracking-[0.10em] text-brand-muted"              >
-                Patient recruitment infrastructure
+                {t("eyebrow")}
               </motion.p>
               <motion.h1
                 initial={{ opacity: 0, y: 18 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.58, delay: 0.06, ease: "easeOut" }}
                 className="mt-5 font-heading text-[2.8rem] md:text-[clamp(2.5rem,5vw,4rem)] font-[600] leading-[1.12] tracking-[-0.02em] text-brand-cocoa">
-                Recruit faster. Retain Longer.
+                {t("headline")}
               </motion.h1>
               <motion.p
                 initial={{ opacity: 0, y: 18 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.58, delay: 0.12, ease: "easeOut" }}
                 className="mx-auto mt-6 max-w-[680px] font-body text-base font-light leading-[1.7] text-brand md:text-[16px]"              >
-                We help research teams recruit faster, meet enrollment targets, and strengthen sponsor relationships through connected recruitment systems.
+{t("subheadline")}
               </motion.p>
               <motion.div
                 initial={{ opacity: 0, y: 18 }}
@@ -215,7 +220,7 @@ xl:px-[4.25rem]
   className="inline-flex min-h-14 items-center gap-3 uppercase rounded-none bg-brand-orange px-5 py-3 text-[13px] font-medium text-brand-ivory shadow-[0_14px_30px_rgba(255,79,0,0.20)] transition-colors hover:bg-brand-orange/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange focus-visible:ring-offset-2 focus-visible:ring-offset-brand-ivory sm:px-6"
 >
   <Calendar className="size-4 stroke-[1.8]" />
-  Book an intro call
+  {t("cta")}
 </Link>
               </motion.div>
             </div>

@@ -1,34 +1,29 @@
+"use client";
+
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-
+import { useTranslations, useLocale } from "next-intl";
 import { BorderPlus } from "@/components/border-plus";
 import Image from "next/image";
 
 const articles = [
   {
-    category: "Recruitment strategy",
-    title: "Clinical recruitment is not an awareness problem alone.",
-    description:
-      "Clinical research has advanced significantly over the last decade, with studies becoming more...",
+    id: "strategy",
     image: "/article/art1.svg",
   },
   {
-    category: "Patient enrollment",
-    title: "Why recruitment fails after patients show interest?",
-    description:
-      "Patient interest is an important milestone in every clinical trial recruitment journey. It means...",
+    id: "enrollment",
     image: "/article/art2.svg",
   },
   {
-    category: "Digital infrastructure",
-    title: "Why more technology does not always reduce complexity?",
-    description:
-      "A new technology is usually introduced with a simple goal: to make work easier. Whether it improves...",
+    id: "infrastructure",
     image: "/article/img1.svg",
   },
 ] as const;
 
 export const InsightsPreview = () => {
+  const t = useTranslations("InsightsPreview");
+  const locale = useLocale();
   return (
     <section
 
@@ -49,25 +44,35 @@ export const InsightsPreview = () => {
           <div className="border-b border-brand-border text-center">
             <div className="px-6 py-20 text-center md:py-24">
 
-              <h2 className="mx-auto mt-5 max-w-2xl font-heading text-[clamp(2.5rem,5vw,3.2rem)] font-[600] leading-[1.2] tracking-[-0.04em] text-brand-cocoa">
+            <h2
+  className={`
+    mx-auto
+    mt-5
+    ${locale === "pl" ? "max-w-3xl" : "max-w-3xl"}
+    font-heading
+    text-[clamp(2.5rem,5vw,3.2rem)]
+    font-[600]
+    leading-[1.2]
+    tracking-[-0.04em]
+    text-brand-cocoa
+  `}
+>
 
-              Ideas shaping the{" "}
+              {t("headline")}{" "}
 <span className="text-brand-orange">
-
-  future.
-
+  {t("headlineHighlight")}
 </span>
 
               </h2>
 
               <p className="mx-auto mt-6 max-w-[620px] font-body text-base font-light leading-[1.7] text-brand-muted md:text-[16px]">
 
-              Explore insights on recruitment, patient engagement, and the operational systems helping clinical sites deliver studies more effectively.
+              {t("description")}
 
               </p>
               <Link
-                href="/blog"
-                className="
+  href={`/${locale}/blog`}
+  className="
     group mt-14 inline-flex min-h-12 items-center gap-2
     rounded-none
     bg-brand-orange
@@ -86,7 +91,7 @@ export const InsightsPreview = () => {
     focus-visible:ring-offset-brand-ivory
   "
               >
-                Read latest
+                {t("cta")}
 
                 <ArrowRight
                   className="
@@ -105,9 +110,11 @@ export const InsightsPreview = () => {
 
           <div className="grid divide-y divide-brand-border lg:grid-cols-3 lg:divide-x lg:divide-y-0">
             {articles.map((article, index) => (
-              <Link
-                key={article.title}
-                href="/blog"
+             <Link
+
+             key={article.id}
+           
+             href={`/${locale}/blog`}
                 className="group flex min-h-[315px] flex-col px-6 pb-8 transition-colors hover:bg-[#FFFAF6] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange focus-visible:ring-inset md:px-8 md:pb-10"
               >
                 <div className="-mx-6 mb-8 overflow-hidden md:-mx-8">
@@ -117,7 +124,7 @@ export const InsightsPreview = () => {
 
                       src={article.image}
 
-                      alt={article.title}
+                      alt={t(`articles.${article.id}.title`)}
 
                       className="
 
@@ -140,17 +147,17 @@ export const InsightsPreview = () => {
                   </div>
                 </div>
                 <p className="font-body text-xs font-medium uppercase tracking-[0.14em] text-brand-orange">
-                  {article.category}
+                {t(`articles.${article.id}.category`)}
                 </p>
                 <h3 className="mt-4 max-w-md font-body text-[23px] font-[500] leading-[1.4] tracking-[-0.03em] text-brand-cocoa">
-                  {article.title}
+                {t(`articles.${article.id}.title`)}
                 </h3>
 
                 <p className="mt-3 max-w-md pb-5 font-body text-[15px] font-light leading-[1.7] text-brand-muted">
-                  {article.description}
+                {t(`articles.${article.id}.description`)}
                 </p>
                 <span className="mt-auto inline-flex items-center gap-2 pt-8 text-sm font-medium text-brand-cocoa transition-colors group-hover:text-brand-orange">
-                  Explore article
+                {t("articleCta")}
                   <ArrowRight className="size-4" aria-hidden="true" />
                 </span>
               </Link>

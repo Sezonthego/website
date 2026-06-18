@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
+import { useTranslations } from "next-intl";
 import {
   Bell,
   CalendarCheck,
@@ -11,22 +12,25 @@ import {
 
 
 const steps = [
-    {
-      label: "Welcome sent",
-      icon: MessageCircle,
-    },
-    {
-      label: "Reminder scheduled",
-      icon: Bell,
-    },
-    {
-      label: "Visit confirmed",
-      icon: CalendarCheck,
-    },
-  ];
+  {
+    key: "welcome",
+    icon: MessageCircle,
+  },
+  {
+    key: "reminder",
+    icon: Bell,
+  },
+  {
+    key: "visit",
+    icon: CalendarCheck,
+  },
+];
 
 
 export function PatientEngagementVisual() {
+
+  const t = useTranslations("SolutionVisuals.engagement");
+
   return (
     <div className="relative flex h-full w-full items-center justify-center overflow-visible">
 
@@ -64,11 +68,11 @@ export function PatientEngagementVisual() {
 
         <div>
           <p className="font-body text-sm font-medium text-brand-cocoa">
-            Patient
+          {t("patient")}
           </p>
 
           <p className="mt-1 font-body text-xs text-brand-muted">
-            Enrolled
+          {t("enrolled")}
           </p>
         </div>
       </motion.div>
@@ -86,7 +90,7 @@ export function PatientEngagementVisual() {
 
           return (
             <motion.div
-              key={step.label}
+            key={step.key}
               animate={{
                 opacity: [0.35, 1, 1, 0.35],
                 x: [-8, 0, 0, -8],
@@ -122,7 +126,7 @@ export function PatientEngagementVisual() {
                   text-brand-cocoa
                 "
               >
-                {step.label}
+                {t(`steps.${step.key}`)}
               </span>
 
               <CheckCircle2
@@ -175,11 +179,11 @@ backdrop-blur-xl
 >
 
   <p className="text-xs font-medium uppercase tracking-[0.14em] text-brand-orange">
-    Engagement status
+  {t("statusTitle")}
   </p>
 
   <h3 className="mt-3 font-heading text-xl font-[500] tracking-[-0.04em] text-brand-cocoa">
-  Completed
+  {t("completed")}
   </h3>
 
 
@@ -189,7 +193,7 @@ backdrop-blur-xl
       <CheckCircle2 className="size-4 text-brand-orange" />
 
       <span className="text-xs text-brand-muted">
-        SMS sent
+      {t("status.sms")}
       </span>
     </div>
 
@@ -198,7 +202,7 @@ backdrop-blur-xl
       <CheckCircle2 className="size-4 text-brand-orange" />
 
       <span className="text-xs text-brand-muted">
-        Email sent
+      {t("status.email")}
       </span>
     </div>
 
@@ -207,7 +211,7 @@ backdrop-blur-xl
       <CheckCircle2 className="size-4 text-brand-orange" />
 
       <span className="text-xs text-brand-muted">
-        Visit confirmed
+      {t("status.visit")}
       </span>
     </div>
 

@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
+import { useTranslations } from "next-intl";
 import {
   Activity,
   MousePointerClick,
@@ -105,6 +106,8 @@ function PatientDot({
 }
 
 export function PatientAcquisitionVisual() {
+  const t = useTranslations("SolutionVisuals.acquisition");
+
   return (
 <div className="relative isolate flex min-h-[760px] w-full items-center justify-center overflow-hidden px-4 md:px-8">
       {/* Background dashboard: hidden first, then comes forward */}
@@ -156,10 +159,10 @@ className="
         <div className="mb-5 flex items-start justify-between">
           <div>
             <p className="text-xs font-medium uppercase tracking-[0.14em] text-brand-orange">
-              Acquisition channels
+            {t("eyebrow")}
             </p>
             <h3 className="mt-2 font-heading text-2xl md:text-3xl font-[500] tracking-[-0.04em] text-brand-cocoa">
-              Recruitment reach
+            {t("title")}
             </h3>
           </div>
 
@@ -189,14 +192,17 @@ className="
             times: [0, 0.34, 0.46, 0.86, 1],
           }}
         >
-          Expanding reach and detecting potential study candidates.
+          {t("description")}
         </motion.p>
 
         <div className="grid grid-cols-2 gap-3">
-          <Metric icon={Search} label="Search traffic" value="+342" delay={0.42} />
-          <Metric icon={Activity} label="Engagement" value="86%" delay={0.52} />
-          <Metric icon={MousePointerClick} label="Page visits" value="+428" delay={0.62} />
-          <Metric icon={Users} label="Potential fit" value="18" delay={0.72} />
+        <Metric icon={Search} label={t("metrics.search")} value="+342" delay={0.42} />
+
+<Metric icon={Activity} label={t("metrics.engagement")} value="86%" delay={0.52} />
+
+<Metric icon={MousePointerClick} label={t("metrics.visits")} value="+428" delay={0.62} />
+
+<Metric icon={Users} label={t("metrics.fit")} value="18" delay={0.72} />
         </div>
       </motion.div>
 
@@ -247,7 +253,7 @@ className="
           }}
           className="text-[13px] font-medium uppercase tracking-[0.12em]"
         >
-          Add study
+          {t("addStudy")}
         </motion.span>
       </motion.div>
 

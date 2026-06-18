@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { useLocale } from "next-intl";
 
 import { Container } from "@/components/container";
 import { Button } from "@/components/ui/button";
@@ -19,12 +20,14 @@ type LegalPageProps = {
 };
 
 export function LegalPage({
+  
   eyebrow,
   title,
   description,
   updated,
   sections,
 }: LegalPageProps) {
+  const locale = useLocale();
   return (
     <div className="min-h-screen bg-brand-ivory text-brand-cocoa">
 
@@ -100,7 +103,7 @@ text-brand-cocoa
                 tracking-[0.18em]
                 text-brand-muted
               ">
-                Last updated
+                {locale === "pl" ? "Ostatnia aktualizacja" : "Last updated"}
               </p>
 
               <p className="mt-3 font-body text-sm font-medium text-brand-cocoa">
@@ -116,12 +119,13 @@ text-brand-cocoa
                 leading-[1.7]
                 text-brand-muted
               ">
-                Questions about this page can be sent to our team.
+               {locale === "pl"
+  ? "Pytania dotyczące tej strony możesz przesłać naszemu zespołowi."
+  : "Questions about this page can be sent to our team."}
               </p>
 
               <Link
-
-href="/contact"
+  href={`/${locale}/contact`}
 
 className="
 
@@ -161,7 +165,7 @@ tracking-[-0.01em]
 
 >
 
-REACH TO US
+{locale === "pl" ? "Skontaktuj się z nami" : "Reach out to us"}
 
 </Link>
 

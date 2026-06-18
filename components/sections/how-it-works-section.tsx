@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import { useTranslations, useLocale } from "next-intl";
 import {
   BookOpen,
   Bot,
@@ -28,28 +29,24 @@ import { cn } from "@/lib/utils";
 const steps = [
   {
     number: "01",
-    title: "Discover",
-    description:
-      "We understand your studies, recruitment goals, and current processes to create a system that fits your site.",
+    id: "discover",
     visual: <WorkflowVisual />,
   },
   {
     number: "02",
-    title: "Implement",
-    description:
-      "We build and configure your recruitment pages, qualification flows, patient engagement, and operational systems.",
+    id: "implement",
     visual: <AgentVisual />,
   },
   {
     number: "03",
-    title: "Scale",
-    description:
-      "We continuously improve your recruitment system to help your site manage ongoing and future studies.",
+    id: "scale",
     visual: <ChannelVisual />,
   },
 ] as const;
 
 export function GetStartedSection() {
+  const t = useTranslations("HowItWorks");
+  const locale = useLocale();
   return (
     <section
 
@@ -69,18 +66,30 @@ export function GetStartedSection() {
         <div className="overflow-hidden">
           <div className="px-6 py-20 text-center md:py-24">
             <p className="font-body text-sm font-light uppercase tracking-[0.12em] text-brand-muted">
-              THE WEFORGE APPROACH
+            {t("eyebrow")}
             </p>
 
-            <h2 className="mx-auto mt-5 max-w-5xl font-heading text-[clamp(2.5rem,5vw,3.2rem)] font-[600] leading-[1.2] tracking-[-0.04em] text-brand-cocoa">
-              Better recruitment, without {" "}
-              <span className="text-brand-orange">
-                disrupting your site.
-              </span>
+            <h2
+  className={`
+    mx-auto
+    mt-5
+    ${locale === "pl" ? "max-w-3xl" : "max-w-5xl"}
+    font-heading
+    text-[clamp(2.5rem,5vw,3.2rem)]
+    font-[600]
+    leading-[1.2]
+    tracking-[-0.04em]
+    text-brand-cocoa
+  `}
+>
+            {t("headline")}{" "}
+<span className="text-brand-orange">
+  {t("headlineHighlight")}
+</span>
             </h2>
 
             <p className="mx-auto mt-6 max-w-[500px] font-body text-base font-light leading-[1.7] text-brand-muted md:text-[16px]">
-              We build and optimize your recruitment infrastructure while your team stays focused on delivering clinical studies.
+            {t("description")}
             </p>
             <Link
   href="https://cal.com/YOUR-CAL-LINK"
@@ -105,7 +114,7 @@ export function GetStartedSection() {
     focus-visible:ring-offset-brand-ivory
   "
 >
-  Discuss your needs
+{t("cta")}
 </Link>
           </div>
 
@@ -135,11 +144,11 @@ export function GetStartedSection() {
 
                 <div className="px-9 py-10 md:px-12">
                   <h3 className="font-body text-[23px] font-[500] leading-[1.15] tracking-[-0.03em] text-brand-cocoa">
-                    {step.title}
+                  {t(`steps.${step.id}.title`)}
                   </h3>
 
                   <p className="mt-3 max-w-[520px] font-body text-[15px] font-light leading-[1.7] text-brand-muted">
-                    {step.description}
+                  {t(`steps.${step.id}.description`)}
                   </p>
                 </div>
               </article>
@@ -152,24 +161,24 @@ export function GetStartedSection() {
 }
 
 function WorkflowVisual() {
+  const t = useTranslations("HowItWorks.visuals.workflow");
   const nodes = [
     {
-      label: "Studies",
+      label: t("studies"),
       icon: Hospital,
       className: "left-1/2 top-8 -translate-x-1/2",
     },
     {
-      label: "Goals",
+      label: t("goals"),
       icon: FileCheck2,
       className: "right-4 top-1/2 -translate-y-1/2",
     },
     {
-      label: "Processes",
+      label: t("processes"),
       icon: Workflow,
       className: "bottom-8 left-1/2 -translate-x-1/2",
     },
   ] as const;
-
   return (
     <div className="relative flex size-72 items-center justify-center md:size-80">
 
@@ -197,11 +206,11 @@ function WorkflowVisual() {
 
           <div>
             <p className="text-sm font-medium text-brand-cocoa">
-              Site Review
+            {t("siteReview")}
             </p>
 
             <p className="mt-1 text-xs text-brand-muted">
-              Discovery phase
+            {t("phase")}
             </p>
           </div>
 
@@ -272,20 +281,20 @@ function WorkflowVisual() {
 }
 
 function AgentVisual() {
+  const t = useTranslations("HowItWorks.visuals.agent");
   const rows = [
     {
-      label: "Recruitment page",
+      label: t("page"),
       icon: Globe2,
     },
     {
-      label: "Qualification flow",
+      label: t("qualification"),
       icon: FileCheck2,
     },
     {
-      label: "Patient engagement",
+      label: t("engagement"),
       icon: MessagesSquare,
     },
-
   ] as const;
 
 
@@ -371,6 +380,7 @@ function AgentVisual() {
 
 function ChannelVisual() {
   const count = useMotionValue(0);
+  const t = useTranslations("HowItWorks.visuals.scale");
 
   const patients = useTransform(count, (value) =>
     `+${Math.round(value * 840)}`
@@ -394,7 +404,7 @@ function ChannelVisual() {
 
     {
 
-      label: "Patients reached",
+      label: t("patients"),
 
       value: "+840",
 
@@ -467,7 +477,7 @@ function ChannelVisual() {
             <div className="flex items-center justify-between">
 
               <p className="text-xs font-medium text-brand-cocoa">
-                Growth
+              {t("growth")}
               </p>
 
               <motion.span className="font-heading text-sm font-medium text-brand-orange">

@@ -1,6 +1,6 @@
+"use client";
 import {
   Activity,
-  AirVent,
   Bone,
   Brain,
   CircleDot,
@@ -19,8 +19,7 @@ import {
 import Link from "next/link";
 import { BorderPlus } from "@/components/border-plus";
 import { MessagesSquare } from "lucide-react";
-
-import { GiKidneys, GiLungs } from "react-icons/gi";
+import { useTranslations, useLocale } from "next-intl";
 
 import {
   IconLungs,
@@ -28,33 +27,33 @@ import {
 } from "@tabler/icons-react";
 
 const practiceAreasTop = [
-  { label: "Oncology", icon: Ribbon },
-  { label: "Hematology", icon: CircleDot },
-  { label: "Cardiology", icon: HeartPulse },
-  { label: "Cardiovascular", icon: Activity },
-  { label: "Neurology", icon: Brain },
-  { label: "Psychiatry", icon: Brain },
-  { label: "Central Nervous System", icon: Brain },
-  { label: "Endocrinology", icon: ShieldPlus },
-  { label: "Metabolism", icon: Activity },
-  { label: "Gastroenterology", icon: Stethoscope },
-  { label: "Hepatology", icon: Stethoscope },
-  { label: "Nephrology", icon: Stethoscope },
+  { translationKey: "oncology", icon: Ribbon },
+  { translationKey: "hematology", icon: CircleDot },
+  { translationKey: "cardiology", icon: HeartPulse },
+  { translationKey: "cardiovascular", icon: Activity },
+  { translationKey: "neurology", icon: Brain },
+  { translationKey: "psychiatry", icon: Brain },
+  { translationKey: "cns", icon: Brain },
+  { translationKey: "endocrinology", icon: ShieldPlus },
+  { translationKey: "metabolism", icon: Activity },
+  { translationKey: "gastroenterology", icon: Stethoscope },
+  { translationKey: "hepatology", icon: Stethoscope },
+  { translationKey: "nephrology", icon: Stethoscope },
 ] as const;
 
 const practiceAreasBottom = [
-  { label: "Urology", icon: Stethoscope },
-  { label: "Nephrology", icon: IconDroplet },
-  { label: "Pulmonology", icon: IconLungs },
-  { label: "Infectious Diseases", icon: Syringe },
-  { label: "Immunology", icon: ShieldPlus },
-  { label: "Rheumatology", icon: Bone },
-  { label: "Dermatology", icon: Microscope },
-  { label: "Ophthalmology", icon: Eye },
-  { label: "Otolaryngology", icon: Ear },
-  { label: "Rare Diseases", icon: Dna },
-  { label: "Diabetology", icon: Pill },
-  { label: "Obesity", icon: Weight },
+  { translationKey: "urology", icon: Stethoscope },
+  { translationKey: "nephrology", icon: IconDroplet },
+  { translationKey: "pulmonology", icon: IconLungs },
+  { translationKey: "infectious", icon: Syringe },
+  { translationKey: "immunology", icon: ShieldPlus },
+  { translationKey: "rheumatology", icon: Bone },
+  { translationKey: "dermatology", icon: Microscope },
+  { translationKey: "ophthalmology", icon: Eye },
+  { translationKey: "otolaryngology", icon: Ear },
+  { translationKey: "rare", icon: Dna },
+  { translationKey: "diabetology", icon: Pill },
+  { translationKey: "obesity", icon: Weight },
 ] as const;
 
 
@@ -71,12 +70,18 @@ function PracticeAreaItem({
       <span className="flex size-12 shrink-0 items-center justify-center bg-[#FFF0E8] text-brand-orange md:size-14">
         <Icon className="size-5 stroke-[1.8]" aria-hidden="true" />
       </span>
-      <span className="whitespace-nowrap text-base leading-tight md:text-lg">{label}</span>
+
+      <span className="whitespace-nowrap text-base leading-tight md:text-lg">
+        {label}
+      </span>
     </span>
   );
 }
 
 export function PracticeSection() {
+
+  const t = useTranslations("TherapeuticAreas");
+  const locale = useLocale();
   return (
     <section id="therapeutic-areas" className="mt-28 mb-28 border-y border-brand-border bg-brand-ivory px-4 text-brand-cocoa md:px-8">
       <div className="relative mx-auto max-w-[1320px] border-x border-brand-border bg-brand-ivory">
@@ -88,15 +93,26 @@ export function PracticeSection() {
         <BorderPlus className="-bottom-[11px] -right-[11px]" />
 
         <div className="px-5 py-20 text-center md:px-6 md:py-24">
-          <h2 className="mx-auto max-w-3xl font-heading text-[clamp(2.5rem,5vw,3rem)] font-[600] leading-[1.2] tracking-[-0.04em] text-brand-cocoa">
-            Built to adapt around your{" "}
-            <span className="text-brand-orange">
-              research.
-            </span>
+        <h2
+  className={`
+    mx-auto
+    ${locale === "pl" ? "max-w-2xl" : "max-w-3xl"}
+    font-heading
+    text-[clamp(2.5rem,5vw,3.2rem)]
+    font-[600]
+    leading-[1.2]
+    tracking-[-0.04em]
+    text-brand-cocoa
+  `}
+>
+          {t("headline")}{" "}
+<span className="text-brand-orange">
+  {t("headlineHighlight")}
+</span>
           </h2>
 
           <p className="mx-auto mt-6 max-w-[600px] font-body text-base font-light leading-[1.7] text-brand-muted md:text-[16px]">
-            Weforge supports recruitment workflows across therapeutic areas and study types, helping sites build structured systems around the way they operate.
+          {t("description")}
           </p>
 
           <div className="relative mt-16 overflow-hidden">
@@ -109,31 +125,37 @@ export function PracticeSection() {
 
             {/* ROW 1 */}
             <div className="flex min-w-max animate-practice-scroll-left gap-18">
-              {[...practiceAreasTop, ...practiceAreasTop].map((area, index) => (
-                <PracticeAreaItem
-                  key={`${area.label}-${index}`}
-                  label={area.label}
-                  icon={area.icon}
-                />
-              ))}
-            </div>
+
+            {[...practiceAreasTop, ...practiceAreasTop].map((area, index) => (
+  <PracticeAreaItem
+  key={`${area.translationKey}-${index}`}
+  label={t(`items.${area.translationKey}`)}
+  icon={area.icon}
+/>
+))}
+
+</div>
 
             {/* ROW 2 */}
             <div className="mt-10 mb-5 flex min-w-max animate-practice-scroll-right gap-18">
-              {[...practiceAreasBottom, ...practiceAreasBottom].map((area, index) => (
-                <PracticeAreaItem
-                  key={`${area.label}-${index}`}
-                  label={area.label}
-                  icon={area.icon}
-                />
-              ))}
-            </div>
+
+            {[...practiceAreasBottom, ...practiceAreasBottom].map((area, index) => (
+ <PracticeAreaItem
+ key={`${area.translationKey}-${index}`}
+ label={t(`items.${area.translationKey}`)}
+ icon={area.icon}
+/>
+))}
+
+</div>
 
           </div>
 
           <Link
-            href="/contact"
-            className="
+
+href={`/${locale}/contact`}
+
+className="
     mt-12
     inline-flex
     min-h-12
@@ -164,7 +186,7 @@ export function PracticeSection() {
               aria-hidden="true"
             />
 
-            Discuss your needs
+{t("cta")}
           </Link>
         </div>
       </div>

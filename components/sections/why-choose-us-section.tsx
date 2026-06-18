@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useTranslations, useLocale } from "next-intl";
 import {
 
   Plug,
@@ -20,23 +21,19 @@ import { Container } from "@/components/container";
 
 const reasons = [
   {
-    title: "GDPR compliant",
-    body: "Designed with privacy in mind, supporting responsible collection, processing, and management of patient data.",
+    id: "gdpr",
     icon: ShieldCheck,
   },
   {
-    title: "Client-controlled systems",
-    body: "Connected systems built to keep your team in control of the infrastructure, access, and patient information.",
+    id: "control",
     icon: Settings2,
   },
   {
-    title: "Seamless integration",
-    body: "Recruitment infrastructure that fits into your existing operations, helping your team work with less disruption.",
+    id: "integration",
     icon: Plug,
   },
   {
-    title: "Secure infrastructure",
-    body: "Built on trusted technologies with security-focused practices to support reliable handling of sensitive information.",
+    id: "security",
     icon: Lock,
   },
 ] as const;
@@ -44,9 +41,11 @@ const reasons = [
 function ReasonCell({
   reason,
   featured = false,
+  t,
 }: {
   reason: (typeof reasons)[number];
   featured?: boolean;
+  t: ReturnType<typeof useTranslations>;
 }) {
   const Icon = reason.icon;
 
@@ -119,7 +118,7 @@ function ReasonCell({
     ${featured ? "text-brand-ivory" : "text-brand-cocoa"}
   `}
         >
-          {reason.title}
+          {t(`reasons.${reason.id}.title`)}
         </h3>
 
         <p
@@ -136,7 +135,7 @@ function ReasonCell({
     ${featured ? "text-brand-ivory/60" : "text-brand-muted"}
   `}
         >
-          {reason.body}
+         {t(`reasons.${reason.id}.body`)}
         </p>
 
       </div>
@@ -145,6 +144,8 @@ function ReasonCell({
 }
 
 export function WhyChooseSection() {
+  const t = useTranslations("WhyChoose");
+  const locale = useLocale();
   const [particles, setParticles] = useState<
 
   {
@@ -228,15 +229,25 @@ useEffect(() => {
 
             <div className="relative flex h-full min-h-[320px] flex-col">
               <div>
-                <h2 className="font-heading text-[clamp(2.5rem,5vw,3rem)] font-[600] leading-[1.2] tracking-[-0.04em] text-brand-cocoa">
-                  The foundation behind{" "}
-                  <span className="text-brand-orange">
-                    reliable recruitment.
-                  </span>
-                </h2>
+              <h2
+  className={`
+    ${locale === "pl" ? "max-w-2xl" : "max-w-5xl"}
+    font-heading
+    text-[clamp(2.5rem,5vw,3rem)]
+    font-[600]
+    leading-[1.2]
+    tracking-[-0.04em]
+    text-brand-cocoa
+  `}
+>
+  {t("headline")}{" "}
+  <span className="text-brand-orange">
+    {t("headlineHighlight")}
+  </span>
+</h2>
                 <p className="mt-6 max-w-[600px] font-body text-base font-light leading-[1.7] text-brand-muted md:text-[16px]">
-                  Committed to maintaining the security, control, and compliance standards required in clinical research.
-                </p>
+                {t("description")}
+                                </p>
               </div>
               <Link
   href="https://cal.com/YOUR-CAL-LINK"
@@ -261,7 +272,7 @@ useEffect(() => {
     focus-visible:ring-offset-brand-ivory
   "
 >
-  Talk with our team
+{t("cta")}
 
   <ArrowRight
     className="
@@ -280,7 +291,7 @@ useEffect(() => {
 
             <div
 
-              key={reason.title}
+            key={reason.id}
 
               className={`
 
@@ -297,13 +308,21 @@ useEffect(() => {
   `}
 
             >
-              <ReasonCell
-                reason={reason}
-                featured={
-                  reason.title === "Secure infrastructure" ||
-                  reason.title === "GDPR compliant"
-                }
-              />
+          <ReasonCell
+
+reason={reason}
+
+t={t}
+
+featured={
+
+  reason.id === "security" ||
+
+  reason.id === "gdpr"
+
+}
+
+/>
             </div>
           ))}
         </div>

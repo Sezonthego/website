@@ -1,0 +1,382 @@
+{
+  "Navigation": {
+    "home": "Home",
+    "solutions": "Solutions",
+    "insights": "Insights",
+    "contact": "Contact"
+  },
+  "Navbar": {
+    "home": "Home",
+    "statistics": "Statistics",
+    "articles": "Articles",
+    "contact": "Contact",
+    "primaryCta": "ASK A QUESTION",
+    "secondaryCta": "View solutions",
+    "linkedin": "Meet us on LinkedIn",
+    "phone": "Call a specialist",
+    "email": "Write us an email"
+  },
+  "Hero": {
+    "trust": "Powered by industry-leading technologies",
+    "eyebrow": "Patient recruitment infrastructure",
+    "headline": "Recruit faster. Retain longer.",
+    "subheadline": "We help research teams recruit faster, meet enrollment targets, and strengthen sponsor relationships through connected recruitment systems.",
+    "cta": "Book an intro call"
+  },
+  "Challenges": {
+    "headline": "Recruitment shouldn't be the reason your site",
+    "headlineHighlight": "falls behind.",
+    "description": "Enrollment challenges create more than delays. They increase operational pressure, weaken sponsor confidence, and limit your site's ability to deliver studies consistently.",
+    "cards": {
+      "patientReach": {
+        "title": "Patient Reach",
+        "description": "The right patients are out there, but traditional recruitment makes it difficult to consistently reach and engage them."
+      },
+      "patientQuality": {
+        "title": "Patient Quality",
+        "description": "Patient interest doesn’t guarantee enrollment. Without qualification, teams spend time on patients who may not fit."
+      },
+      "manualOverload": {
+        "title": "Manual Overload",
+        "description": "Manual coordination increases workload and makes it harder to keep patients engaged throughout the study."
+      },
+      "fragmentedSystems": {
+        "title": "Fragmented Systems",
+        "description": "Disconnected tools make recruitment harder to track, manage, and scale across studies."
+      }
+    }
+  },
+  "Impact": {
+    "headline": "Performance shapes your",
+    "headlineHighlight": "site's future.",
+    "description": "Enrollment performance influences sponsor trust, study opportunities, and your ability to deliver research consistently.",
+    "sourcedFrom": "SOURCED FROM",
+    "metrics": {
+      "timeline": "Trials miss enrollment timelines",
+      "expectations": "Sites miss the expectations",
+      "awareness": "Patients unaware of clinical trials",
+      "cost": "Sponsor cot per delay trial day"
+    },
+    "testimonials": {
+      "dombernowsky": {
+        "role": "Therapeutic Innovation & Regulatory Science",
+        "name": "Dombernowsky et al.",
+        "quote": "Recruitment-related factors are pivotal when assessing trial sites during site selection."
+      },
+      "chaudhari": {
+        "role": "Perspectives in Clinical Research",
+        "name": "Chaudhari et al.",
+        "quote": "Participant recruitment and retention are two major bottlenecks in conducting clinical trials."
+      },
+      "lamberti": {
+        "role": "Tufts CSDD",
+        "name": "Mary Jo Lamberti",
+        "quote": "It takes more patients to be screened in order to get the same number of completed patients."
+      }
+    }
+  },
+  "Solution": {
+    "headline": "A complete recruitment",
+    "headlineHighlight": "infrastructure",
+    "headlineEnd": "built and managed around your site.",
+    "description": "Weforge handles patient acquisition, pre-qualification, engagement, and recruitment workflows, helping your team focus on the right participants while reducing the manual work behind enrollment.",
+    "items": {
+      "patientAcquisition": {
+        "title": "Patient Acquisition",
+        "description": "We help you reach and attract potential participants through targeted recruitment channels built around your studies."
+      },
+      "smartQualification": {
+        "title": "Smart Qualification",
+        "description": "We apply study-specific qualification flows before patients reach your team, helping coordinators focus on participants more likely to match study requirements."
+      },
+      "patientEngagement": {
+        "title": "Patient Engagement",
+        "description": "We create structured patient engagement flows that reduce manual coordination and help keep participants informed and engaged throughout the study journey."
+      },
+      "recruitmentOperations": {
+        "title": "Recruitment Operations",
+        "description": "We centralize patient pipelines and recruitment workflows into one connected system, giving your team the clarity and capacity needed to manage recruitment as you grow."
+      }
+    }
+  },
+  "SolutionVisuals": {
+    "operations": {
+      "study": "Study: Atopic Dermatitis",
+      "active": "Active recruitment",
+      "progress": "Enrollment Progress",
+      "patients": {
+        "prescreened": "Pre-screened",
+        "qualified": "Qualified",
+        "scheduled": "Scheduled"
+      },
+      "metrics": {
+        "enrolled": "Enrolled",
+        "weeklyProgress": "Weekly progress"
+      }
+    },
+    "acquisition": {
+      "eyebrow": "Acquisition channels",
+      "title": "Recruitment reach",
+      "description": "Expanding reach and detecting potential study candidates.",
+      "addStudy": "Add study",
+      "metrics": {
+        "search": "Search traffic",
+        "engagement": "Engagement",
+        "visits": "Page visits",
+        "fit": "Potential fit"
+      }
+    },
+    "engagement": {
+      "patient": "Patient",
+      "enrolled": "Enrolled",
+      "steps": {
+        "welcome": "Welcome sent",
+        "reminder": "Reminder scheduled",
+        "visit": "Visit confirmed"
+      },
+      "statusTitle": "Engagement status",
+      "completed": "Completed",
+      "status": {
+        "sms": "SMS sent",
+        "email": "Email sent",
+        "visit": "Visit confirmed"
+      }
+    },
+    "qualification": {
+      "studyPage": "Study page",
+      "study": "Type 2 diabetes",
+      "button": "Check eligibility",
+      "flowTitle": "Qualification flow",
+      "patient": "Patient",
+      "steps": {
+        "criteria": "Checking criteria",
+        "responses": "Reviewing responses",
+        "matching": "Matching study fit"
+      },
+      "results": {
+        "patient01": {
+          "name": "Patient 01",
+          "status": "Eligible"
+        },
+        "patient02": {
+          "name": "Patient 02",
+          "status": "Review"
+        }
+      }
+    }
+  },
+  "TherapeuticAreas": {
+    "headline": "Built to adapt around your",
+    "headlineHighlight": "research.",
+    "description": "Weforge supports recruitment workflows across therapeutic areas and study types, helping sites build structured systems around the way they operate.",
+    "cta": "Discuss your needs",
+    "items": {
+      "oncology": "Oncology",
+      "hematology": "Hematology",
+      "cardiology": "Cardiology",
+      "cardiovascular": "Cardiovascular",
+      "neurology": "Neurology",
+      "psychiatry": "Psychiatry",
+      "cns": "Central Nervous System",
+      "endocrinology": "Endocrinology",
+      "metabolism": "Metabolism",
+      "gastroenterology": "Gastroenterology",
+      "hepatology": "Hepatology",
+      "nephrology": "Nephrology",
+      "urology": "Urology",
+      "pulmonology": "Pulmonology",
+      "infectious": "Infectious Diseases",
+      "immunology": "Immunology",
+      "rheumatology": "Rheumatology",
+      "dermatology": "Dermatology",
+      "ophthalmology": "Ophthalmology",
+      "otolaryngology": "Otolaryngology",
+      "rare": "Rare Diseases",
+      "diabetology": "Diabetology",
+      "obesity": "Obesity"
+    }
+  },
+  "WhyChoose": {
+    "headline": "The foundation behind",
+    "headlineHighlight": "reliable recruitment.",
+    "description": "Committed to maintaining the security, control, and compliance standards required in clinical research.",
+    "cta": "Talk with our team",
+    "reasons": {
+      "gdpr": {
+        "title": "GDPR compliant",
+        "body": "Designed with privacy in mind, supporting responsible collection, processing, and management of patient data."
+      },
+      "control": {
+        "title": "Client-controlled systems",
+        "body": "Connected systems built to keep your team in control of the infrastructure, access, and patient information."
+      },
+      "integration": {
+        "title": "Seamless integration",
+        "body": "Recruitment infrastructure that fits into your existing operations, helping your team work with less disruption."
+      },
+      "security": {
+        "title": "Secure infrastructure",
+        "body": "Built on trusted technologies with security-focused practices to support reliable handling of sensitive information."
+      }
+    }
+  },
+  "HowItWorks": {
+    "eyebrow": "THE WEFORGE APPROACH",
+    "headline": "Better recruitment, without",
+    "headlineHighlight": "disrupting your site.",
+    "description": "We build and optimize your recruitment infrastructure while your team stays focused on delivering clinical studies.",
+    "cta": "Book an intro call",
+    "steps": {
+      "discover": {
+        "title": "Discover",
+        "description": "We understand your studies, recruitment goals, and current processes to create a system that fits your site."
+      },
+      "implement": {
+        "title": "Implement",
+        "description": "We build and configure your recruitment pages, qualification flows, patient engagement, and operational systems."
+      },
+      "scale": {
+        "title": "Scale",
+        "description": "We continuously improve your recruitment system to help your site manage ongoing and future studies."
+      }
+    },
+    "visuals": {
+      "workflow": {
+        "studies": "Studies",
+        "goals": "Goals",
+        "processes": "Processes",
+        "siteReview": "Site Review",
+        "phase": "Discovery phase"
+      },
+      "agent": {
+        "page": "Recruitment page",
+        "qualification": "Qualification flow",
+        "engagement": "Patient engagement"
+      },
+      "scale": {
+        "patients": "Patients reached",
+        "growth": "Growth"
+      }
+    }
+  },
+  "InsightsPreview": {
+    "headline": "Ideas shaping the",
+    "headlineHighlight": "future.",
+    "description": "Explore insights on recruitment, patient engagement, and the operational systems helping clinical sites deliver studies more effectively.",
+    "cta": "Read latest",
+    "articleCta": "Explore article",
+    "articles": {
+      "strategy": {
+        "category": "Recruitment strategy",
+        "title": "Clinical recruitment is not an awareness problem alone.",
+        "description": "Clinical research has advanced significantly over the last decade, with studies becoming more..."
+      },
+      "enrollment": {
+        "category": "Patient enrollment",
+        "title": "Why recruitment fails after patients show interest?",
+        "description": "Patient interest is an important milestone in every clinical trial recruitment journey. It means..."
+      },
+      "infrastructure": {
+        "category": "Digital infrastructure",
+        "title": "Why more technology does not always reduce complexity?",
+        "description": "A new technology is usually introduced with a simple goal: to make work easier. Whether it improves..."
+      }
+    }
+  },
+  "FinalCTA": {
+    "headline": "Make recruitment a reason sponsors",
+    "headlineHighlight": "trust your site.",
+    "description": "Strengthen your recruitment capabilities with infrastructure designed to improve enrollment performance and support reliable study delivery.",
+    "cta": "Book an intro call"
+  },
+  "Footer": {
+    "description": "Building the recruitment infrastructure clinical sites need to recruit, manage, and deliver studies more effectively.",
+    "cta": "Talk with our team",
+    "resources": "Resources",
+    "compliance": "Compliance",
+    "navigation": {
+      "home": "Home",
+      "solutions": "Solutions",
+      "articles": "Articles",
+      "contact": "Contact"
+    },
+    "policies": {
+      "privacy": "Privacy Policy",
+      "terms": "Terms & Conditions",
+      "cookies": "Cookie Policy"
+    },
+    "newsletter": {
+      "title": "Clinical insights",
+      "description": "Stay informed on the latest in clinical recruitment.",
+      "placeholder": "Write your email",
+      "subscribe": "Subscribe",
+      "consent": "By subscribing, you agree to our"
+    },
+    "rights": "All rights reserved."
+  },
+  "Contact": {
+    "headline": "We're",
+    "headlineHighlight": "one click",
+    "headlineEnd": "away.",
+    "description": "Let us discuss your recruitment challenges, operational goals, and how Weforge can support your clinical operations."
+  },
+"ContactForm": {
+  "email": "Email",
+  "phone": "Phone",
+  "location": "Location",
+
+  "name": "Name",
+  "namePlaceholder": "Your name",
+
+  "emailPlaceholder": "you@company.com",
+
+  "roleQuestion": "Which best describes you?",
+
+  "roles": {
+    "site": "Clinical research site",
+    "cro": "CRO",
+    "sponsor": "Sponsor",
+    "other": "Other"
+  },
+
+  "message": "Message",
+  "messagePlaceholder": "Tell us about your recruitment goals...",
+
+  "consentStart": "By submitting you agree with our",
+  "and": "and",
+  "privacy": "Privacy Policy",
+
+  "terms": "Terms & Conditions",
+
+  "send": "Send message",
+  "sending": "Sending..."
+},
+"Blog": {
+  "eyebrow": "Insights",
+  "headline": "Ideas shaping the future of",
+  "headlineHighlight": "clinical research.",
+  "description": "Explore insights on recruitment challenges, patient engagement, and the infrastructure helping clinical sites deliver studies more effectively.",
+
+  "categories": {
+    "recruitment": {
+      "title": "Patient Recruitment",
+      "description": "Strategies and insights on improving patient reach, qualification, enrollment, and the systems behind successful recruitment."
+    },
+    "operations": {
+      "title": "Clinical Operations",
+      "description": "Exploring the workflows, processes, and operational challenges that shape how research sites deliver studies."
+    },
+    "infrastructure": {
+      "title": "Digital Infrastructure",
+      "description": "How technology, automation, and connected systems can support more efficient and scalable clinical research operations."
+    }
+  },
+
+  "cta": "Get notified"
+},
+"NotFound": {
+  "headline": "Page not found.",
+  "description": "The page you are looking for may have moved or no longer exists.",
+  "button": "Back to homepage"
+}
+}

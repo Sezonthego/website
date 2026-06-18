@@ -4,8 +4,9 @@ import { useState } from "react";
 import Link from "next/link";
 import { ArrowRight, MousePointerClick, Phone, Mail } from "lucide-react";
 import { IconBrandLinkedin } from "@tabler/icons-react";
-
+import { useTranslations, useLocale } from "next-intl";
 import { Logo } from "@/components/logo";
+import { LanguageSwitcher } from "@/components/language-switcher";
 import {
   MobileNav,
   MobileNavHeader,
@@ -20,14 +21,38 @@ import {
 } from "@/components/ui/resizable-navbar";
 import { motion } from "motion/react";
 
-const navItems = [
-  { name: "Home", link: "/" },
-  { name: "Statistics", link: "/#impact" },
-  { name: "Articles", link: "/blog" },
-  { name: "Contact", link: "/contact" },
+const getNavItems = (
+  t: (key: string) => string,
+  locale: string
+) => [
+
+  { name: t("home"), link: `/${locale}` },
+
+  { name: t("statistics"), link: `/${locale}#impact` },
+
+  { name: t("articles"), link: `/${locale}/blog` },
+
+  { name: t("contact"), link: `/${locale}/contact` },
+
 ];
 
-function MobileNavActions({ onClose }: { onClose: () => void }) {
+function MobileNavActions({
+
+  onClose,
+
+  primaryLabel,
+
+  secondaryLabel,
+
+}: {
+
+  onClose: () => void;
+
+  primaryLabel: string;
+
+  secondaryLabel: string;
+
+}) {
   return (
     <div className="flex w-full flex-col gap-3">
 
@@ -39,7 +64,7 @@ function MobileNavActions({ onClose }: { onClose: () => void }) {
         onClick={onClose}
       >
         <ArrowRight className="size-4" aria-hidden="true" />
-        Ask a question
+        {primaryLabel}
       </NavbarButton>
 
 
@@ -51,7 +76,7 @@ function MobileNavActions({ onClose }: { onClose: () => void }) {
         onClick={onClose}
       >
         <MousePointerClick className="size-4" aria-hidden="true" />
-        View solutions
+        {secondaryLabel}
       </NavbarButton>
 
     </div>
@@ -60,7 +85,12 @@ function MobileNavActions({ onClose }: { onClose: () => void }) {
 
 export function SiteNavbar({ banner }: { banner?: React.ReactNode }) {
 
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const t = useTranslations("Navbar");
+const locale = useLocale();
+
+const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+const navItems = getNavItems(t, locale);
 
   return (
 
@@ -69,7 +99,15 @@ export function SiteNavbar({ banner }: { banner?: React.ReactNode }) {
         <Logo className="relative z-20 shrink-0 px-2 py-1" />
         <div className="relative z-20 flex items-center gap-8">
           <NavItems items={navItems} />
-          <NavActions />
+          <NavActions
+  primaryHref={`/${locale}/contact`}
+  secondaryHref={`/${locale}#solution`}
+  primaryLabel={t("primaryCta")}
+  secondaryLabel={t("secondaryCta")}
+  linkedinLabel={t("linkedin")}
+  phoneLabel={t("phone")}
+  emailLabel={t("email")}
+/>
         </div>
       </NavBody>
 
@@ -79,7 +117,7 @@ export function SiteNavbar({ banner }: { banner?: React.ReactNode }) {
           <Logo className="shrink-0" />
 
           <div className="flex items-center gap-5">
-
+          <LanguageSwitcher />
             <Link
 
               href="https://www.linkedin.com/company/weforgeclinical/"
@@ -168,7 +206,15 @@ export function SiteNavbar({ banner }: { banner?: React.ReactNode }) {
               {item.name}
             </Link>
           ))}
-          <MobileNavActions onClose={() => setIsMobileMenuOpen(false)} />
+          <MobileNavActions
+
+onClose={() => setIsMobileMenuOpen(false)}
+
+primaryLabel={t("primaryCta")}
+
+secondaryLabel={t("secondaryCta")}
+
+/>
         </MobileNavMenu>
       </MobileNav>
     </Navbar>
