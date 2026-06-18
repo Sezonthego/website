@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Geist, Source_Serif_4 } from "next/font/google";
 import { StructuredData } from "@/components/structured-data";
-
+import { GoogleTagManager } from "@next/third-parties/google";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import { AnnouncementBanner } from "@/components/sections/announcement-banner";
 
 
@@ -71,14 +72,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-<body suppressHydrationWarning className={`${geist.variable} ${sourceSerif.variable}`}>
-
-
-<main className="bg-background text-foreground">
-<StructuredData />
-  {children}
-</main>
-
+      <GoogleAnalytics gaId="G-01VKSZJ23K" />
+  
+      <body
+        suppressHydrationWarning
+        className={`${geist.variable} ${sourceSerif.variable}`}
+      >
+        <main className="bg-background text-foreground">
+          <StructuredData />
+          {children}
+        </main>
       </body>
     </html>
   );
