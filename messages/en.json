@@ -378,5 +378,12 @@
   "headline": "Page not found.",
   "description": "The page you are looking for may have moved or no longer exists.",
   "button": "Back to homepage"
+},
+"Cookies": {
+  "title": "Privacy preferences",
+  "description": "We use cookies to improve your browsing experience, analyze website performance, and understand how our webpages are used.",
+  "privacy": "Privacy Policy",
+  "accept": "Accept",
+  "ignore": "Ignore"
 }
 }

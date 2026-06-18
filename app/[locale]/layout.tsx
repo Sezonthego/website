@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
+import { CookieBanner } from "@/components/cookie-banner";
 
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
@@ -101,6 +102,7 @@ export default async function LocaleLayout({
       <Navbar />
       {children}
       <Footer />
+      <CookieBanner />
     </NextIntlClientProvider>
   );
 }

@@ -81,6 +81,7 @@ export default function RootLayout({
         <main className="bg-background text-foreground">
           <StructuredData />
           {children}
+        
         </main>
       </body>
     </html>

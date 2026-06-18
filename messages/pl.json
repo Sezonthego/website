@@ -408,5 +408,12 @@
   "headline": "Nie znaleziono strony.",
   "description": "Strona, której szukasz, mogła zostać przeniesiona lub już nie istnieje.",
   "button": "Wróć na stronę główną"
+},
+"Cookies": {
+  "title": "Preferencje prywatności",
+  "description": "Używamy plików cookie, aby poprawić działanie strony, analizować jej wydajność i lepiej rozumieć sposób korzystania z naszych stron.",
+  "privacy": "Polityka prywatności",
+  "accept": "Akceptuję",
+  "ignore": "Ignoruj"
 }
 }
