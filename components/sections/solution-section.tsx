@@ -57,17 +57,16 @@ function SolutionVisual({ activeIndex }: { activeIndex: number }) {
   
     return (
       <AnimatePresence mode="wait">
-        <motion.div
-          key={activeIndex}
-          initial={{ opacity: 0, y: 16, scale: 0.98 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          exit={{ opacity: 0, y: -16, scale: 0.98 }}
-          transition={{
-            duration: 0.55,
-            ease: [0.22, 1, 0.36, 1],
-          }}
-          className="h-full w-full"
-        >
+  <motion.div
+  key={activeIndex}
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
+  exit={{ opacity: 0 }}
+  transition={{
+    duration: 0.3,
+  }}
+  className="h-full w-full"
+>
           {visuals[activeIndex]}
         </motion.div>
       </AnimatePresence>
@@ -80,16 +79,20 @@ function FrontOfficeEngine() {
     const locale = useLocale();
     const [activeIndex, setActiveIndex] = useState(0);
     const [progressKey, setProgressKey] = useState(0);
-    const activeSolution = solutionItems[activeIndex];
   
     useEffect(() => {
       const timer = window.setTimeout(() => {
-        setActiveIndex((current) => (current + 1) % solutionItems.length);
-        setProgressKey((current) => current + 1);
+        setActiveIndex(
+          (current) => (current + 1) % solutionItems.length
+        );
+    
+        setProgressKey(
+          (current) => current + 1
+        );
       }, SOLUTION_ROTATE_MS);
-  
+    
       return () => window.clearTimeout(timer);
-    }, [activeIndex, progressKey]);
+    }, [activeIndex]);
   
     const setActiveItem = (index: number) => {
       setActiveIndex(index);
@@ -198,21 +201,17 @@ function FrontOfficeEngine() {
                  <motion.div
   initial={false}
   animate={{
-    height: isActive ? "auto" : 0,
     opacity: isActive ? 1 : 0,
+    scaleY: isActive ? 1 : 0,
   }}
   transition={{
-    height: {
-      duration: 0.45,
-      ease: [0.22, 1, 0.36, 1],
-    },
-    opacity: {
-      duration: 0.2,
-    },
+    duration: 0.25,
+    ease: "easeOut",
   }}
   className="
     ml-[52px]
     mt-2
+    origin-top
     overflow-hidden
     md:ml-[96px]
   "
