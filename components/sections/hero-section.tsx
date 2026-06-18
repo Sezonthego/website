@@ -52,6 +52,7 @@ const trustItems = [
 
 function HeroTrustStrip() {
   const t = useTranslations("Hero");
+  const locale = useLocale();
   const marqueeItems = [...trustItems, ...trustItems];
 
   return (
@@ -162,7 +163,7 @@ xl:px-[4.25rem]
 
 ">
             <div className="mx-auto max-w-[1000px]">
-            <p
+     <p
   className="
     text-center
     text-base

@@ -82,17 +82,12 @@ function FrontOfficeEngine() {
   
     useEffect(() => {
       const timer = window.setTimeout(() => {
-        setActiveIndex(
-          (current) => (current + 1) % solutionItems.length
-        );
-    
-        setProgressKey(
-          (current) => current + 1
-        );
+        setActiveIndex((current) => (current + 1) % solutionItems.length);
+        setProgressKey((current) => current + 1);
       }, SOLUTION_ROTATE_MS);
-    
+  
       return () => window.clearTimeout(timer);
-    }, [activeIndex]);
+    }, [activeIndex, progressKey]);
   
     const setActiveItem = (index: number) => {
       setActiveIndex(index);
