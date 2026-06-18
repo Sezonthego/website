@@ -11,14 +11,13 @@ import { AnnouncementBanner } from "@/components/sections/announcement-banner";
 const geist = Geist({
   variable: "--font-geist",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["300", "400", "500"],
 });
-
 
 const sourceSerif = Source_Serif_4({
   variable: "--font-source-serif",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600"],
+  weight: ["500", "600"],
 });
 
 

@@ -120,29 +120,20 @@ export const InsightsPreview = () => {
                 <div className="-mx-6 mb-8 overflow-hidden md:-mx-8">
                   <div className="-mx-6 mb-8 flex aspect-video items-center justify-center overflow-hidden bg-brand-cocoa md:-mx-8">
 
-                    <img
-
-                      src={article.image}
-
-                      alt={t(`articles.${article.id}.title`)}
-
-                      className="
-
+                  <Image
+  src={article.image}
+  alt={t(`articles.${article.id}.title`)}
+  width={800}
+  height={450}
+  className="
     h-full
-
     w-full
-
     object-contain
-
     transition-transform
-
     duration-500
-
     group-hover:scale-105
-
   "
-
-                    />
+/>
 
                   </div>
                 </div>

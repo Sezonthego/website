@@ -300,7 +300,7 @@ export const Footer = () => {
                   </Link>
 
                   <Link
-                    href="mailto:hello@weforgeclinical.com"
+                    href="mailto:contact@weforgeclinical.pl"
                     aria-label="Email Weforge"
                   >
                     <Mail

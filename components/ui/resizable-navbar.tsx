@@ -395,7 +395,7 @@ export function NavActions({
         </span>
       </Link>
       <Link
-        href="mailto:hello@weforgeclinical.com"
+        href="mailto:contact@weforgeclinical.pl"
         className="
     group
     mr-7
