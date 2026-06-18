@@ -7,7 +7,9 @@ import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 
 const locales = ["en", "pl"] as const;
-
+export function generateStaticParams() {
+  return locales.map((locale) => ({ locale }));
+}
 export async function generateMetadata({
   params,
 }: {
