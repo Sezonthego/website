@@ -8,7 +8,7 @@ export default getRequestConfig(async ({ requestLocale }) => {
   const locale =
     requested && locales.includes(requested)
       ? requested
-      : "en";
+      : "pl";
 
   return {
     locale,
