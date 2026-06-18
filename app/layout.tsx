@@ -75,6 +75,7 @@ export default function RootLayout({
 
 
 <main className="bg-background text-foreground">
+  <div>VERCEL TEST 123</div>
 <StructuredData />
   {children}
 </main>
