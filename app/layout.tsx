@@ -4,6 +4,7 @@ import { Geist, Source_Serif_4 } from "next/font/google";
 import { StructuredData } from "@/components/structured-data";
 import { GoogleTagManager } from "@next/third-parties/google";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import Script from "next/script";
 import { AnnouncementBanner } from "@/components/sections/announcement-banner";
 
 
@@ -78,6 +79,35 @@ export default function RootLayout({
         suppressHydrationWarning
         className={`${geist.variable} ${sourceSerif.variable}`}
       >
+        <Script id="google-consent" strategy="beforeInteractive">
+  {`
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+
+    gtag('consent', 'default', {
+      analytics_storage: 'denied',
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied'
+    });
+  `}
+</Script>
+
+<Script
+  src="https://www.googletagmanager.com/gtag/js?id=G-01VKSZJ23K"
+  strategy="afterInteractive"
+/>
+
+<Script id="google-analytics" strategy="afterInteractive">
+  {`
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-01VKSZJ23K');
+  `}
+</Script>
         <main className="bg-background text-foreground">
           <StructuredData />
           {children}

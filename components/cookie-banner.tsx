@@ -3,7 +3,11 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useLocale, useTranslations } from "next-intl";
-
+declare global {
+    interface Window {
+      gtag?: (...args: unknown[]) => void;
+    }
+  }
 export function CookieBanner() {
   const t = useTranslations("Cookies");
   const locale = useLocale();
@@ -16,6 +20,9 @@ export function CookieBanner() {
     if (consent === "accepted") {
       window.gtag?.("consent", "update", {
         analytics_storage: "granted",
+        ad_storage: "granted",
+        ad_user_data: "granted",
+        ad_personalization: "granted",
       });
     }
   
@@ -23,13 +30,16 @@ export function CookieBanner() {
       setShowBanner(true);
     }
   }, []);
-
+  
   const handleChoice = (value: "accepted" | "ignored") => {
     localStorage.setItem("cookie-consent", value);
   
     if (value === "accepted") {
       window.gtag?.("consent", "update", {
         analytics_storage: "granted",
+        ad_storage: "granted",
+        ad_user_data: "granted",
+        ad_personalization: "granted",
       });
     }
   
