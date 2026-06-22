@@ -5,6 +5,7 @@ import { useTranslations, useLocale } from "next-intl";
 import { Calendar } from "lucide-react";
 import { motion } from "motion/react";
 import Image from "next/image";
+import { externalLinks } from "@/lib/links";
 import { BorderPlus } from "@/components/border-plus";
 import {
 
@@ -68,7 +69,6 @@ const trustItems = [
 
 function HeroTrustStrip() {
   const t = useTranslations("Hero");
-  const locale = useLocale();
   const marqueeItems = [...trustItems, ...trustItems];
 
   return (
@@ -115,7 +115,9 @@ function HeroTrustStrip() {
 
 export function HeroSection() {
   const t = useTranslations("Hero");
-
+  const locale = useLocale();
+  const links =
+  externalLinks[locale as keyof typeof externalLinks];
   return (
     <section
       id="hero"
@@ -206,7 +208,7 @@ xl:px-[4.25rem]
                 className="mt-8 flex justify-center"
               >
                 <Link
-  href="https://cal.com/YOUR-CAL-LINK"
+  href={links.introCall}
   target="_blank"
   rel="noopener noreferrer"
   className="inline-flex min-h-14 items-center gap-3 uppercase rounded-none bg-brand-orange px-5 py-3 text-[13px] font-medium text-brand-ivory shadow-[0_14px_30px_rgba(255,79,0,0.20)] transition-colors hover:bg-brand-orange/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange focus-visible:ring-offset-2 focus-visible:ring-offset-brand-ivory sm:px-6"

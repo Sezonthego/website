@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import { externalLinks } from "@/lib/links";
 import { useTranslations, useLocale } from "next-intl";
 import {
   BookOpen,
@@ -18,7 +19,7 @@ import {
   Workflow,
   Zap,
 } from "lucide-react";
-import { motion, useMotionValue, useTransform, animate } from "motion/react";
+import { motion, useMotionValue, useTransform, animate } from "framer-motion";
 import { useEffect } from "react";
 
 
@@ -47,6 +48,8 @@ const steps = [
 export function GetStartedSection() {
   const t = useTranslations("HowItWorks");
   const locale = useLocale();
+const links =
+  externalLinks[locale as keyof typeof externalLinks];
   return (
     <section
 
@@ -92,7 +95,7 @@ export function GetStartedSection() {
             {t("description")}
             </p>
             <Link
-  href="https://cal.com/YOUR-CAL-LINK"
+  href={links.introCall}
   target="_blank"
   rel="noopener noreferrer"
   className="

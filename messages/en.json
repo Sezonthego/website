@@ -356,7 +356,8 @@
   "headline": "Ideas shaping the future of",
   "headlineHighlight": "clinical research.",
   "description": "Explore insights on recruitment challenges, patient engagement, and the infrastructure helping clinical sites deliver studies more effectively.",
-
+  "searchPlaceholder": "Search articles...",
+    "articleCta": "Read article",
   "categories": {
     "recruitment": {
       "title": "Patient Recruitment",
@@ -385,5 +386,12 @@
   "privacy": "Privacy Policy",
   "accept": "Accept",
   "ignore": "Ignore"
+},
+"BlogArticle": {
+  "cta": {
+    "title": "Better recruitment starts here!",
+    "description": "Build the infrastructure that helps your team recruit faster, meet enrollment targets, and lower the daily manual workload.",
+    "button": "Book an intro call"
+  }
 }
 }

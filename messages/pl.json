@@ -372,6 +372,8 @@
   "headlineHighlight": "badań klinicznych.",
 
   "description": "Poznaj materiały dotyczące wyzwań rekrutacyjnych, zaangażowania pacjentów oraz infrastruktury pomagającej ośrodkom klinicznym skuteczniej realizować badania.",
+  "searchPlaceholder": "Szukaj artykułów...",
+    "articleCta": "Czytaj artykuł",
 
   "categories": {
 
@@ -415,5 +417,12 @@
   "privacy": "Polityka prywatności",
   "accept": "Akceptuję",
   "ignore": "Ignoruj"
+},
+"BlogArticle": {
+  "cta": {
+    "title": "Lepsza rekrutacja zaczyna się tutaj!",
+    "description": "Zbuduj infrastrukturę, która pomaga Twojemu zespołowi szybciej rekrutować pacjentów, osiągać cele rekrutacyjne i ograniczać codzienną pracę manualną.",
+    "button": "Umów rozmowę"
+  }
 }
 }

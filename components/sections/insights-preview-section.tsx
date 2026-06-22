@@ -4,25 +4,14 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { useTranslations, useLocale } from "next-intl";
 import { BorderPlus } from "@/components/border-plus";
-import Image from "next/image";
+import { blogPosts } from "@/lib/blog-posts";
 
-const articles = [
-  {
-    id: "strategy",
-    
-  },
-  {
-    id: "enrollment",
-   
-  },
-  {
-    id: "infrastructure",
-  },
-] as const;
 
 export const InsightsPreview = () => {
+  
   const t = useTranslations("InsightsPreview");
   const locale = useLocale();
+  const articles = blogPosts[locale as keyof typeof blogPosts];
   return (
     <section
 
@@ -70,7 +59,7 @@ export const InsightsPreview = () => {
 
               </p>
               <Link
-  href={`/${locale}/blog`}
+   href={`/${locale}/blog`}
   className="
     group mt-14 inline-flex min-h-12 items-center gap-2
     rounded-none
@@ -109,24 +98,20 @@ export const InsightsPreview = () => {
 
           <div className="grid divide-y divide-brand-border lg:grid-cols-3 lg:divide-x lg:divide-y-0">
             {articles.map((article, index) => (
-             <Link
-
-             key={article.id}
-           
-             href={`/${locale}/blog`}
-                className="group flex min-h-[315px] flex-col px-6 pb-8 transition-colors hover:bg-[#FFFAF6] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange focus-visible:ring-inset md:px-8 md:pb-10"
+         <Link
+         key={article.id}
+       
+         href={`/${locale}/blog/${article.slug}`}
+                className="group flex min-h-[270px] flex-col px-6 pb-8 transition-colors hover:bg-[#FFFAF6] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange focus-visible:ring-inset md:px-8 md:pb-10"
               >
       
                 <p className="font-body text-xs font-medium uppercase tracking-[0.14em] pt-12 text-brand-orange">
-                {t(`articles.${article.id}.category`)}
+                {article.category}
                 </p>
                 <h3 className="mt-4 max-w-md font-body text-[23px] font-[500] leading-[1.4] tracking-[-0.03em] text-brand-cocoa">
-                {t(`articles.${article.id}.title`)}
+                {article.title}
                 </h3>
 
-                <p className="mt-3 max-w-md pb-5 font-body text-[15px] font-light leading-[1.7] text-brand-muted">
-                {t(`articles.${article.id}.description`)}
-                </p>
                 <span className="mt-auto inline-flex items-center gap-2 pt-8 text-sm font-medium text-brand-cocoa transition-colors group-hover:text-brand-orange">
                 {t("articleCta")}
                   <ArrowRight className="size-4" aria-hidden="true" />

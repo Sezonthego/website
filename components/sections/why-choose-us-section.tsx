@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useTranslations, useLocale } from "next-intl";
+import { externalLinks } from "@/lib/links";
 import {
 
   Plug,
@@ -157,6 +158,9 @@ function ReasonCell({
 export function WhyChooseSection() {
   const t = useTranslations("WhyChoose");
   const locale = useLocale();
+
+const links =
+  externalLinks[locale as keyof typeof externalLinks];
   const [particles, setParticles] = useState<
 
   {
@@ -261,7 +265,7 @@ useEffect(() => {
                                 </p>
               </div>
               <Link
-  href="https://cal.com/YOUR-CAL-LINK"
+  href={links.introCall}
   target="_blank"
   rel="noopener noreferrer"
   className="

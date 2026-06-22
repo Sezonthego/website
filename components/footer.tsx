@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { externalLinks } from "@/lib/links";
 import { useTranslations, useLocale } from "next-intl";
 import { Send, Phone, Mail } from "lucide-react";
 import { MessagesSquare } from "lucide-react";
@@ -17,8 +18,11 @@ import { BorderPlus } from "@/components/border-plus";
 import { cn } from "@/lib/utils";
 
 export const Footer = () => {
-  const t = useTranslations("Footer");
   const locale = useLocale();
+
+const links =
+  externalLinks[locale as keyof typeof externalLinks];
+  const t = useTranslations("Footer");
   const navigationItems = [
     { title: t("navigation.home"), href: `/${locale}` },
     { title: t("navigation.solutions"), href: `/${locale}#features` },
@@ -141,7 +145,7 @@ export const Footer = () => {
               </SubHeading>
 
               <Link
-  href="https://cal.com/YOUR-CAL-LINK"
+  href={links.introCall}
   target="_blank"
   rel="noopener noreferrer"
   className="

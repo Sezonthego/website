@@ -3,10 +3,14 @@ import Link from "next/link";
 import { Calendar } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useTranslations, useLocale } from "next-intl";
+import { externalLinks } from "@/lib/links";
 
 export function TransformCommunicationCta() {
-  const t = useTranslations("FinalCTA");
   const locale = useLocale();
+
+const links =
+  externalLinks[locale as keyof typeof externalLinks];
+  const t = useTranslations("FinalCTA");
   const [particles, setParticles] = useState<
     {
       x: number;
@@ -152,7 +156,7 @@ export function TransformCommunicationCta() {
 
 
           <Link
-  href="https://cal.com/YOUR-CAL-LINK"
+  href={links.introCall}
   target="_blank"
   rel="noopener noreferrer"
   className="

@@ -1,10 +1,13 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
+import { blogPosts } from "@/lib/blog-posts";
+import { useLocale } from "next-intl";
 
 import { BorderPlus } from "@/components/border-plus";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Search } from "lucide-react";
 
 const categories = [
   "recruitment",
@@ -12,9 +15,28 @@ const categories = [
   "infrastructure",
 ] as const;
 
+
 export default function BlogPage() {
   const t = useTranslations("Blog");
+  const locale = useLocale();
+  const articles =
+  
+    blogPosts[locale as keyof typeof blogPosts];
+    const [visibleCount, setVisibleCount] = useState(6);
+    const [search, setSearch] = useState("");
 
+    const filteredArticles = articles.filter((article) =>
+      `${article.title} ${article.category} ${article.content}`
+        .toLowerCase()
+        .includes(search.toLowerCase())
+    );
+    
+    const visibleArticles = filteredArticles.slice(
+      0,
+      visibleCount
+    );
+
+    const hasMore = visibleCount < filteredArticles.length;
   return (
     <div className="min-h-screen bg-brand-ivory text-brand-cocoa">
 
@@ -71,7 +93,52 @@ export default function BlogPage() {
             >
               {t("description")}
             </p>
+            <div className="relative mt-10 max-w-[520px]">
 
+<Search
+  className="
+    pointer-events-none
+    absolute
+    left-5
+    top-1/2
+    size-4
+    -translate-y-1/2
+    stroke-[1.8]
+    text-brand-muted
+  "
+/>
+
+<input
+  value={search}
+  onChange={(e) => setSearch(e.target.value)}
+  placeholder={t("searchPlaceholder")}
+  className="
+    h-14
+    w-full
+
+    border
+    border-brand-border
+    bg-brand-ivory
+
+    pl-12
+    pr-5
+
+    font-body
+    text-[15px]
+    font-light
+    text-brand-cocoa
+
+    outline-none
+
+    placeholder:text-brand-muted
+
+    transition-colors
+
+    focus:border-brand-orange
+  "
+/>
+
+</div>
           </div>
 
         </div>
@@ -96,57 +163,123 @@ export default function BlogPage() {
           <BorderPlus className="-bottom-[11px] -right-[11px]" />
 
 
-          <div className="grid md:grid-cols-3">
+         
 
-            {categories.map((category, index) => (
-              <div
-                key={category}
-                className={`
-                  min-h-[240px]
-                  border-brand-border
-                  p-8
-                  md:p-10
+          {/* ARTICLES */}
+          <div className="border-brand-border">
+            <div className="grid divide-y divide-brand-border lg:grid-cols-3 lg:divide-x lg:divide-y-0">
 
-                  ${
-                    index !== categories.length - 1
-                      ? "border-b md:border-b-0 md:border-r"
-                      : ""
-                  }
-                `}
-              >
-
-                <p
+            {visibleArticles.map((article) => (
+                <Link
+                  key={article.id}
+                  href={`/${locale}/blog/${article.slug}`}
                   className="
-                    font-heading
-                    text-[28px]
-                    font-[600]
-                    leading-[1.2]
-                    tracking-[-0.035em]
-                    text-brand-cocoa
-                  "
+                  group
+                  flex
+                  min-h-[280px]
+                  flex-col
+                  px-6
+                  pb-10
+                  transition-colors
+                  hover:bg-[#FFFAF6]
+                  md:px-12
+                  md:pb-12
+                "
                 >
-                  {t(`categories.${category}.title`)}
-                </p>
 
-                <p
-                  className="
-                    mt-4
+                  <p className="
+                    pt-12
                     font-body
-                    text-[15px]
-                    font-light
-                    leading-[1.7]
-                    text-brand-muted
-                  "
-                >
-                  {t(`categories.${category}.description`)}
-                </p>
+                    text-xs
+                    font-medium
+                    uppercase
+                    tracking-[0.14em]
+                    text-brand-orange
+                  ">
+                    {article.category}
+                  </p>
 
-              </div>
-            ))}
 
+                  <h3 className="
+                    mt-4
+                    max-w-md
+                    font-body
+                    text-[23px]
+                    font-[500]
+                    leading-[1.4]
+                    tracking-[-0.03em]
+                    text-brand-cocoa
+                  ">
+                    {article.title}
+                  </h3>
+
+
+                  <span className="
+                    mt-auto
+                    inline-flex
+                    items-center
+                    gap-2
+                    pt-8
+                    text-sm
+                    font-medium
+                    text-brand-cocoa
+                    group-hover:text-brand-orange
+                  ">
+                    {t("articleCta")}
+                    <ArrowRight className="size-4" />
+                  </span>
+
+                </Link>
+              ))}
+
+            </div>
           </div>
+          {hasMore && (
+  <div className="relative border-t border-brand-border py-12 text-center">
 
+    {/* fade */}
+    <div
+      className="
+        pointer-events-none
+        absolute
+        -top-24
+        left-0
+        h-24
+        w-full
+        bg-gradient-to-t
+        from-brand-ivory
+        to-transparent
+      "
+    />
 
+    <button
+      onClick={() =>
+        setVisibleCount((prev) => prev + 6)
+      }
+      className="
+        relative
+        inline-flex
+        h-12
+        items-center
+        bg-brand-cocoa
+        px-6
+
+        font-body
+        text-[13px]
+        font-medium
+        uppercase
+
+        text-brand-ivory
+
+        transition-colors
+        hover:bg-brand-orange
+      "
+    >
+      Load more articles
+    </button>
+
+  </div>
+)}
           {/* CTA */}
           <div className="border-t border-brand-border p-8 md:p-10">
 
