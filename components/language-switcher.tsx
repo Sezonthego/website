@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useLocale } from "next-intl";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "motion/react";
+import { blogPosts } from "@/lib/blog-posts";
 
 export function LanguageSwitcher() {
   const locale = useLocale();
@@ -13,9 +14,30 @@ export function LanguageSwitcher() {
 
   const cleanPath = pathname.replace(/^\/(en|pl)/, "");
 
+  let targetPath = `/${nextLocale}${cleanPath}`;
+
+  if (cleanPath.startsWith("/blog/")) {
+    const currentSlug = cleanPath.replace("/blog/", "");
+
+    const currentArticle =
+      blogPosts[locale as keyof typeof blogPosts].find(
+        (post) => post.slug === currentSlug
+      );
+
+    const translatedArticle = currentArticle
+      ? blogPosts[nextLocale as keyof typeof blogPosts].find(
+          (post) => post.id === currentArticle.id
+        )
+      : null;
+
+    if (translatedArticle) {
+      targetPath = `/${nextLocale}/blog/${translatedArticle.slug}`;
+    }
+  }
+
   return (
     <Link
-      href={`/${nextLocale}${cleanPath}`}
+      href={targetPath}
       aria-label={`Switch to ${nextLocale}`}
       className="
         group
