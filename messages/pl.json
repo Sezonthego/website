@@ -419,6 +419,10 @@
   "ignore": "Ignoruj"
 },
 "BlogArticle": {
+  "writtenBy": "Autor",
+  "editedBy": "Redakcja",
+  "published": "Opublikowano",
+
   "cta": {
     "title": "Lepsza rekrutacja zaczyna się tutaj!",
     "description": "Zbuduj infrastrukturę, która pomaga Twojemu zespołowi szybciej rekrutować pacjentów, osiągać cele rekrutacyjne i ograniczać codzienną pracę manualną.",

@@ -388,6 +388,10 @@
   "ignore": "Ignore"
 },
 "BlogArticle": {
+  "writtenBy": "Written by",
+  "editedBy": "Edited by",
+  "published": "Published",
+
   "cta": {
     "title": "Better recruitment starts here!",
     "description": "Build the infrastructure that helps your team recruit faster, meet enrollment targets, and lower the daily manual workload.",

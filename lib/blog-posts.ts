@@ -13,6 +13,7 @@ export const blogPosts = {
       title: "Clinical recruitment is not an awareness problem alone.",
       date: "18 June 2026",
       author: "Yazid Abouhafss",
+      editor:"Ouassim Ridouani",
       content: recruitmentAwareness,
     },
 
@@ -23,6 +24,7 @@ export const blogPosts = {
       title: "Why recruitment fails after patients show interest?",
       date: "18 June 2026",
       author: "Yazid Abouhafss",
+      editor:"Ouassim Ridouani",
       content: patientInterest,
     },
 
@@ -33,6 +35,7 @@ export const blogPosts = {
       title: "Why more technology does not always reduce complexity?",
       date: "18 June 2026",
       author: "Yazid Abouhafss",
+      editor:"Ouassim Ridouani",
       content: technologyComplexity,
     },
   ],
@@ -48,6 +51,7 @@ pl: [
     title: "Rekrutacja kliniczna to nie tylko problem świadomości.",
     date: "18 czerwca 2026",
     author: "Yazid Abouhafss",
+editor: "Julia Bajko",
     content: recruitmentAwarenessPL,
   },
 
@@ -58,6 +62,7 @@ pl: [
     title: "Dlaczego rekrutacja nie kończy się po zainteresowaniu pacjenta?",
     date: "18 czerwca 2026",
     author: "Yazid Abouhafss",
+    editor: "Julia Bajko",
     content: patientInterestPL,
   },
 
@@ -68,6 +73,7 @@ pl: [
     title: "Dlaczego więcej technologii nie zawsze zmniejsza złożoność?",
     date: "18 czerwca 2026",
     author: "Yazid Abouhafss",
+    editor: "Julia Bajko",
     content: technologyComplexityPL,
   },
 ],

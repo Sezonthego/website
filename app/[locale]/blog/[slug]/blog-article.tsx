@@ -129,23 +129,37 @@ export default function BlogArticle({ article }: BlogArticleProps) {
                 {/* SIDEBAR */}
                 <aside className="border-b border-brand-border p-6 lg:border-b-0 lg:border-l lg:p-10">
             <div className="sticky top-28">
-              <p className="font-body text-xs font-medium uppercase tracking-[0.18em] text-brand-muted">
-                Written by
-              </p>
+            <p className="font-body text-xs font-medium uppercase tracking-[0.18em] text-brand-muted">
+  {t("writtenBy")}
+</p>
 
-              <p className="mt-3 font-body text-sm font-medium leading-[1.6] text-brand-cocoa">
-                Yazid Abouhafss
-              </p>
+<p className="mt-3 font-body text-sm font-medium leading-[1.6] text-brand-cocoa">
+  {article.author}
+</p>
 
-              <div className="my-8 h-px bg-brand-border" />
 
-              <p className="font-body text-xs font-medium uppercase tracking-[0.18em] text-brand-muted">
-                Published
-              </p>
+<div className="my-8 h-px bg-brand-border" />
+
+
+<p className="font-body text-xs font-medium uppercase tracking-[0.18em] text-brand-muted">
+  {t("editedBy")}
+</p>
+
+<p className="mt-3 font-body text-sm font-medium leading-[1.6] text-brand-cocoa">
+  {article.editor}
+</p>
+
+
+<div className="my-8 h-px bg-brand-border" />
+
+
+<p className="font-body text-xs font-medium uppercase tracking-[0.18em] text-brand-muted">
+  {t("published")}
+</p>
 
               <p className="mt-3 font-body text-sm font-medium text-brand-cocoa">
-                18 June 2026
-              </p>
+  {article.date}
+</p>
             </div>
           </aside>
         </div>
