@@ -2,8 +2,8 @@ import { recruitmentAwareness } from "@/content/blog/en/clinical-recruitment-is-
 import { patientInterest } from "@/content/blog/en/why-recruitment-fails-after-patients-show-interest";
 import { technologyComplexity } from "@/content/blog/en/why-more-technology-does-not-always-reduce-complexity";
 import { recruitmentAwarenessPL } from "@/content/blog/pl/rekrutacja-kliniczna-to-nie-tylko-problem-swiadomosci";
-import { patientInterestPL } from "@/content/blog/pl/dlaczego-wiecej-technologii-nie-zawsze-zmniejsza-zlozonosc";
-import { technologyComplexityPL } from "@/content/blog/pl/dlaczego-rekrutacja-nie-konczy-sie-po-zainteresowaniu-pacjenta";
+import { technologyComplexityPL } from "@/content/blog/pl/dlaczego-wiecej-technologii-nie-zawsze-zmniejsza-zlozonosc";
+import { patientInterestPL } from "@/content/blog/pl/dlaczego-rekrutacja-nie-konczy-sie-po-zainteresowaniu-pacjenta";
 export const blogPosts = {
   en: [
     {

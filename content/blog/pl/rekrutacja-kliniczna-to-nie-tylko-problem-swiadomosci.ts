@@ -1,13 +1,15 @@
 export const recruitmentAwarenessPL = `
-Badania kliniczne znacząco rozwinęły się w ostatniej dekadzie. Badania stają się coraz bardziej precyzyjne, a zespoły badawcze mają dostęp do większej liczby technologii, danych i cyfrowych możliwości niż kiedykolwiek wcześniej.
+Wyzwania związane z rekrutacją do badań klinicznych wykraczają poza sam problem świadomości potencjalnych pacjentów.
+
+Badania kliniczne znacząco rozwinęły się w ostatniej dekadzie. Stają się one coraz bardziej precyzyjne, a zespoły badawcze mają dostęp do większej liczby technologii, danych i cyfrowych możliwości niż kiedykolwiek wcześniej.
 
 Jednak mimo postępu w wielu obszarach badań klinicznych, jeden kluczowy element procesu nadal pozostaje wyzwaniem: pomoc odpowiednim pacjentom w znalezieniu, zrozumieniu, zakwalifikowaniu się i pozostaniu zaangażowanym w badania kliniczne.
 
-Z tego powodu rekrutacja pacjentów często traktowana jest głównie jako problem dotarcia. Założenie wydaje się proste: jeśli więcej pacjentów dowie się o badaniu, więcej osób ostatecznie weźmie w nim udział.
+Z tego powodu rekrutacja pacjentów często traktowana jest głównie jako problem dotarcia do potencjalnych zainteresowanych. Założenie wydaje się proste: jeśli więcej pacjentów dowie się o badaniu, więcej osób ostatecznie weźmie w nim udział.
 
-Widoczność jest ważna, ale dotarcie do pacjentów to dopiero początek.
+Widoczność jest ważna, ale dotarcie do pacjentów to dopiero początek procesu.
 
-To, że pacjent zobaczy reklamę, odwiedzi stronę badania lub wyrazi początkowe zainteresowanie, nie oznacza jeszcze skutecznej rekrutacji. To, co dzieje się po pierwszej interakcji, często decyduje o powodzeniu całego procesu.
+Fakt, że pacjent zobaczy reklamę, odwiedzi stronę badania lub wyrazi początkowe zainteresowanie, nie stanowi jeszcze gwarancji skutecznej rekrutacji. Kluczowe znaczenie ma to, co dzieje się po pierwszym kontakcie, ponieważ to właśnie kolejne etapy procesu w największym stopniu determinują jego ostateczny wynik.
 
 Problemem nie zawsze jest brak zainteresowania pacjentów
 
@@ -17,17 +19,17 @@ Potencjalny uczestnik może być zainteresowany udziałem w badaniu, ale nadal m
 
 Każdy etap tworzy możliwość pojawienia się dodatkowych barier.
 
-Opóźniona odpowiedź, niejasne informacje, ręczne przekazywanie danych lub niespójny proces mogą sprawić, że zainteresowany pacjent nigdy nie zostanie uczestnikiem badania.
+Opóźniona odpowiedź, niejasne informacje, niezautomatyzowane przekazywanie danych lub niespójny proces komunikacji mogą sprawić, że zainteresowany pacjent nigdy nie zostanie uczestnikiem badania.
 
-W takich sytuacjach wyzwaniem nie jest wyłącznie wzbudzenie zainteresowania. Kluczowe jest stworzenie jasnej ścieżki, która pozwala przeprowadzić pacjenta przez kolejne etapy.
+W takich sytuacjach wyzwaniem nie jest wyłącznie wzbudzenie uwagi. Kluczowe jest stworzenie jasnej ścieżki, która pozwala przeprowadzić pacjenta przez kolejne etapy.
 
-Rekrutacja nie jest pojedynczym momentem. To połączona ścieżka od świadomości i kwalifikacji, aż po komunikację, udział w badaniu i utrzymanie zaangażowania.
+Rekrutacja nie jest pojedynczym momentem, lecz połączoną ścieżką od świadomości i kwalifikacji, aż po komunikację, udział w badaniu i utrzymanie zaangażowania.
 
 Gdy ta ścieżka jest rozproszona, pacjenci mogą zostać utraceni nawet po wykonaniu pierwszego kroku.
 
 Problemy w procesie rekrutacji mają realne konsekwencje
 
-Wyzwania związane z rekrutacją nie są jedynie problemem operacyjnym. Mają bezpośredni wpływ na harmonogramy badań, zespoły badśawcze, sponsorów oraz pacjentów.
+Wyzwania związane z rekrutacją nie są jedynie problemem operacyjnym. Mają one bezpośredni wpływ na harmonogramy badań, zespoły badawcze, sponsorów oraz pacjentów.
 
 Badania wielokrotnie pokazują, że rekrutacja pacjentów pozostaje jednym z najtrudniejszych obszarów badań klinicznych, a wiele projektów doświadcza opóźnień z powodu nieosiągnięcia celów rekrutacyjnych w zakładanym czasie.
 
@@ -45,19 +47,15 @@ W ostatnich latach zespoły badawcze uzyskały dostęp do większej liczby rozwi
 
 Dostępnych jest coraz więcej platform, formularzy, narzędzi komunikacyjnych, paneli analitycznych i kanałów dotarcia do pacjentów. Każde z nich może rozwiązać konkretny problem, ale dodanie większej liczby narzędzi nie tworzy automatycznie lepszego procesu rekrutacji.
 
-Często dzieje się odwrotnie.
+W praktyce pacjent może zostać zarejestrowany w jednym systemie, podczas gdy jego dane znajdują się w innym, komunikacja odbywa się za pośrednictwem kolejnych narzędzi, a zespół badawczy nadal musi ręcznie integrować wszystkie te elementy.
 
-Pacjent może trafić przez jeden system, jego informacje mogą znajdować się w innym miejscu, komunikacja może odbywać się przez kolejne narzędzie, a zespół nadal musi ręcznie łączyć wszystkie elementy.
-
-Narzędzia istnieją, ale cały proces pozostaje rozproszony.
-
-Powstają utrudnienia nie dlatego, że zespołom brakuje zaangażowania, ale dlatego, że systemy wokół nich nie zostały zaprojektowane jako jedna spójna całość.
+Powyższe utrudnienia nie są efektem niedostatecznego zaangażowania zespołów, lecz konsekwencją braku spójnej architektury systemów, w ramach których funkcjonują.
 
 Rekrutacja powinna być projektowana jako ścieżka pacjenta
 
 Lepsze podejście zaczyna się od spojrzenia na rekrutację z perspektywy całej ścieżki pacjenta.
 
-Celem nie jest wyłącznie dotarcie do osoby, która może być zainteresowana. Celem jest przeprowadzenie jej przez każdy ważny etap między odkryciem badania a faktycznym udziałem.
+Celem nie jest wyłącznie dotarcie do osoby, która może być zainteresowana. Celem jest przeprowadzenie jej przez każdy ważny etap między odkryciem badania, a faktycznym udziałem.
 
 Wymaga to połączenia wszystkich etapów:
 
@@ -71,7 +69,7 @@ Skuteczna komunikacja pomaga utrzymać zaangażowanie pacjentów.
 
 Dobrze zorganizowane procesy pomagają zespołom sprawniej zarządzać rekrutacją.
 
-Kiedy te elementy są połączone, rekrutacja staje się prostsza zarówno dla pacjentów, jak i zespołów badawczych.
+Kiedy powyższe elementy są połączone, rekrutacja staje się prostsza zarówno dla pacjentów, jak i zespołów badawczych.
 
 Lepsza infrastruktura wspiera lepszą rekrutację
 
@@ -79,25 +77,19 @@ Przyszłość rekrutacji do badań klinicznych nie polega wyłącznie na generow
 
 Połączona infrastruktura integruje najważniejsze elementy rekrutacji: pozyskiwanie pacjentów, informacje o badaniu, wstępną kwalifikację, komunikację, pracę koordynatorów oraz analizę wyników.
 
-Celem nie jest zastąpienie zespołów badawczych.
-
-Celem jest zmniejszenie niepotrzebnych utrudnień wokół ich pracy.
+Celem nie jest zastąpienie zespołów badawczych, a zmniejszenie niepotrzebnych utrudnień wokół ich pracy.
 
 Lepsze systemy pozwalają zespołom poświęcać mniej czasu na zarządzanie rozproszonymi informacjami, a więcej na wspieranie pacjentów przechodzących przez proces rekrutacji.
 
 Kolejny etap rekrutacji to połączone procesy
 
-Badania kliniczne stają się coraz bardziej złożone. Pacjenci oczekują bardziej przejrzystych doświadczeń cyfrowych, sponsorzy oczekują większej efektywności, a ośrodki badawcze muszą realizować badania sprawnie, zachowując jakość i zaufanie.
+Badania kliniczne stają się coraz bardziej złożone. Pacjenci oczekują bardziej przejrzystych doświadczeń cyfrowych, sponsorzy większej efektywności, a ośrodki badawcze muszą realizować zadania sprawnie, zachowując jakość i zaufanie.
 
 Spełnienie tych oczekiwań wymaga czegoś więcej niż dodania kolejnego oddzielnego narzędzia.
 
 Wymaga stworzenia połączonych ścieżek między pacjentami, procesami i zespołami badawczymi.
 
-W Weforge wierzymy, że przyszłość rekrutacji do badań klinicznych będzie oparta na lepszej infrastrukturze zaprojektowanej wokół całej ścieżki — od zainteresowania pacjenta do udziału w badaniu.
+W Weforge wierzymy, że przyszłość rekrutacji do badań klinicznych będzie oparta na lepszej infrastrukturze zaprojektowanej wokół całej ścieżki- od zainteresowania pacjenta aż do ukończenia badania.
 
-Ponieważ lepsza rekrutacja nie wynika wyłącznie z dotarcia do większej liczby osób.
-
-Powstaje dzięki tworzeniu lepszych systemów wokół ludzi, którzy umożliwiają rozwój badań.
-
-Lepsze systemy. Lepsza rekrutacja.
+Lepsza rekrutacja nie wynika wyłącznie z dotarcia do większej liczby osób, lecz z budowania skuteczniejszych systemów wspierających badania i osoby zaangażowane w ich realizację. To właśnie jakość tych systemów, a nie sama skala działań, decyduje o efektywności procesu rekrutacyjnego.
 `;

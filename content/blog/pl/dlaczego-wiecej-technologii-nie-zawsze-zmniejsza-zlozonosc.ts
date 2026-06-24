@@ -1,149 +1,117 @@
-export const patientInterestPL = `
-Zainteresowanie pacjenta to ważny etap w procesie rekrutacji do każdego badania klinicznego.
+export const technologyComplexityPL = `
+Większa liczba technologii nie zawsze przekłada się na mniejszą złożoność procesów. Choć nowe rozwiązania są wdrażane w celu uproszczenia pracy i zwiększenia efektywności, w praktyce mogą one zarówno usprawniać poszczególne etapy badań klinicznych, jak i prowadzić do ich dalszej fragmentacji. W efekcie dodawanie kolejnych narzędzi nie gwarantuje prostszego procesu.
 
-Oznacza, że ktoś odkrył badanie, poświęcił czas na zdobycie informacji i uznał, że udział może być dla niego odpowiedni.
+Gdy systemy są wdrażane w sposób niezależny, bez spójnego procesu integracji, zespoły badawcze mogą zacząć poświęcać więcej czasu na zarządzanie technologią niż na korzystanie z niej jako narzędzia wspierającego ich pracę.
 
-Jednak wygenerowanie zainteresowania nie jest tym samym, co osiągnięcie rekrutacji.
+Kluczowym wyzwaniem nie jest liczba narzędzi, lecz ich integracja i współdziałanie.
 
-Pomiędzy pierwszą interakcją pacjenta z badaniem a momentem, w którym zostaje on uczestnikiem, istnieje wiele etapów decydujących o tym, czy początkowe zainteresowanie rzeczywiście przełoży się na udział.
+Badania kliniczne mają więcej narzędzi niż kiedykolwiek wcześniej
 
-Pacjent musi zrozumieć założenia badania, przejść proces kwalifikacji, komunikować się z zespołem badawczym, zaplanować wizyty i pozostać zaangażowany przez cały proces.
+W ciągu ostatniej dekady badania kliniczne uległy znacznej cyfryzacji. Zespoły badawcze korzystają dziś z różnych rozwiązań wspierających poszczególne elementy procesu, takich jak:
 
-To właśnie przestrzeń pomiędzy zainteresowaniem a udziałem w badaniu jest miejscem, w którym zaczyna się wiele wyzwań rekrutacyjnych.
+platformy do rekrutacji pacjentów
 
-Zainteresowanie to dopiero początek
+systemy elektronicznego zarządzania danymi
 
-Rekrutacja do badań klinicznych jest często oceniana przez pryzmat możliwości dotarcia do potencjalnych uczestników.
+narzędzia komunikacyjne
 
-Większa widoczność, więcej odwiedzin strony internetowej i więcej zgłoszeń od pacjentów są zazwyczaj traktowane jako oznaki postępu. Chociaż te wskaźniki są ważne, pokazują jedynie początek znacznie dłuższej ścieżki.
+rozwiązania do planowania i koordynacji
 
-Wysłanie formularza przez pacjenta nie oznacza, że rekrutacja została zakończona.
+panele analityczne i raportowe
 
-Pacjent nadal może potrzebować zrozumieć wymagania badania, potwierdzić kryteria kwalifikacji, porozmawiać z koordynatorem, zaplanować wizytę i podjąć świadomą decyzję dotyczącą udziału.
+Każda z tych technologii odpowiada na określony problem: platformy rekrutacyjne wspierają dotarcie do pacjentów, narzędzia komunikacyjne zwiększają ich zaangażowanie, a systemy raportowe i dashboardy zapewniają lepszą widoczność wyników.
 
-Każdy z tych momentów wymaga jasnego i dobrze skoordynowanego procesu.
+Trudności pojawiają się jednak w sytuacji, gdy poszczególne rozwiązania funkcjonują w izolacji. Narzędzie może usprawniać jeden etap procesu, jednocześnie generując dodatkowe obciążenia w innym, jeśli przepływ informacji pomiędzy systemami nie jest odpowiednio zintegrowany.
 
-Bez odpowiedniej struktury zainteresowani pacjenci mogą stracić zaangażowanie, zanim dotrą do etapu udziału w badaniu.
+Badania Tufts Center for the Study of Drug Development wskazują na rosnącą złożoność współczesnych badań klinicznych oraz coraz większe wymagania operacyjne wobec zespołów badawczych. Wraz ze wzrostem tej złożoności systemy wspierające badania muszą być bardziej połączone, a nie tylko liczniejsze.
 
-Rekrutacja pacjentów pozostaje jednym z największych wyzwań w rozwoju badań klinicznych. Badania opublikowane w Contemporary Clinical Trials Communications pokazują, że trudności rekrutacyjne nadal przyczyniają się do opóźnień badań, a wiele projektów ma problem z osiągnięciem zakładanych celów rekrutacyjnych w wyznaczonym czasie.
+Kiedy zespoły stają się połączeniem między systemami
 
-Wyzwaniem nie jest tylko stworzenie większej liczby możliwości odkrycia badań przez pacjentów.
+Jednym z konsekwencji rozproszonych systemów technologicznych jest to, że obowiązek łączenia wszystkich elementów procesu często wraca do zespołu badawczego.
 
-Wyzwaniem jest stworzenie ścieżki, która pomaga zainteresowanym pacjentom przejść dalej.
+Choć proces rekrutacji może wydawać się cyfrowy z zewnątrz, w rzeczywistości często opiera się na licznych działaniach manualnych. Dane pacjentów są rejestrowane w jednym systemie, kwalifikacja odbywa się w innym, komunikacja prowadzona jest w odrębnych narzędziach, a raportowanie nadal wymaga dodatkowych ręcznych uzupełnień.
 
-Brakujący etap pomiędzy zainteresowaniem a udziałem
+Z czasem zespoły stają się mostem pomiędzy narzędziami, które miały ułatwić ich pracę.
 
-Kiedy mówi się o rekrutacji, uwaga często skupia się na dwóch punktach: znalezieniu pacjentów i ich włączeniu do badania.
+Może to prowadzić do sytuacji, w których koordynatorzy poświęcają cenny czas na:
 
-Jednak najważniejsza praca często odbywa się pomiędzy tymi dwoma momentami.
+przenoszenie informacji między platformami
 
-Ten środkowy etap obejmuje działania operacyjne, które zmieniają początkowe zainteresowanie w rzeczywisty udział:
+sprawdzanie aktualizacji w wielu systemach
 
-edukacja pacjenta
+ręczne śledzenie postępów pacjentów
 
-wstępna kwalifikacja
+koordynowanie powtarzalnej komunikacji
 
-ocena kryteriów udziału
+Technologia istnieje, ale cały proces nadal zależy od ludzi, którzy muszą łączyć wszystkie elementy.
 
-komunikacja
+Ukryty koszt rozproszonych procesów
 
-planowanie wizyt
+Niewielkie nieefektywności w procesach rekrutacyjnych często wydają się na początku marginalne i łatwe do kontrolowania. Dodatkowe aktualizacje, kolejne arkusze kalkulacyjne czy konieczność pracy w wielu systemach nie są zazwyczaj traktowane jako istotne utrudnienia.
 
-utrzymywanie zaangażowania
+Jednak w skali wielu pacjentów, badań i zespołów te pozornie drobne działania kumulują się, stając się znaczącym obciążeniem operacyjnym.
 
-Te kroki nie zawsze są najbardziej widoczne, ale mają ogromny wpływ na skuteczność rekrutacji.
+Dla ośrodków badawczych rozproszone procesy mogą zwiększać ilość pracy administracyjnej i utrudniać zrozumienie, na jakim etapie ścieżki rekrutacyjnej znajduje się każdy pacjent. Dla pacjentów te same problemy operacyjne mogą oznaczać wolniejsze odpowiedzi, niejasne kolejne kroki i dodatkowe bariery przed udziałem w badaniu.
 
-Kampania może wygenerować setki zainteresowanych pacjentów, ale bez odpowiedniego procesu wiele możliwości może zostać utraconych, zanim zamienią się w rzeczywistych uczestników.
+Organizacje takie jak Society for Clinical Research Sites zwracają uwagę na znaczenie zmniejszania obciążenia operacyjnego oraz tworzenia technologii, która realnie wspiera zespoły badawcze.
 
-Dlatego rekrutacja nie powinna być traktowana wyłącznie jako problem pozyskiwania pacjentów.
+Technologia powinna usuwać bariery wokół ludzi, a nie jedynie przenosić je w inne miejsce.
 
-Jest to również wyzwanie związane z doświadczeniem pacjenta i organizacją procesów.
+Więcej narzędzi to nie to samo co lepsze systemy
 
-Dlaczego zainteresowani pacjenci są traceni przed udziałem w badaniu
+Zbiór przydatnych narzędzi nie tworzy automatycznie połączonego procesu rekrutacji.
 
-Pacjenci rzadko opuszczają proces rekrutacji bez powodu.
+Zespoły badawcze mogą korzystać z różnych platform do zarządzania informacjami o pacjentach, komunikacją, planowaniem i analizą wyników. Każde narzędzie może usprawnić konkretną część pracy, ale skuteczna rekrutacja zależy od tego, jak dobrze wszystkie etapy działają razem.
 
-Często dzieje się tak dlatego, że małe punkty tarcia gromadzą się na różnych etapach procesu.
+Gdy narzędzia pozostają od siebie oddzielone, zespoły często spędzają więcej czasu na koordynowaniu systemów niż na pracy z pacjentami i realizacji badań.
 
-Pacjent może zbyt długo czekać na odpowiedź. Może nie rozumieć kolejnych kroków. Proces kwalifikacji może wymagać wielu dodatkowych wiadomości, a ważne informacje mogą być trudne do zarządzania w rozproszonych systemach.
+Lepsze systemy powstają wtedy, gdy technologia wspiera całą ścieżkę:
 
-Dla pacjentów takie momenty tworzą niepewność.
+pomaga informacjom przepływać sprawniej
 
-Dla zespołów badawczych oznaczają dodatkowe obciążenie operacyjne.
+ogranicza niepotrzebną pracę manualną
 
-Badania dotyczące udziału pacjentów w badaniach klinicznych wielokrotnie wskazują, że komunikacja, zrozumienie procesu, wygoda oraz ograniczanie barier mają istotny wpływ na poprawę rekrutacji i utrzymania uczestników.
+zwiększa widoczność procesów
 
-Skuteczna rekrutacja nie polega więc wyłącznie na dotarciu do właściwych pacjentów.
+wspiera lepszą komunikację
 
-Polega na stworzeniu procesu, który pomaga im kontynuować udział.
+Celem technologii w badaniach klinicznych nie jest zastąpienie ludzi, a stworzenie lepszych systemów wokół nich, aby zespoły mogły poświęcać czas tam, gdzie tworzą największą wartość.
 
-Więcej zainteresowanych pacjentów nie naprawi nieefektywnego procesu
+Projektowanie technologii wokół procesu
 
-Kiedy cele rekrutacyjne są trudne do osiągnięcia, pierwszą reakcją często jest zwiększenie działań promocyjnych.
-
-Więcej kampanii.
-
-Więcej kanałów.
-
-Większa widoczność.
-
-W niektórych przypadkach jest to konieczne. Pacjenci nie mogą uczestniczyć w badaniach, o których nigdy się nie dowiedzą.
-
-Jednak zwiększanie świadomości bez poprawy tego, co dzieje się później, może stworzyć nowe problemy.
-
-Więcej zainteresowanych pacjentów trafiających do rozproszonego procesu oznacza więcej informacji do zarządzania, więcej działań follow-up i większą presję na już obciążone zespoły badawcze.
-
-Rozwój przynosi wartość tylko wtedy, gdy proces, który go wspiera, może skalować się razem z nim.
-
-Badania Tufts Center for the Study of Drug Development pokazują, że skuteczność rekrutacyjna ośrodków znacząco różni się pomiędzy badaniami, co pokazuje, że sama możliwość pozyskania pacjentów nie zawsze przekłada się na skuteczną rekrutację.
-
-Generowanie zainteresowania jest ważne, ale równie ważna jest możliwość przekształcenia tego zainteresowania w rzeczywisty udział.
-
-Projektowanie lepszych ścieżek pacjenta
-
-Lepsze podejście zaczyna się od spojrzenia na rekrutację jako kompletną ścieżkę pacjenta.
+Kolejny etap technologii w rekrutacji do badań klinicznych wymaga innego sposobu myślenia.
 
 Zamiast pytać wyłącznie:
 
-„Jak możemy dotrzeć do większej liczby pacjentów?”
+„Jakie narzędzie rozwiąże ten problem?”
 
-Zespoły badawcze mogą również zapytać:
+Organizacje badawcze powinny również postawić pytanie:
 
-„Jak możemy pomóc zainteresowanym pacjentom przejść przez każdy etap procesu?”
+„Jak to połączy się z całym procesem?”
 
-Wymaga to połączenia wszystkich momentów pomiędzy świadomością a udziałem w badaniu.
+Silniejsza infrastruktura rekrutacyjna łączy różne etapy prowadzące pacjenta od zainteresowania do udziału w badaniu:
 
-Jasne informacje pomagają pacjentom podejmować świadome decyzje.
+pozyskiwanie pacjentów
 
-Uporządkowana kwalifikacja pomaga zespołom szybciej identyfikować odpowiednich uczestników.
+kwalifikację
 
-Sprawna komunikacja utrzymuje zaangażowanie pacjentów.
+komunikację
 
-Zorganizowane procesy pomagają zespołom wiedzieć, na jakim etapie znajduje się każdy pacjent.
+pracę koordynatorów
 
-Kiedy te elementy działają razem, rekrutacja staje się łatwiejsza zarówno dla pacjentów, jak i zespołów badawczych.
+analizę wyników
 
-Przyszłość rekrutacji to nie tylko pozyskiwanie pacjentów
+Kiedy te elementy działają razem, zespoły badawcze zyskują większą przejrzystość, a pacjenci przechodzą przez bardziej uporządkowaną ścieżkę.
 
-Rekrutacja do badań klinicznych będzie stawać się coraz bardziej cyfrowa.
+Technologia tworzy największą wartość wtedy, gdy staje się częścią procesu, a nie kolejnym miejscem, w którym trzeba wykonywać dodatkową pracę.
 
-Jednak sama technologia nie rozwiązuje problemów rekrutacyjnych.
+Przyszłość to połączona infrastruktura
 
-Dodawanie kolejnych niepołączonych narzędzi może zwiększać złożoność, jeśli podstawowy proces pozostaje rozproszony.
+Badania kliniczne będą ulegać dalszej cyfryzacji. Nowe platformy, możliwości analizy danych i technologie będą zmieniać sposób zarządzania oraz prowadzenia badań.
 
-Przyszłość rekrutacji wymaga lepszych połączeń między pacjentami, zespołami badawczymi i systemami, które je wspierają.
+Jednak przyszłość rekrutacji nie będzie zależeć wyłącznie od liczby używanych narzędzi, lecz od tego, jak skutecznie te narzędzia połączą pacjentów, procesy i zespoły.
 
-W Weforge wierzymy, że skuteczna rekrutacja zaczyna się od zaprojektowania tego, co dzieje się po pierwszej interakcji.
+W Weforge wierzymy, że lepsza technologia rekrutacyjna zaczyna się od lepszej infrastruktury.
 
-Ponieważ zainteresowanie pacjenta jest tylko początkiem.
-
-Prawdziwym celem jest stworzenie ścieżki, która pomaga zamienić zainteresowanie w udział.
-
-Źródła
-
-Contemporary Clinical Trials Communications — badania dotyczące wyzwań rekrutacyjnych i barier włączania pacjentów do badań.
-
-National Institutes of Health / PubMed Central — badania dotyczące udziału pacjentów, barier rekrutacyjnych, komunikacji i utrzymania uczestników.
-
-Tufts Center for the Study of Drug Development — analizy dotyczące skuteczności rekrutacyjnej ośrodków badań klinicznych.
+Technologia nie powinna dodawać kolejnych systemów do zarządzania, lecz tworzyć spójne, połączone środowisko, które usprawnia pracę zespołów i wspiera pacjentów na każdym etapie rekrutacji.
 `;
