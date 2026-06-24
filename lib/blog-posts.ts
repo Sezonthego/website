@@ -4,9 +4,6 @@ import { technologyComplexity } from "@/content/blog/en/why-more-technology-does
 import { recruitmentAwarenessPL } from "@/content/blog/pl/rekrutacja-kliniczna-to-nie-tylko-problem-swiadomosci";
 import { patientInterestPL } from "@/content/blog/pl/dlaczego-wiecej-technologii-nie-zawsze-zmniejsza-zlozonosc";
 import { technologyComplexityPL } from "@/content/blog/pl/dlaczego-rekrutacja-nie-konczy-sie-po-zainteresowaniu-pacjenta";
-export type BlogPost =
-
-  (typeof blogPosts)[keyof typeof blogPosts][number];
 export const blogPosts = {
   en: [
     {
@@ -75,3 +72,6 @@ pl: [
   },
 ],
 } as const;
+
+export type BlogPost =
+  (typeof blogPosts)[keyof typeof blogPosts][number];
