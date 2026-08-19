@@ -114,7 +114,7 @@ export default function BlogArticle({ article }: BlogArticleProps) {
   href="https://cal.com/YOUR-CAL-LINK"
   target="_blank"
   rel="noopener noreferrer"
-  className="mt-8 inline-flex min-h-12 items-center gap-3 bg-brand-orange px-5 py-3 font-body text-[13px] font-medium uppercase text-brand-ivory transition-colors hover:bg-brand-orange/90"
+  className="mt-8 inline-flex min-h-11 items-center gap-2 rounded-full bg-brand-orange px-5 py-2.5 font-body text-[13px] font-medium text-brand-ivory transition-colors hover:bg-brand-orange/90"
 >
   <CalendarDays className="size-4 stroke-[1.8]" />
 

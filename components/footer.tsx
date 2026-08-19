@@ -153,16 +153,15 @@ const links =
     mb-6
     md:mb-0
     inline-flex
-    min-h-12
+    min-h-11
     items-center
     gap-4
-    rounded-none
+    rounded-full
     bg-brand-orange
     px-5
-    py-3
+    py-2.5
     text-[13px]
     font-medium
-    uppercase
     text-brand-ivory
     shadow-[0_14px_30px_rgba(255,79,0,0.20)]
     transition-colors

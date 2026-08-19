@@ -33,8 +33,8 @@ const links =
     );
   }, []);
   return (
-    <section id="final-cta" className="mt-28 mb-28 border-y border-brand-border bg-brand-ivory px-4 text-brand-cocoa md:px-8">
-      <div className="relative mx-auto max-w-[1320px] border-x border-brand-border bg-brand-cocoa">
+    <section id="final-cta" className="mt-28 mb-28 bg-brand-ivory px-4 text-brand-cocoa md:px-8">
+      <div className="relative mx-auto max-w-[1320px] overflow-hidden rounded-[28px] border border-brand-border bg-brand-cocoa md:rounded-[36px]">
 
 
         <div className="relative isolate overflow-hidden px-6 py-24 text-center md:px-12 md:py-32">
@@ -110,7 +110,8 @@ const links =
     mx-auto
     ${locale === "pl" ? "max-w-3xl" : "max-w-2xl"}
     font-heading
-    text-[clamp(2.5rem,5vw,3.2rem)]
+    text-[2.24rem]
+    md:text-[clamp(2rem,4vw,3.2rem)]
     font-[600]
     leading-[1.2]
     tracking-[-0.04em]
@@ -162,16 +163,15 @@ const links =
   className="
     mt-14
     inline-flex
-    min-h-12
+    min-h-11
     items-center
     gap-4
-    rounded-none
+    rounded-full
     bg-brand-orange
     px-5
-    py-3
+    py-2.5
     text-[13px]
     font-medium
-    uppercase
     text-brand-ivory
     shadow-[0_14px_30px_rgba(255,79,0,0.20)]
     transition-colors
@@ -181,7 +181,6 @@ const links =
     focus-visible:ring-brand-orange
     focus-visible:ring-offset-2
     focus-visible:ring-offset-brand-ivory
-    sm:px-6
   "
 >
   <Calendar

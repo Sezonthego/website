@@ -55,7 +55,8 @@ function ScaleYourPractice() {
     mt-5
     ${locale === "pl" ? "max-w-5xl" : "max-w-3xl"}
     font-heading
-    text-[clamp(2.5rem,5vw,3.2rem)]
+    text-[2.24rem]
+    md:text-[clamp(2rem,4vw,3.2rem)]
     font-[600]
     leading-[1.2]
     tracking-[-0.04em]

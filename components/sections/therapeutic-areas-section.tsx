@@ -98,7 +98,8 @@ export function PracticeSection() {
     mx-auto
     ${locale === "pl" ? "max-w-2xl" : "max-w-3xl"}
     font-heading
-    text-[clamp(2.5rem,5vw,3.2rem)]
+    text-[2.24rem]
+    md:text-[clamp(2rem,4vw,3.2rem)]
     font-[600]
     leading-[1.2]
     tracking-[-0.04em]
@@ -158,16 +159,15 @@ href={`/${locale}/contact`}
 className="
     mt-12
     inline-flex
-    min-h-12
+    min-h-11
     items-center
     gap-4
-    rounded-none
+    rounded-full
     bg-brand-orange
     px-5
-    py-3
+    py-2.5
     text-[13px]
     font-medium
-    uppercase
     text-brand-ivory
     shadow-[0_14px_30px_rgba(255,79,0,0.20)]
     transition-colors
@@ -177,7 +177,6 @@ className="
     focus-visible:ring-brand-orange
     focus-visible:ring-offset-2
     focus-visible:ring-offset-brand-ivory
-    sm:px-6
     md:mt-16
   "
           >

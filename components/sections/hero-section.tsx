@@ -25,44 +25,44 @@ const trustItems = [
   {
     name: "Supabase",
     logo: "/logos/supabase-logo.svg",
-    width: 150,
-    height: 28,
+    width: 120,
+    height: 22,
   },
   {
     name: "Cursor",
     logo: "/logos/cursor-logo.svg",
-    width: 115,
-    height: 30,
+    width: 92,
+    height: 24,
   },
   {
     name: "Attio",
     logo: "/logos/attio-logo.svg",
-    width: 100,
-    height: 24,
+    width: 80,
+    height: 19,
   },
   {
     name: "Make",
     logo: "/logos/make-logo.svg",
-    width: 110,
-    height: 26,
+    width: 88,
+    height: 21,
   },
   {
     name: "Vercel",
     logo: "/logos/vercel-logo.svg",
-    width: 120,
-    height: 24,
+    width: 96,
+    height: 19,
   },
   {
     name: "OpenAI",
     logo: "/logos/openai-logo.svg",
-    width: 100,
-    height: 28,
+    width: 80,
+    height: 22,
   },
   {
     name: "Next.js",
     logo: "/logos/nextjs-logo.svg",
-    width: 100,
-    height: 24,
+    width: 80,
+    height: 19,
   },
 
 ] as const;
@@ -191,7 +191,7 @@ xl:px-[4.25rem]
                 initial={{ opacity: 0, y: 18 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.58, delay: 0.06, ease: "easeOut" }}
-                className="mt-5 font-heading text-[2.8rem] md:text-[clamp(2.5rem,5vw,4rem)] font-[600] leading-[1.12] tracking-[-0.02em] text-brand-cocoa">
+                className="mt-5 font-heading text-[2.24rem] md:text-[clamp(2rem,4vw,3.2rem)] font-[600] leading-[1.12] tracking-[-0.02em] text-brand-cocoa">
                 {t("headline")}
               </motion.h1>
               <motion.p
@@ -211,7 +211,7 @@ xl:px-[4.25rem]
   href={links.introCall}
   target="_blank"
   rel="noopener noreferrer"
-  className="inline-flex min-h-14 items-center gap-3 uppercase rounded-none bg-brand-orange px-5 py-3 text-[13px] font-medium text-brand-ivory shadow-[0_14px_30px_rgba(255,79,0,0.20)] transition-colors hover:bg-brand-orange/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange focus-visible:ring-offset-2 focus-visible:ring-offset-brand-ivory sm:px-6"
+  className="inline-flex min-h-11 items-center gap-2 rounded-full bg-brand-orange px-5 py-2.5 text-[13px] font-medium text-brand-ivory shadow-[0_10px_24px_rgba(255,79,0,0.18)] transition-colors hover:bg-brand-orange/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange focus-visible:ring-offset-2 focus-visible:ring-offset-brand-ivory"
 >
   <Calendar className="size-4 stroke-[1.8]" />
   {t("cta")}

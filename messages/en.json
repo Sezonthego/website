@@ -10,7 +10,7 @@
     "statistics": "Statistics",
     "articles": "Articles",
     "contact": "Contact",
-    "primaryCta": "ASK A QUESTION",
+    "primaryCta": "Ask a question",
     "secondaryCta": "View solutions",
     "linkedin": "Meet us on LinkedIn",
     "phone": "Call a specialist",
@@ -350,6 +350,116 @@
 
   "send": "Send message",
   "sending": "Sending..."
+},
+"ScopeForm": {
+  "meta": {
+    "title": "Project scope",
+    "description": "A private project scoping form for Weforge Clinical clients."
+  },
+  "access": {
+    "eyebrow": "Private project page",
+    "title": "Enter the access password",
+    "description": "This form is private. Enter the password shared by Weforge to continue.",
+    "password": "Password",
+    "placeholder": "Enter password",
+    "submit": "Continue",
+    "invalid": "The password is incorrect. Please try again.",
+    "unavailable": "Access is temporarily unavailable. Please contact Weforge."
+  },
+  "hero": {
+    "title": "Help us understand your recruitment scope.",
+    "description": "Share the operational details we need to prepare a focused next step. The form usually takes 5–10 minutes."
+  },
+  "contact": {
+    "title": "Organization and contact",
+    "description": "Who should we contact if we need to clarify the scope?",
+    "organization": "Organization",
+    "organizationPlaceholder": "Organization name",
+    "contactName": "Contact name",
+    "contactNamePlaceholder": "Full name",
+    "email": "Work email",
+    "phone": "Phone number",
+    "role": "Role / title",
+    "optional": "Optional"
+  },
+  "studies": {
+    "title": "Studies in scope",
+    "description": "Add one entry for each study you would like us to consider.",
+    "countLabel": "Number of studies",
+    "countLimit": "Maximum 20 studies",
+    "countOutput": "{count, plural, one {# study} other {# studies}}",
+    "add": "Add a study",
+    "removeOne": "Remove a study",
+    "studyLabel": "Study {number}",
+    "protocol": "Protocol / study identifier",
+    "ifAvailable": "If available",
+    "therapeuticArea": "Therapeutic area / indication",
+    "therapeuticPlaceholder": "e.g. Dermatology / atopic dermatitis",
+    "status": "Current status",
+    "statuses": {
+      "preparing": "Preparing to begin recruitment",
+      "recruiting": "Currently recruiting"
+    },
+    "window": "Estimated recruitment window",
+    "windowPlaceholder": "e.g. January–June 2027",
+    "end": "Estimated recruitment end",
+    "remove": "Remove study {number}"
+  },
+  "setup": {
+    "title": "Current recruitment setup",
+    "description": "Tell us what is already in place so we can work with your existing environment.",
+    "toolsQuestion": "Which tools support your recruitment work?",
+    "toolsPrivacy": "Select only general categories you are permitted to share. Do not include patient data, login details, security information, or confidential sponsor information.",
+    "tools": {
+      "ehr-emr": "Electronic health record (EHR / EMR)",
+      "ctms": "Trial management system or study portal",
+      "recruitment-crm": "Recruitment or referral tracking tool",
+      "prescreener": "Online pre-screening form or study page",
+      "scheduling-follow-up": "Scheduling or participant communication tools",
+      "manual": "Spreadsheets, documents, or paper",
+      "none": "No dedicated tools",
+      "prefer-not-to-share": "Prefer not to share",
+      "other": "Another general tool type"
+    },
+    "otherTool": "Other general tool type",
+    "otherToolPlaceholder": "Describe the type only — do not include vendor, account, sponsor, or access details",
+    "paidAdvertising": "Are you currently using paid advertising for recruitment (for example Meta, Google, TikTok, or local media)?",
+    "yes": "Yes",
+    "no": "No",
+    "advertisingManager": "Who manages the advertising?",
+    "advertisingManagerPlaceholder": "e.g. internal team, agency, sponsor, or CRO",
+    "advertisingPlatforms": "Which platforms are used?",
+    "advertisingPlatformsPlaceholder": "e.g. Facebook / Instagram, Google, TikTok, local media",
+    "locationCount": "How many research sites or locations are included in this scope?",
+    "locationPlaceholder": "Enter a number, if known",
+    "locationHelp": "Count each clinic, hospital, or research site that will recruit participants. Enter 1 for a single-site study; leave blank if this is not known yet."
+  },
+  "additional": {
+    "title": "Additional context",
+    "description": "Add anything else that would help us understand the engagement.",
+    "label": "Anything else we should know?",
+    "placeholder": "Optional context, dependencies, or constraints",
+    "privacy": "Please do not include patient names, health information, or other sensitive personal data."
+  },
+  "consent": {
+    "start": "By submitting, you agree to our",
+    "privacy": "Privacy Policy",
+    "and": "and",
+    "terms": "Terms"
+  },
+  "actions": {
+    "submit": "Submit project scope",
+    "submitting": "Submitting…",
+    "submitAnother": "Submit another scope"
+  },
+  "success": {
+    "title": "Thank you. Your scope is with our team.",
+    "description": "We will review the details and follow up with the most relevant next step."
+  },
+  "errors": {
+    "submit": "We could not submit the form.",
+    "generic": "Something went wrong. Please try again."
+  }
 },
 "Blog": {
   "eyebrow": "Insights",

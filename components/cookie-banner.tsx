@@ -133,12 +133,12 @@ export function CookieBanner() {
 
     bg-brand-orange
 
+    rounded-full
     px-5
 
     font-body
-    text-[12px]
+    text-[13px]
     font-medium
-    uppercase
     tracking-[-0.01em]
 
     text-brand-ivory
@@ -163,12 +163,12 @@ export function CookieBanner() {
     border
     border-brand-border
 
+    rounded-full
     px-5
 
     font-body
-    text-[12px]
+    text-[13px]
     font-medium
-    uppercase
 
     text-brand-cocoa
 

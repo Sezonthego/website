@@ -104,7 +104,8 @@ function FrontOfficeEngine() {
   className={`
     ${locale === "pl" ? "max-w-2xl" : "max-w-3xl"}
     font-heading
-    text-[clamp(2.5rem,5vw,3rem)]
+    text-[2.24rem]
+    md:text-[clamp(2rem,4vw,3.2rem)]
     font-[600]
     leading-[1.2]
     tracking-[-0.04em]

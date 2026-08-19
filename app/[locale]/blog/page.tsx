@@ -259,15 +259,15 @@ export default function BlogPage() {
       className="
         relative
         inline-flex
-        h-12
+        h-11
         items-center
         bg-brand-cocoa
+        rounded-full
         px-6
 
         font-body
         text-[13px]
         font-medium
-        uppercase
 
         text-brand-ivory
 
@@ -287,16 +287,16 @@ export default function BlogPage() {
               href="#newsletter"
               className="
                 inline-flex
-                h-12
+                h-11
                 items-center
                 gap-3
                 bg-brand-cocoa
+                rounded-full
                 px-6
 
                 font-body
                 text-[13px]
                 font-medium
-                uppercase
 
                 text-brand-ivory
 

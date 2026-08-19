@@ -52,7 +52,7 @@ export const FAQ = () => {
               <p className="text-sm font-semibold uppercase tracking-[0.18em] text-brand-orange">
                 FAQ
               </p>
-              <h2 className="mt-5 font-heading text-4xl font-light leading-tight text-brand-cocoa md:text-6xl">
+              <h2 className="mt-5 font-heading text-[2.24rem] font-light leading-tight text-brand-cocoa md:text-[clamp(2rem,4vw,3.2rem)]">
                 Clarity above everything.
               </h2>
               <p className="mt-6 text-lg leading-8 text-brand-muted">

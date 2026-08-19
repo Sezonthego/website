@@ -10,7 +10,7 @@
     "statistics": "Statystyki",
     "articles": "Artykuły",
     "contact": "Kontakt",
-    "primaryCta": "ZADAJ PYTANIE",
+    "primaryCta": "Zadaj pytanie",
     "secondaryCta": "Zobacz rozwiązania",
     "linkedin": "Poznaj nas na LinkedIn",
     "phone": "Zadzwoń do specjalisty",
@@ -362,6 +362,116 @@
 
   "send": "Wyślij wiadomość",
   "sending": "Wysyłanie..."
+},
+"ScopeForm": {
+  "meta": {
+    "title": "Zakres projektu",
+    "description": "Prywatny formularz zakresu projektu dla klientów Weforge Clinical."
+  },
+  "access": {
+    "eyebrow": "Prywatna strona projektu",
+    "title": "Wprowadź hasło dostępu",
+    "description": "Ten formularz jest prywatny. Aby kontynuować, wprowadź hasło przekazane przez Weforge.",
+    "password": "Hasło",
+    "placeholder": "Wprowadź hasło",
+    "submit": "Kontynuuj",
+    "invalid": "Hasło jest nieprawidłowe. Spróbuj ponownie.",
+    "unavailable": "Dostęp jest tymczasowo niedostępny. Skontaktuj się z Weforge."
+  },
+  "hero": {
+    "title": "Pomóż nam określić zakres rekrutacji",
+    "description": "Przekaż nam informacje operacyjne potrzebne do przygotowania kolejnego kroku. Wypełnienie formularza zajmie 5–10 minut."
+  },
+  "contact": {
+    "title": "Organizacja i dane kontaktowe",
+    "description": "Z kim możemy się skontaktować, jeśli będziemy potrzebować dodatkowych informacji?",
+    "organization": "Organizacja",
+    "organizationPlaceholder": "Nazwa organizacji",
+    "contactName": "Osoba kontaktowa",
+    "contactNamePlaceholder": "Imię i nazwisko",
+    "email": "Służbowy adres e-mail",
+    "phone": "Numer telefonu",
+    "role": "Stanowisko / rola",
+    "optional": "Opcjonalnie"
+  },
+  "studies": {
+    "title": "Badania objęte zakresem",
+    "description": "Dodaj osobny wpis dla każdego badania, które mamy uwzględnić.",
+    "countLabel": "Liczba badań",
+    "countLimit": "Maksymalnie 20 badań",
+    "countOutput": "{count, plural, one {# badanie} few {# badania} many {# badań} other {# badania}}",
+    "add": "Dodaj badanie",
+    "removeOne": "Usuń badanie",
+    "studyLabel": "Badanie {number}",
+    "protocol": "Numer protokołu / identyfikator badania",
+    "ifAvailable": "Jeśli jest dostępny",
+    "therapeuticArea": "Obszar terapeutyczny / wskazanie",
+    "therapeuticPlaceholder": "np. dermatologia / atopowe zapalenie skóry",
+    "status": "Aktualny status",
+    "statuses": {
+      "preparing": "Przygotowanie do rozpoczęcia rekrutacji",
+      "recruiting": "Rekrutacja w toku"
+    },
+    "window": "Planowany okres rekrutacji",
+    "windowPlaceholder": "np. styczeń–czerwiec 2027",
+    "end": "Planowane zakończenie rekrutacji",
+    "remove": "Usuń badanie {number}"
+  },
+  "setup": {
+    "title": "Obecny proces rekrutacji",
+    "description": "Powiedz nam, jakie rozwiązania są obecnie wykorzystywane, abyśmy mogli dopasować się do istniejącego środowiska.",
+    "toolsQuestion": "Jakie narzędzia wspierają dziś Państwa rekrutację?",
+    "toolsPrivacy": "Wybierz wyłącznie ogólne kategorie, które możesz udostępnić. Nie podawaj danych pacjentów, danych logowania, informacji o zabezpieczeniach ani poufnych informacji sponsora.",
+    "tools": {
+      "ehr-emr": "Elektroniczna dokumentacja medyczna (EHR / EMR)",
+      "ctms": "System zarządzania badaniami lub portal badania",
+      "recruitment-crm": "Narzędzie do obsługi rekrutacji lub skierowań",
+      "prescreener": "Formularz wstępnej kwalifikacji lub strona badania",
+      "scheduling-follow-up": "Narzędzia do umawiania wizyt lub komunikacji z uczestnikami",
+      "manual": "Arkusze, dokumenty lub formularze papierowe",
+      "none": "Brak dedykowanych narzędzi",
+      "prefer-not-to-share": "Wolę nie podawać",
+      "other": "Inny ogólny typ narzędzia"
+    },
+    "otherTool": "Inny ogólny typ narzędzia",
+    "otherToolPlaceholder": "Opisz wyłącznie typ narzędzia — bez nazwy dostawcy, danych konta, sponsora ani danych dostępowych",
+    "paidAdvertising": "Czy obecnie wykorzystują Państwo płatne reklamy do rekrutacji (np. Meta, Google, TikTok lub media lokalne)?",
+    "yes": "Tak",
+    "no": "Nie",
+    "advertisingManager": "Kto zarządza kampaniami reklamowymi?",
+    "advertisingManagerPlaceholder": "np. zespół wewnętrzny, agencja, sponsor lub CRO",
+    "advertisingPlatforms": "Z jakich platform korzystacie?",
+    "advertisingPlatformsPlaceholder": "np. Facebook / Instagram, Google, TikTok, media lokalne",
+    "locationCount": "Ile ośrodków badawczych obejmuje ten zakres?",
+    "locationPlaceholder": "Wpisz liczbę, jeśli jest znana",
+    "locationHelp": "Uwzględnij każdą placówkę, szpital lub ośrodek, który będzie prowadzić rekrutację. Wpisz 1 w przypadku jednego ośrodka; pozostaw pole puste, jeśli liczba nie jest jeszcze znana."
+  },
+  "additional": {
+    "title": "Dodatkowe informacje",
+    "description": "Dodaj inne informacje, które pomogą nam lepiej zrozumieć zakres współpracy.",
+    "label": "Czy powinniśmy wiedzieć o czymś jeszcze?",
+    "placeholder": "Opcjonalne informacje, zależności lub ograniczenia",
+    "privacy": "Nie podawaj imion i nazwisk pacjentów, informacji o stanie zdrowia ani innych wrażliwych danych osobowych."
+  },
+  "consent": {
+    "start": "Wysyłając formularz, akceptujesz naszą",
+    "privacy": "Politykę prywatności",
+    "and": "oraz",
+    "terms": "Regulamin"
+  },
+  "actions": {
+    "submit": "Wyślij zakres projektu",
+    "submitting": "Wysyłanie…",
+    "submitAnother": "Wyślij kolejny zakres"
+  },
+  "success": {
+    "title": "Dziękujemy. Otrzymaliśmy zakres projektu.",
+    "description": "Przeanalizujemy przekazane informacje i skontaktujemy się w sprawie najlepszego kolejnego kroku."
+  },
+  "errors": {
+    "submit": "Nie udało się wysłać formularza.",
+    "generic": "Wystąpił błąd. Spróbuj ponownie."
+  }
 },
 "Blog": {
 

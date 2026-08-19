@@ -248,7 +248,8 @@ useEffect(() => {
   className={`
     ${locale === "pl" ? "max-w-2xl" : "max-w-5xl"}
     font-heading
-    text-[clamp(2.5rem,5vw,3rem)]
+    text-[2.24rem]
+    md:text-[clamp(2rem,4vw,3.2rem)]
     font-[600]
     leading-[1.2]
     tracking-[-0.04em]
@@ -269,13 +270,12 @@ useEffect(() => {
   target="_blank"
   rel="noopener noreferrer"
   className="
-    group mt-14 md:mt-auto inline-flex min-h-12 w-fit items-center gap-2
-    rounded-none
+    group mt-14 md:mt-auto inline-flex min-h-11 w-fit items-center gap-2
+    rounded-full
     bg-brand-orange
-    px-5 py-3
+    px-5 py-2.5
     text-[13px]
     font-medium
-    uppercase
     text-brand-ivory
     shadow-[0_14px_30px_rgba(255,79,0,0.20)]
     transition-colors

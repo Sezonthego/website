@@ -85,7 +85,9 @@ export const ContactSection = () => {
 
   font-heading
 
-  text-[clamp(2.2rem,4vw,3.2rem)]
+  text-[2.24rem]
+
+  md:text-[clamp(2rem,4vw,3.2rem)]
 
   font-[600]
 
@@ -148,15 +150,15 @@ export const ContactSection = () => {
                 className="
     mt-8
     inline-flex
-    h-12
+    h-11
     items-center
     justify-center
     bg-brand-cocoa
+    rounded-full
     px-6
     font-body
     text-[13px]
     font-medium
-    uppercase
     text-brand-ivory
     transition-colors
     hover:bg-brand-orange
@@ -372,7 +374,7 @@ export const ContactSection = () => {
 
     inline-flex
 
-    h-12
+    h-11
 
     items-center
 
@@ -382,6 +384,7 @@ export const ContactSection = () => {
 
     bg-brand-cocoa
 
+    rounded-full
     px-6
 
     font-body
@@ -390,7 +393,6 @@ export const ContactSection = () => {
 
     font-medium
 
-    uppercase
 
     text-brand-ivory
 

@@ -259,7 +259,7 @@ export const NavbarButton = ({
     | React.ComponentPropsWithoutRef<"button">
   )) => {
   const baseStyles =
-    "inline-flex min-h-12 items-center gap-2 whitespace-nowrap uppercase rounded-none bg-brand-orange px-5 py-3 text-[13px] font-medium text-brand-ivory shadow-[0_14px_30px_rgba(255,79,0,0.20)] transition-colors hover:bg-brand-orange/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange focus-visible:ring-offset-2 focus-visible:ring-offset-brand-ivory sm:px-4";
+    "inline-flex min-h-10 items-center gap-2 whitespace-nowrap rounded-full bg-brand-orange px-4 py-2 text-[12px] font-medium text-brand-ivory shadow-[0_10px_24px_rgba(255,79,0,0.18)] transition-colors hover:bg-brand-orange/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange focus-visible:ring-offset-2 focus-visible:ring-offset-brand-ivory";
 
   const variantStyles = {
     primary:
@@ -284,7 +284,7 @@ export const NavbarButton = ({
 
 export function NavActions({
   primaryHref = "/contact",
-  primaryLabel = "ASK A QUESTION",
+  primaryLabel = "Ask a question",
   secondaryHref = "/#solution",
   secondaryLabel = "View solutions",
   linkedinLabel = "Meet us on LinkedIn",

@@ -141,10 +141,10 @@ className="
 
   justify-center
 
+  rounded-full
   bg-brand-cocoa
 
   px-5
-uppercase
   font-body
 
  text-[13px]
